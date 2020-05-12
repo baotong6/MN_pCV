@@ -124,13 +124,13 @@ Section \ref{sec:obs} describes the observation we used and the source detection
 The LW towards the inner Galactic bulge has been extensively observed by {\it Chandra} with its Advanced CCD Imaging Spectrometer (ACIS).
 A total of 13 ACIS-I observations were taken, three in 2005 and ten in 2008, resulting in a total exposure of 982 ks.
 A log of these observations is given in Table \ref{tab:obsinfo}. 
-A number of previous studies have made use of all or part of these observations, which primarily focused on the identification of point sources and the determination of their statistical properties \citep{2009Natur.458.1142R,2009ApJ...700.1702V,2009ApJ...706..223H,2011MNRAS.414..495R,2012MNRAS.427.1633H,2013ApJ...766...14M,2016MNRAS.462L.106W}.
+A number of previous studies have made use of all or part of these observations, which primarily focused on the identification of discrete X-ray sources and the quantification of their statistical properties \citep{2009Natur.458.1142R,2009ApJ...700.1702V,2009ApJ...706..223H,2011MNRAS.414..495R,2012MNRAS.427.1633H,2013ApJ...766...14M,2016MNRAS.462L.106W}.
 \\
 
 We downloaded and uniformly reprocessed the archival data with CIAO v4.10 and CALDB v4.8.1, following the standard procedure\footnote{http://cxc.harvard.edu/ciao}.
 The CIAO tool \emph{reproject\_aspect} was employed to align the relative astrometry among the individual observations, by matching the centroids of commonly detected point sources. ObsID 9502, which has the longest exposure (164.1 ks), served as the reference frame.
 %The resultant accuracy in relative astrometry was typically better than $0\farcs1$.
-The level 2 event file was created for each ObsID, with the arrival time of each event corrected to the Solar barycenter (i.e., Temps Dynamique Barycentrique time) by using the CIAO tool \emph{axbary}.
+The level 2 event file was created for each ObsID, with the arrival time of each event corrected to the Solar System barycenter (i.e., Temps Dynamique Barycentrique time) by using the CIAO tool \emph{axbary}.
 We then constructed a merged event list, reprojecting all events to a common tangential point, [R.A., Decl.]=[267.86375, 29.58475].
 The individual observations cover a similar field-of-view (FoV) due to their similar aimpoints and roll angles, as illustrated in Figure~\ref{fig:FoV} which displays the merged 2--8 keV counts image.
 We have examined the light curve of each ObsID and found that the instrumental background was quiescent for the vast majority of time intervals.
@@ -165,15 +165,15 @@ ObsID & Start Time & Nominal R.A. & Nominal Decl. &  Roll angle & Exposure & Mod
 \end{table*}
 
 \subsection{Source detection}\label{subsec:detect}
-By design, the LW suffers from moderate line-of-sight extinction, $N_{\rm H} \approx 7\times10^{21}{\rm~cm^{-2}}$ \citep{2011MNRAS.414..495R}, which obscures X-ray photons with energies $\lesssim$ 1 keV.
+It is known that the LW suffers from moderate line-of-sight extinction, $N_{\rm H} \approx 7\times10^{21}{\rm~cm^{-2}}$ \citep{2011MNRAS.414..495R}, which obscures X-ray photons with energies $\lesssim$ 1 keV.
 %there would be a large number of active binaries (AB) as foreground sources. ABs emit X-rays mainly below 2keV. Thus we use 2-8 keV to do source detection. 
 Here we focus on sources prominent in the 2--8 keV band, which are most likely CVs located in the Galactic bulge. This will also facilitate a direct comparison with the CVs found in the Nuclear Star Cluster \citep{2018ApJS..235...26Z}, the line-of-sight column density of which, $N_{\rm H} \sim 10^{23}{\rm~cm^{-2}}$, is only transparent to photons with energies $\gtrsim$2 keV. 
 
 Source detection was performed following the procedures detailed in \citet{2018ApJS..235...26Z}.
 Briefly, we first generated for each observation an exposure map as well as point-spread function (PSF) maps with enclosed count fraction (ECF) of 50\% and 90\%. 
 Both the exposure and PSF maps were weighted by a fiducial spectrum, which is an absorbed bremsstrahlung with a plasma temperature of 10 keV and a column density of $N_{\rm H}=10^{22}{\rm~cm^{-2}}$, typical of the X-ray sources in the LW. 
-We then reprojected the individual exposure maps in the same way as for the counts images; the PSF maps were similarly stacked, weighted by the corresponding exposure map. 
-Next, we employed {\it wavdetect} to identify point sources in the merged 2--8 keV counts image, supplying the algorithm  with the exposure map and the 50\%-ECF PSF map and adopting a false-positive probability threshold of $10^{-6}$. 
+We then reprojected the individual exposure maps to form a stacked exposure map in the same way as for the counts images; the PSF maps were similarly stacked, weighted by the corresponding exposure map. 
+Next, we employed {\it wavdetect} to identify discrete sources in the merged 2--8 keV counts image, supplying the algorithm with the stacked exposure map and the 50\%-ECF PSF map and adopting a false-positive probability threshold of $10^{-6}$. 
 This resulted in a raw list of 847 independent sources in the 2--8 keV band. 
 % {\bf [since photometry is involved in the timing anlysis, it's not a bad idea to describe the procedure here]}
 %Since the goal of this paper is to identity periodic sources and we can only get robust periodic signal from relatively bright sources. The precise photometry correction for these sources are not necessary.
@@ -187,7 +187,7 @@ Photometry (i.e., net photon flux and its error) for individual sources were cal
 We consider a {\it significant detection} for a given source in a given ObsID if the photon flux is greater than 3 times the error. 
 %For precisely processing, we exclude the contamination of nearby point sources and extended sources from background region by naked eyes. 
 %Then this procedure was only applied for candidate periodic sources (as decribed in sec \ref{sec:results}) due to the manpower limit. 
-We further define for each source an inter-observation {\it variability index}, $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections, respectively. This implicitly requires that significant detections in at least two observations.
+We further define for each source an inter-observation {\it variability index}, $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the significant detections, respectively. This implicitly requires significant detections in at least two observations.
 
 \begin{figure*}
 \centering
@@ -265,7 +265,7 @@ In this work, we take 12 as the largest number of phase bins, that demands the c
 \end{equation}
 \end{subequations}
 
-The total span of 13 observation is about three years, i.e., $10^8s$, so the resolution of angular frequency is $5\times 10^{-9}$. When the $\omega$ increases, corresponding the period decreases, the same resolution brings numerous discrete frequencies and raises running time greatly. Thus we used three different resolutions $10^{-7},10^{-8},10^{-9}$ in three period ranges $(300s,3000s),(3000s,10000s), (10000s,50000s)$. The ranges was chosen for the orbital period distribution of CVs, as shown in Figure \ref{fig:N_P}. There is a period gap in distribution at 2-3 hours, and a period minimum at about 70 minutes. Then the first range covers roughly the spin period of IPs, the other two ranges overlay the orbital period below and beyond the period gap respectively.
+The total span of 13 observation is about three years, i.e., $10^8$ s, so the resolution of angular frequency is $5\times 10^{-9}$. When the $\omega$ increases, corresponding the period decreases, the same resolution brings numerous discrete frequencies and raises running time greatly. Thus we used three different resolutions $10^{-7},10^{-8},10^{-9}$ in three period ranges $(300s,3000s),(3000s,10000s), (10000s,50000s)$. The ranges was chosen for the orbital period distribution of CVs, as shown in Figure \ref{fig:N_P}. There is a period gap in distribution at 2-3 hours, and a period minimum at about 70 minutes. Then the first range covers roughly the spin period of IPs, the other two ranges overlay the orbital period below and beyond the period gap respectively.
 
 Generally, for each source, we provide the dataset for GL method. Then we got the most periodic signal with its probability in three period ranges. Taking 90\% as threshold to determine the periodicity, finally we choose all the candidate sources with at least one periodic signal.
 
@@ -327,16 +327,16 @@ Then the simulation were run 100 times at each set of parameter. Results of dete
 
 \section{Period Searching Results}\label{sec:results}
 %\subsection{Filtering detections}
-According to the simulations in Section~\ref{subsec:simulation}, a periodic signal is hard to detect in sources with a total counts $C\lesssim$100, even in the case of high variation amplitudes.  
-Hence we restrict our period searching to sources with $C \geq 100$, which include 667 of the 847 sources in the raw list.
+According to the simulations in Section~\ref{subsec:simulation}, a periodic signal is hard to detect in sources with total counts $C\lesssim$100, even in the case of high variation amplitudes.  
+Therefore, we restrict our period searching to sources with $C \geq 100$, which include 667 of the 847 sources in the raw list.
 
-Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signals from the three period ranges. However, it is necessary to exclude spurious detections, which may be caused by several effects:
+Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signals from the three period ranges. However, it is necessary to filter spurious detections, which may be caused by several effects:
 
-(i) By design, the ACIS is dithered to distribute photons over more CCD pixels to avoid pile-up and to fill CCD gaps.  The dither period is 706.96s in pitch and 999.96s in yaw. Any signals detected at these two periods and their harmonics are thus excluded. These are mostly found in sources located close to CCD gaps.
+(i) By design, the ACIS is dithered to distribute photons over more CCD pixels to avoid pile-up and to fill CCD gaps.  The dither period is 706.96 s in pitch and 999.96 s in yaw. Any signals detected at these two periods and their harmonics are thus excluded. These are mostly found in sources located close to CCD gaps.
 
-(ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of douple-peak or triple-peak in the phase-folded light curves, provided that the intrinsic signal has a single-peak structure. However, if a single-peak structure were not the case, it is more difficult to distinguish half harmonics and the true period. Hence we assume that there is no half harmonics and always take the lowest period among the multiple detections as the true period. We provide more discussions about harmonics in Appendix~\ref{harmonics}. 
+(ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of douple-peak or triple-peak in the phase-folded light curves, provided that the intrinsic signal has a single-peak structure. However, if a single-peak structure were not the case, it is more difficult to distinguish the true period and the half harmonics. Hence we assume that there is no half harmonics and always take the lowest period among the multiple detections as the true period. Appendix~\ref{harmonics} provides more discussions about harmonics.
 
-(iii) In certain sources, strong flux variations or outbursts occupying one particular observation can also cause false detections. This is because the GL algorithm, which directly analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may "think" there exists a period especially in the third period range. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We reanalyze their light curves, including only the outbursting or quiescent epochs. For three of them, in either case the tentative period cannot be recovered. Therefore, these three signals are probably false detections. The remaining source is kept since its period can be recovered in both the outbursting and quiescent epochs. 
+(iii) In certain sources, strong flux variations or outbursts occupying one particular observation can also cause a false periodic signature. This is because the GL algorithm, which directly analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may "think" there exists a period especially in the third period range. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We reanalyze their light curves on subsets covering only the outbursting or quiescent epochs. For three of them, the tentative period cannot be recovered in either subset. Therefore, these three signals are probably false detections. The remaining source is kept since its period can be recovered in both the outbursting and quiescent epochs. {\bf [Table 2 shows no source with VI $>$ 10.]}
 
 %\subsection{Confirmed Periods}
 The above filtering thus results in 25 valid periodic signals in 23 sources.
@@ -345,7 +345,7 @@ The basic information of these periodic sources are listed in Table~\ref{tab:src
 Locations of these sources are marked in Figure~\ref{fig:FoV}.
 
 In two cases, two different periods are found for the same source, hence each of them is assigned two IDs: \#1/\#14 and \#21/\#22.  
-The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra (Section~\ref{sec:spectra}) of these two sources are shown in Figure~\ref{fig:pCV_sample} and Figure~\ref{fig:pCV_sample}. {\bf [a 4-panel plot for each source}
+The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra (Section~\ref{sec:spectra}) of these two sources are shown in Figure~\ref{fig:pCV_sample_1} and Figure~\ref{fig:pCV_sample_2}. 
 For left panel, though the GL method could not distinguish background photons, we still define the local background from photometric results, shown as the yellow strip in the left panel of Figure \ref{fig:Figure_p}. The width of strip represents the Poisson error range.
 Additionally, since the bin size in phase-folded light curve has no effect on the shape, we chose the bin size between 20 to 50, to get the most distinct display. 
 For middle panel, the valid detection (defined in \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations. 
@@ -354,29 +354,7 @@ Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen
 
 %The periodic sources and their information are shown in Table \ref{tab:src}, which also includes the cross-match results with \cite{2012ApJ...746..165H}. The ten periodic sources discovered by \cite{2012ApJ...746..165H} have also been determined by GL method in this work.
 
-\begin{figure*}
-\begin{minipage}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324001_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324002_cut.eps}
-\end{minipage}
-\begin{minipage}[b]{0.44\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/324001_lc_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/324001_spec.pdf}
-\end{minipage}
-\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#1(\#14) source.\label{fig:pCV_sample_1}}
-\end{figure*}
 
-\begin{figure*}
-\begin{minipage}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153001_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153002_cut.eps}
-\end{minipage}
-\begin{minipage}[b]{0.44\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/153001_lc_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/153001_spec.pdf}
-\end{minipage}
-\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#21(\#22) source.\label{fig:pCV_sample_2}}
-\end{figure*}
 
 
 \begin{table*}
@@ -386,9 +364,9 @@ Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen
 \begin{tabular}{lccccccccccc}
 \hline
 \hline
-ID& R.A. & Decl. & Period & $P_{GL}$ & H-ID & Counts & $A_0$ & $P_{det}$ & $P_{det}'$ & VI & Harmonics
+ID& R.A. & Decl. & Period & $P_{\rm GL}$ & H-ID & $C$ & $A_0$ & $P_{det}$ & $P_{det}'$ & VI & Harmonics
 \\
-LW & $\circ$ & $\circ$ & (s) & & & 1-8 keV & & \% & \% & & 
+LW & $\circ$ & $\circ$ & (s) & & & & & \% & \% & & 
 \\ 
 (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10) & (11) & (12)
 \\
@@ -407,7 +385,7 @@ LW & $\circ$ & $\circ$ & (s) & & & 1-8 keV & & \% & \% & &
 \\
 7 & 267.86651 &	-29.58575 & 5144.97 & 0.99880 &-& 335 & 0.77 & 100 &-& 2.48 & \text{Second}
 \\
-8 & 267.90982 &	-29.55845 & 5158.75 & 1.00000 &-& 121 & 1.00 & 100 &-& 2.3 & \text{Second}
+8 & 267.90982 &	-29.55845 & 5158.75 & 1.00000 &-& 121 & 1.00 & 100 &-& 2.30 & \text{Second}
 \\
 9 & 267.88075 &	-29.48562 & 5231.49 & 0.94949 &-& 347 & 0.67 & 100 &-& 1.65 &-
 \\
@@ -426,7 +404,7 @@ LW & $\circ$ & $\circ$ & (s) & & & 1-8 keV & & \% & \% & &
 \\
 15 & 267.89161 &	 -29.46508 & 6335.85 & 1.00000 & H5 & 823 & 0.62  & 100 & 100 & 2.09 & \text{Second} 
 \\
-16 & 267.89024 &	 -29.55369 & 6597.55 & 1.00000 & H9 & 487 & 0.72  & 100  & 99 & 4.3 & \text{Second}
+16 & 267.89024 &	 -29.55369 & 6597.55 & 1.00000 & H9 & 487 & 0.72  & 100  & 99 & 4.30 & \text{Second}
 \\
 17 & 267.87162 &	 -29.49011 & 7448.98 & 0.99999 & H3 & 535 & 0.73  & 100  & 100 & 1.76 & \text{Second}
 \\
@@ -471,6 +449,30 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039&-  &-&-&-&-
     \end{tablenotes}
 \end{threeparttable}
 \end{table*}
+
+\begin{figure*}
+\begin{minipage}[b]{0.45\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324001_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324002_cut.eps}
+\end{minipage}
+\begin{minipage}[b]{0.44\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/324001_lc_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/324001_spec.pdf}
+\end{minipage}
+\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#1(\#14) source.\label{fig:pCV_sample_1}}
+\end{figure*}
+
+\begin{figure*}
+\begin{minipage}[b]{0.45\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153001_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153002_cut.eps}
+\end{minipage}
+\begin{minipage}[b]{0.44\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/153001_lc_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/153001_spec.pdf}
+\end{minipage}
+\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#21(\#22) source.\label{fig:pCV_sample_2}}
+\end{figure*}
 
 \section{X-ray spectral analysis}\label{sec:spectra}
 We perform spectral analysis for all 23 confirmed periodic sources to gain insight on their nature. Source and background spectra are extracted from the same regions as described in Section~\ref{subsec:detect}, along with the ancillary response files (ARFs) and redistribution matrix files (RMFs), by using the CIAO tool \emph{specextract}. 
