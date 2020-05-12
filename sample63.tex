@@ -62,7 +62,7 @@
 %\title[Short title, max. 45 characters]{Periodic X-ray Sources in the Galactic Bulge}
 %\author{Bao \& Li}
 
-\title[Short title, max. 45 characters]{Periodic Cataclysmic Variables in the Galactic Bulge: Application of the Gregory-Loredo Algorithm}
+\title[Periodic Cataclysmic Variables in the Galactic Bulge]{Periodic Cataclysmic Variables in the Galactic Bulge: Application of the Gregory-Loredo Algorithm}
 
 \author[Bao \& Li]{
 Tong Bao,$^{1,2}$\thanks{E-mail: mn@ras.org.uk (KTS)}
@@ -189,7 +189,7 @@ We consider a {\it significant detection} for a given source in a given ObsID if
 %Then this procedure was only applied for candidate periodic sources (as decribed in sec \ref{sec:results}) due to the manpower limit. 
 We further define for each source an inter-observation {\it variability index}, $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections, respectively. This implicitly requires that significant detections in at least two observations.
 
-\begin{figure*}[htbp]
+\begin{figure*}
 \centering
 \includegraphics[scale=0.8]{./figure/LW/ds9.eps}
 \caption{2--8 keV counts image of the Limiting Window, combining 13 {\it Chandra}/ACIS-I observations. Locations of the 23 periodic sources are marked with colored circles ({\it magenta}: ten sources previously reported by \citep{2012ApJ...746..165H}; {\it red}: twelve newly discovered in this work and belonging to the Galactic bulge; {\it green}: one newly discovered and located in the foreground). Source numbering is the same as in Table~\ref{tab:src}. In particular, 1/14 and 21/22 are the two sources each showing two periodic signals.}
@@ -318,7 +318,7 @@ We set $f=0.1$ and $w=0.1$ in our simulations, which are typical of eclipsing CV
 We test three values for the period, $P$=5258, 15258 and 45258 sec. 
 Then the simulation were run 100 times at each set of parameter. Results of detection rate(also taking 90\% as threshold) is shown is Figure \ref{fig:eclipse}. It is noteworthy that the efficiency soars to 1 when the number of counts goes up. And a marked rise appears with the growth of period.
  
-\begin{figure}[ht!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.61]{./figure/sim_LW/eclipse_cut.eps}
 \caption{Detection rate obtained from simulation results for eclipsing models. Magenta, red and green denotes for P=45258s, 15258s and 5258s respectively. }\label{fig:eclipse}
@@ -353,12 +353,31 @@ For right panel, the spectra illustrated here were fitted in the range of 1--8 k
 Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen:fig}.
 
 %The periodic sources and their information are shown in Table \ref{tab:src}, which also includes the cross-match results with \cite{2012ApJ...746..165H}. The ten periodic sources discovered by \cite{2012ApJ...746..165H} have also been determined by GL method in this work.
-\begin{figure*}[!ht]
-%  \ContinuedFloat
-%  \captionsetup{list=off,format=cont}
-    \centering    \includegraphics[page=1,scale=0.90,trim=0 0 0 70,clip]{plot_figure_LW_sample.pdf}
-    \caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for two sources.\label{fig:pCV_sample}}
+
+\begin{figure*}
+\begin{minipage}[b]{0.45\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324001_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324002_cut.eps}
+\end{minipage}
+\begin{minipage}[b]{0.44\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/324001_lc_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/324001_spec.pdf}
+\end{minipage}
+\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#1(\#14) sources.\label{fig:pCV_sample_1}}
 \end{figure*}
+
+\begin{figure*}
+\begin{minipage}[b]{0.45\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153001_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153002_cut.eps}
+\end{minipage}
+\begin{minipage}[b]{0.44\textwidth}
+\includegraphics[width=\textwidth]{./figure/LW/153001_lc_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/153001_spec.pdf}
+\end{minipage}
+\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#21(\#22) sources.\label{fig:pCV_sample_2}}
+\end{figure*}
+
 
 \begin{table*}
 \centering
@@ -615,11 +634,11 @@ Still, we took 90\% as threshold to get valid detection at 0.1\% accuracy. The p
 
 The improvement on detecting efficiency and data usage brought more periodic signals than \cite{2012ApJ...746..165H}. Additionally, we operated the simulation not only for sinusoidal variation, but also for eclipsing models to describe the dip in orbital modulation. Combining the simulation results and more than twice the sample, we were allowed to discuss the source properties and the distribution of CVs in galactic bulge region on a better level.
 
-\begin{figure}[htb]
+\begin{figure}
 \includegraphics[scale=0.55]{./figure/sim_LW/Pdet_com.eps}
 \caption{The comparison of efficiency between two methods. H-ID is the sequence number given by \citep{2012ApJ...746..165H}, same as column(6) in Table \ref{tab:src} \label{fig:com}.The detection rate of LS method are taken from Table 2 in \citep{2012ApJ...746..165H}}.
 \end{figure}
-\begin{figure}[htbp]
+\begin{figure}
 \includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
 \caption{The comparison between estimated and the real detected number of sources. \label{fig:NP_sim}}
 \end{figure}
@@ -630,7 +649,7 @@ These periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 1
 Before we start to discuss the nature of these periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in section \ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
 
-\begin{figure*}[htbp]
+\begin{figure*}
 \centering
 \includegraphics[scale=0.73]{./figure/CV/N_P.eps}
 \caption{The period distribution of the LW sources (dark-blue line), the spin (purple) and orbital (green) periods of IPs ,the periods (sky-blue) of polars and the orbital (red) periods of DNe from the RK catalog \citep{2003A&A...404..301R}, version 7.20). The famous period gap(yellow line) and period minimum(orange dashed line) are also plotted, whose value are taken from \citep{2011ApJS..194...28K}.\label{fig:N_P}}
@@ -662,7 +681,7 @@ Intrinsically, the eclipse of white dwarf depends on the inclination angle, radi
 \end{equation}
 We took parameters from simulation operated by \citep{2011ApJS..194...28K}, in which $R_1$ is fixed at when $M_{WD}$ equals 0.75 solar mass. Assuming that inclination is even distributed in $(0,90^\circ)$, the probability of eclipsing(hereafter EP) are plotted in Figure \ref{fig:simpCV}.
 
-\begin{figure}[ht!]
+\begin{figure}
 \centering
 \includegraphics[scale=0.55]{./figure/p_inCV.eps}
 \caption{Probability of eclipsing in CVs. The break around 3.2hours resulted by different model for CVs beyond and below the period gap.\label{fig:simpCV}}
