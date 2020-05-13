@@ -336,7 +336,7 @@ Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signal
 
 (ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of douple-peak or triple-peak in the phase-folded light curves, provided that the intrinsic signal has a single-peak structure. However, if a single-peak structure were not the case, it is more difficult to distinguish the true period and the half harmonics. Hence we assume that there is no half harmonics and always take the lowest period among the multiple detections as the true period. Appendix~\ref{harmonics} provides more discussions about harmonics.
 
-(iii) In certain sources, strong flux variations or outbursts occupying one particular observation can also cause a false periodic signature. This is because the GL algorithm, which directly analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may "think" there exists a period especially in the third period range. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We reanalyze their light curves on subsets covering only the outbursting or quiescent epochs. For three of them, the tentative period cannot be recovered in either subset. Therefore, these three signals are probably false detections. The remaining source is kept since its period can be recovered in both the outbursting and quiescent epochs. {\bf [Table 2 shows no source with VI $>$ 10.]}
+(iii) In certain sources, strong flux variations or outbursts occupying one particular observation can also cause a false periodic signature. This is because the GL algorithm, which directly analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may "think" there exists a period especially in the third period range. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We reanalyze their light curves on subsets covering only the outbursting or quiescent epochs. For three of them, the tentative period cannot be recovered in either subset. Therefore, these three signals are probably false detections. The remaining source is kept since its period can be recovered in both the outbursting and quiescent epochs.
 
 %\subsection{Confirmed Periods}
 The above filtering thus results in 25 valid periodic signals in 23 sources.
@@ -344,12 +344,19 @@ Among them, 10 periodic signals were reported by \citet{2012ApJ...746..165H} and
 The basic information of these periodic sources are listed in Table~\ref{tab:src}, sorted by the order of increasing period. 
 Locations of these sources are marked in Figure~\ref{fig:FoV}.
 
-In two cases, two different periods are found for the same source, hence each of them is assigned two IDs: \#1/\#14 and \#21/\#22.  
-The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra (Section~\ref{sec:spectra}) of these two sources are shown in Figure~\ref{fig:pCV_sample_1} and Figure~\ref{fig:pCV_sample_2}. 
-For left panel, though the GL method could not distinguish background photons, we still define the local background from photometric results, shown as the yellow strip in the left panel of Figure \ref{fig:Figure_p}. The width of strip represents the Poisson error range.
-Additionally, since the bin size in phase-folded light curve has no effect on the shape, we chose the bin size between 20 to 50, to get the most distinct display. 
-For middle panel, the valid detection (defined in \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations. 
-For right panel, the spectra illustrated here were fitted in the range of 1--8 keV, consistent with the timing analysis. 
+In two cases, two different periods are found for the same source, hence we have assigned each sources two IDs: \#1/\#14 and \#21/\#22.  
+The phase-folded light curves at the two modulation periods are shown for source 1/14 in the upper panels of  Figure~\ref{fig:pCV_sample_1} and for source 21/22 in the upper panels of Figure~\ref{fig:pCV_sample_2}. 
+The number of phase bins, between 20 to 50, is chosen to optimally display substructures in the light curve. 
+While the GL algorithm does not rely on quantifying the local background, for comparison we plot in these panels the background level (yellow strip, the width of which represents 1\,$\sigma$ Poisso error) as determined in Section~\ref{subsec:detect}. 
+{\bf [Give a try to describe these light curves.]}
+The characteristics of the phase-folded light curves provide important clues to the source origin, which will be further addressed in Section~\ref{subsec:class}.
+
+The phase-folded light curves are complemented by the long-term, inter-observation light curve, shown in the lower left panel of Figures~\ref{fig:pCV_sample_1} and \ref{fig:pCV_sample_2}. 
+
+Finally, the source spectrum (Section~\ref{sec:spectra})
+is shown in the lower left panel of Figures~\ref{fig:pCV_sample_1} and \ref{fig:pCV_sample_2}. 
+%For middle panel, the valid detection (defined in \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations. 
+%For right panel, the spectra illustrated here were fitted in the range of 1--8 keV, consistent with the timing analysis. 
 Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen:fig}.
 
 %The periodic sources and their information are shown in Table \ref{tab:src}, which also includes the cross-match results with \cite{2012ApJ...746..165H}. The ten periodic sources discovered by \cite{2012ApJ...746..165H} have also been determined by GL method in this work.
@@ -459,7 +466,9 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039&-  &-&-&23.6&-
 \includegraphics[width=\textwidth]{./figure/LW/324001_lc_cut.eps}
 \includegraphics[width=\textwidth]{./figure/LW/324001_spec.pdf}
 \end{minipage}
-\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#1(\#14) source.\label{fig:pCV_sample_1}}
+\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#1(\#14) source.
+For middle panel, the valid detection (defined in \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations.}
+\label{fig:pCV_sample_1}
 \end{figure*}
 
 \begin{figure*}
@@ -471,7 +480,8 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039&-  &-&-&23.6&-
 \includegraphics[width=\textwidth]{./figure/LW/153001_lc_cut.eps}
 \includegraphics[width=\textwidth]{./figure/LW/153001_spec.pdf}
 \end{minipage}
-\caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#21(\#22) source.\label{fig:pCV_sample_2}}
+\caption{Similar to Figure~\ref{fig:pCV_sample_2}, but for source 21/22.}
+\label{fig:pCV_sample_2}
 \end{figure*}
 
 \section{X-ray spectral analysis}\label{sec:spectra}
