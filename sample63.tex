@@ -314,7 +314,7 @@ f\lambda_0 & \text{$\phi(t) \in[(1-w)\pi,(1+w)\pi]$},
 \end{equation}
 where $w$ accounts for the eclipsing width (duration) in phase space, and $f$ characterizes the relative depth of the eclipse ($0\leq f \leq 1$; $f = 0$ corresponds to total eclipse). Here the eclipse is assumed to occur around $\phi = \pi$. 
 Again, $\lambda_0$ can be related to the total counts as $C=(1-fw)\lambda_0T$.
-We set $f=0.1$ and $w=0.1$ in our simulations, which are typical of eclipsing CVs, since the radius ratio of WD, companion star and orbit are about 1:10:50. {\bf [try $f$ =0.2, 0.5?$f$ might be too small. better try more values]}
+We set $f=0.1$ and $w=0.1$ in our simulations, which are typical of eclipsing CVs, since the radius ratio of WD, companion star and orbit are about 1:10:50. 
 We test three values for the period, $P$=5258, 15258 and 45258 sec. 
 Then the simulation were run 100 times at each set of parameter. Results of detection rate(also taking 90\% as threshold) is shown is Figure \ref{fig:eclipse}. It is noteworthy that the efficiency soars to 1 when the number of counts goes up. And a marked rise appears with the growth of period.
  
@@ -345,10 +345,12 @@ The basic information of these periodic sources are listed in Table~\ref{tab:src
 Locations of these sources are marked in Figure~\ref{fig:FoV}.
 
 In two cases, two different periods are found for the same source, hence we have assigned each sources two IDs: \#1/\#14 and \#21/\#22.  
-The phase-folded light curves at the two modulation periods are shown for source 1/14 in the upper panels of  Figure~\ref{fig:pCV_sample_1} and for source 21/22 in the upper panels of Figure~\ref{fig:pCV_sample_2}. 
+The phase-folded light curves at the two modulation periods are shown for source \#1/\#14 in the upper panels of  Figure~\ref{fig:pCV_sample_1} and for source \#21/\#22 in the upper panels of Figure~\ref{fig:pCV_sample_2}. 
 The number of phase bins, between 20 to 50, is chosen to optimally display substructures in the light curve. 
-While the GL algorithm does not rely on quantifying the local background, for comparison we plot in these panels the background level (yellow strip, the width of which represents 1\,$\sigma$ Poisso error) as determined in Section~\ref{subsec:detect}. 
-{\bf [Give a try to describe these light curves.]}
+While the GL algorithm does not rely on quantifying the local background, for comparison we plot in these panels the background level (yellow strip, the width of which represents 1\,$\sigma$ Poisson error) as determined in Section~\ref{subsec:detect}.
+ 
+ For source \#1, the width in phase with flux lower than average is about 0.5, longer than the value for \#14, which is about 0.3. This difference holds out the view that the short period caused by rotation with the alternation of accretion column.
+ While for source \#21, the weak variation indicates the rotation modulation . And the apparent sharp, narrow eclipsing in \#22 strongly sustain that the orbit modulation with high inclination angle. Considering that the angle between magnetic axis and rotation axis is usually small, it also support for the weak variation of spin modulation.
 The characteristics of the phase-folded light curves provide important clues to the source origin, which will be further addressed in Section~\ref{subsec:class}.
 
 The phase-folded light curves are complemented by the long-term, inter-observation light curve, shown in the lower left panel of Figures~\ref{fig:pCV_sample_1} and \ref{fig:pCV_sample_2}. 
@@ -487,7 +489,7 @@ For middle panel, the valid detection (defined in \ref{subsec:detect}) are plott
 \section{X-ray spectral analysis}\label{sec:spectra}
 We perform spectral analysis for all 23 confirmed periodic sources to gain insight on their nature. Source and background spectra are extracted from the same regions as described in Section~\ref{subsec:detect}, along with the ancillary response files (ARFs) and redistribution matrix files (RMFs), by using the CIAO tool \emph{specextract}. 
 The spectra from individual observations are then coadded to form a combined spectrum of a given source, with the corresponding ARFs and RMFs weighted by the effective exposure. 
-{\bf Further, the spectrum is adaptively binned to achieve a minimum of 20 counts and a signal-to-noise ratio greater than 2 per bin.}
+Further, the spectrum is adaptively binned to achieve a minimum of 20 counts and a signal-to-noise ratio greater than 2 per bin.
 
 The resultant spectra are analyzed using XSPEC v12.9.1.
 %The reason we present the fitting results of 0.5-8 keV here is to constrain the absorption. Notice that the choice of energy range is not consistent with the illustration of spectra in Figure \ref{fig:Figure_p}, even though it has little impact on exhibition. 
@@ -621,28 +623,29 @@ this difference must be oweing to the different period searching methods employe
 
 \cite{2012ApJ...746..165H} employed the LS periodogram,
 %extracted only the several nearby observations, all the observations were applied here for timing analysis. That difference was caused by the mechanisms of methods. 
-which, as described in Section~\ref{subsec:GL}, handles the light curve in time space, while the GL algorithm processes the light curve in phase space with tolerance for observing gaps. {\bf We have applied the LS periodogram to our data in essentially the same way as \cite{2012ApJ...746..165H} and confirmed that only those 10 periods can be detected by this method.}
+which, as described in Section~\ref{subsec:GL}, handles the light curve in time space, while the GL algorithm processes the light curve in phase space with tolerance for observing gaps. We have applied the LS periodogram to our data in essentially the same way as \cite{2012ApJ...746..165H} and confirmed that only those 10 periods can be detected by this method.
 
-Besides, we also did 100 times of simulations for each signal. We had to use sinusoidal variations for simulating process though many of them may deviate much from real shape. The counts rate and period can be directly attained from data, while the amplitude is hard to determine since the deviation. In \citet{2012ApJ...746..165H}, they got $A_0$ from $A_{\mathrm{rms}}$ depended on Rayleigh statistics.
-The definition of $A_{\mathrm{rms}}$ and the relation between 
-$A_{\mathrm{rms}}$ and $A_0$, which were taken by \cite{2012ApJ...746..165H}, are described below.
-\begin{subequations}
-\begin{equation}
-A_{\mathrm{rms}}=\left(\frac{Z_{1}^{2}}{N}\right)^{1 / 2} \frac{N}{N-B}
-\end{equation}
-\begin{equation}
-Z_{1}^{2}=\frac{2}{N}\left\{\left[\Sigma_{j} \cos \phi\left(t_{j}\right)\right]^{2}+\left[\Sigma_{j} \sin ^{2} \phi\left(t_{j}\right)\right]^{2}\right\}
-\end{equation}
-\begin{equation}\label{Arms}
-A_0=\sqrt{2} A_{\mathrm{rms}}
-\end{equation}
-\end{subequations}
-where equation \ref{Arms} only works for sinusoidal modulations. N and B represent the total counts in source region and local background respectively. $t_{j}$ and $\phi\left(t_{j}\right)$ refer to the arrival time and phase of each photon. $Z_{1}^{2}$ is the classical Rayleigh statistic method \citep{1983A&A...128..245B,2003ApJ...599..465M}.
+Besides, we also did 100 times of simulations for each signal. We had to use sinusoidal variations for simulating process though many of them may deviate much from real shape. The counts rate and period can be directly attained from data, while the amplitude is hard to determine since the deviation. In \citet{2012ApJ...746..165H}, they got $A_0$ from $A_{\mathrm{rms}}$ depended on Rayleigh statistics.\citep{1983A&A...128..245B,2003ApJ...599..465M}.
+%The definition of $A_{\mathrm{rms}}$ and the relation between 
+%$A_{\mathrm{rms}}$ and $A_0$, which were taken by \cite{2012ApJ...746..165H}, are described below.
+%\begin{subequations}
+%\begin{equation}
+%A_{\mathrm{rms}}=\left(\frac{Z_{1}^{2}}{N}\right)^{1 / 2} \frac{N}{N-B}
+%\end{equation}
+%\begin{equation}
+%Z_{1}^{2}=\frac{2}{N}\left\{\left[\Sigma_{j} \cos \phi\left(t_{j}\right)\right]^{2}+\left[\Sigma_{j} \sin ^{2} \phi\left(t_{j}\right)\right]^{2}\right\}
+%\end{equation}
+%\begin{equation}\label{Arms}
+%A_0=\sqrt{2} A_{\mathrm{rms}}
+%\end{equation}
+%\end{subequations}
+%where equation \ref{Arms} only works for sinusoidal modulations. N and B represent the total counts in source region and local background respectively. $t_{j}$ and $\phi\left(t_{j}\right)$ refer to the arrival time and phase of each photon. $Z_{1}^{2}$ is the classical Rayleigh statistic method \citep{1983A&A...128..245B,2003ApJ...599..465M}.
 Meanwhile, they provided another way to obtain $A_0$. From phase-folded light curve, they defined $A_{M}={1-R_{min}}/R_{max}$, and $A_{M}=2A_0/({1+A_0})$, where $R_{min}(R_{max})$ is the minimum (maximum) count rate of the folded light curve. 
 
 Though $A_{M}$ depends on the bin size of phase-folded light curve, we still prefer it rather than $A_{rms}$ to get the amplitude, i.e, $A_0$, since the deviation between sinusoidal variation and real shape sometimes made $A_{0}$ exceeds one when it was calculated from $A_{\mathrm{rms}}$. 
 
 Still, we took 90\% as threshold to get valid detection at 0.1\% accuracy. The percentage of valid detection would be represented by $P_{det}$. And $A_{M}$ was obtained with bin size fixed at 20. For directly comparison, we also ran the simulation based on the same $A_{0}$ defined in \citet{2012ApJ...746..165H} for the ten collective sources. A flagrant contrast was illustrated in Figure \ref{fig:com} based on that two columns. Apparently, GL method has better performance compared with LS method.
+
 
 The improvement on detecting efficiency and data usage brought more periodic signals than \cite{2012ApJ...746..165H}. Additionally, we operated the simulation not only for sinusoidal variation, but also for eclipsing models to describe the dip in orbital modulation. Combining the simulation results and more than twice the sample, we were allowed to discuss the source properties and the distribution of CVs in galactic bulge region on a better level.
 
