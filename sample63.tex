@@ -344,6 +344,8 @@ Among them, 10 periodic signals were reported by \citet{2012ApJ...746..165H} and
 The basic information of these periodic sources are listed in Table~\ref{tab:src}, sorted by the order of increasing period. 
 Locations of these sources are marked in Figure~\ref{fig:FoV}.
 
+Out of concern about the dither effect on period searching, we compute the fractional area covered by chips (hereafter FA) for each source in each observation. FA equals 1 when source region are not affected by gaps. After, weighting the FA in total exposure time, we define $\overline{FA}$ for each source. Most of $\overline{FA}$ are beyond 0.9, except for \#5, which is 0.74. Thus we run 100 simulation for this source in two cases. One for no dithering and the other for dithering. It turns out no difference in detection rate. In general, we can neglect the dither effect. 
+
 In two cases, two different periods are found for the same source, hence we have assigned each sources two IDs: \#1/\#14 and \#21/\#22.  
 The phase-folded light curves at the two modulation periods are shown for source \#1/\#14 in the upper panels of  Figure~\ref{fig:pCV_sample_1} and for source \#21/\#22 in the upper panels of Figure~\ref{fig:pCV_sample_2}. 
 The number of phase bins, between 20 to 50, is chosen to optimally display substructures in the light curve. 
@@ -461,28 +463,28 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039&-  &-&-&23.6&-
 
 \begin{figure*}
 \begin{minipage}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324001_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324002_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324001.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324002.eps}
 \end{minipage}
 \begin{minipage}[b]{0.44\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/324001_lc_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/324001_spec.pdf}
+\includegraphics[width=\textwidth]{./figure/LW/324001_lc.eps}
+\includegraphics[width=1.01\textwidth]{./figure/LW/324001_spec.pdf}
 \end{minipage}
 \caption{The phase-folded light curve at the two modulation periods, the long-term, inter-observation light curve and the spectra for \#1(\#14) source.
-For middle panel, the valid detection (defined in \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations.}
+For middle panel, the valid detection (defined in section \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations.}
 \label{fig:pCV_sample_1}
 \end{figure*}
 
 \begin{figure*}
 \begin{minipage}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153001_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153002_cut.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153001.eps}
+\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_153002.eps}
 \end{minipage}
 \begin{minipage}[b]{0.44\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/153001_lc_cut.eps}
-\includegraphics[width=\textwidth]{./figure/LW/153001_spec.pdf}
+\includegraphics[width=\textwidth]{./figure/LW/153001_lc.eps}
+\includegraphics[width=1.01\textwidth]{./figure/LW/153001_spec.pdf}
 \end{minipage}
-\caption{Similar to Figure~\ref{fig:pCV_sample_2}, but for source 21/22.}
+\caption{Similar to Figure~\ref{fig:pCV_sample_1}, but for source \#21/\#22.}
 \label{fig:pCV_sample_2}
 \end{figure*}
 
@@ -646,7 +648,6 @@ Though $A_{M}$ depends on the bin size of phase-folded light curve, we still pre
 
 Still, we took 90\% as threshold to get valid detection at 0.1\% accuracy. The percentage of valid detection would be represented by $P_{det}$. And $A_{M}$ was obtained with bin size fixed at 20. For directly comparison, we also ran the simulation based on the same $A_{0}$ defined in \citet{2012ApJ...746..165H} for the ten collective sources. A flagrant contrast was illustrated in Figure \ref{fig:com} based on that two columns. Apparently, GL method has better performance compared with LS method.
 
-
 The improvement on detecting efficiency and data usage brought more periodic signals than \cite{2012ApJ...746..165H}. Additionally, we operated the simulation not only for sinusoidal variation, but also for eclipsing models to describe the dip in orbital modulation. Combining the simulation results and more than twice the sample, we were allowed to discuss the source properties and the distribution of CVs in galactic bulge region on a better level.
 
 \begin{figure}
@@ -669,7 +670,7 @@ It can be easily seen that the period distribution of these LW sources resembles
 \includegraphics[scale=0.73]{./figure/CV/N_P.eps}
 \caption{The period distribution of the LW sources (dark-blue line), the spin (purple) and orbital (green) periods of IPs ,the periods (sky-blue) of polars and the orbital (red) periods of DNe from the RK catalog \citep{2003A&A...404..301R}, version 7.20). The famous period gap(yellow line) and period minimum(orange dashed line) are also plotted, whose value are taken from \citep{2011ApJS..194...28K}.\label{fig:N_P}}
 \end{figure*}
-For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in section \ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:Figure_p}. 	While the simultaneous existence of \#21 and \#22 and the 2\% period difference suggest it might be an asynchronous intermediate polar. Besides, the central dip of \#3, \#18 and \#20 are also similar to this circumstance. Since the eclipse happens in nearly all types of CVs, we could only set three as an upper limit of number of DNe in our sample.
+For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in section \ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:pCV_sample_2}. 	While the simultaneous existence of \#21 and \#22 and the 2\% period difference suggest it might be an asynchronous intermediate polar. Besides, the central dip of \#3, \#18 and \#20 are also similar to this circumstance. Since the eclipse happens in nearly all types of CVs, we could only set three as an upper limit of number of DNe in our sample.
 
 For magnetic CVs, including IPs and polars, their orbit modulation could give rise to more complicated shape of light curve. For polars, consider the simplistic situation, whose accretion is nearly onto one pole, then the shape of light curve would be divided into two groups. Suppose an inclination $i$, the angle between rotation axis and magnetic axis is $\beta$, the magnetic colatitude of accretion is $\epsilon$. Then if $i+\beta+\epsilon > 90^{\circ}$, we would see alternately two poles, the shape would be like \#6, with half of orbit cycle showing no emission. This so-called "two-pole"  behavior are more complicated if the accretion goes to both two poles, the gap with half orbit cycle would be partially filled (like \#16) by second pole's emission. Sometimes it may completely reverse in hard X-ray band cause the accretion shock in second pole producing most of hard X-rays \citep{1985A&A...148L..14H}. On the other hand, if $i+\beta+\epsilon < 90^{\circ}$ and $\beta < i$, in which the accreting pole is always visible , the modulation would caused by the obscuring of accretion stream. The width and depth of the dip in phase space are determined by many reasons and totally unpredictable. 
 
@@ -701,7 +702,7 @@ We took parameters from simulation operated by \citep{2011ApJS..194...28K}, in w
 \includegraphics[scale=0.55]{./figure/p_inCV.eps}
 \caption{Probability of eclipsing in CVs. The break around 3.2hours resulted by different model for CVs beyond and below the period gap.\label{fig:simpCV}}
 \end{figure}
-We utilized the simulation results of 5258s and 15258s as the detection rate for period under(75\% of the total number) and beyond the period gap(25\% of the total number). The fraction was taken from the DNe distribution in solar neighborhood. Besides, EP was chosen as 0.18 and 0.20 for this two types.
+We utilized the simulation results of 5258s and 15258s as the detection rate for period under (75\% of the total number) and beyond the period gap (25\% of the total number). The fraction was taken from the DNe distribution in solar neighborhood. Besides, EP was chosen as 0.18 and 0.20 for this two types.
 Similarly, the predicted number of periodic non-mCVs which "should" be detected in each counts bin is:
 \begin{equation}
 Np_{i}=N_i\times DR \times EP \times 667 \times \alpha	
