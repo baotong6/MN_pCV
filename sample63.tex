@@ -65,8 +65,8 @@
 \title[Periodic Cataclysmic Variables in the Galactic Bulge]{Periodic Cataclysmic Variables in the Galactic Bulge: Application of the Gregory-Loredo Algorithm}
 
 \author[Bao \& Li]{
-Tong Bao,$^{1,2}$\thanks{E-mail: mn@ras.org.uk (KTS)}
-Zhiyuan Li,$^{1,2}$
+Tong Bao,$^{1,2}$\thanks{E-mail: baotong@smail.nju.edu.cn}
+Zhiyuan Li,$^{1,2}$\thanks{E-mail: lizy@nju.edu.cn}
 \\
 % List of institutions
 $^{1}$School of Astronomy and Space Science, Nanjing University, Nanjing 210046, China\\
@@ -125,16 +125,7 @@ The LW towards the inner Galactic bulge has been extensively observed by {\it Ch
 A total of 13 ACIS-I observations were taken, three in 2005 and ten in 2008, resulting in a total exposure of 982 ks.
 A log of these observations is given in Table \ref{tab:obsinfo}. 
 A number of previous studies have made use of all or part of these observations, which primarily focused on the identification of discrete X-ray sources and the quantification of their statistical properties \citep{2009Natur.458.1142R,2009ApJ...700.1702V,2009ApJ...706..223H,2011MNRAS.414..495R,2012MNRAS.427.1633H,2013ApJ...766...14M,2016MNRAS.462L.106W}.
-\\
 
-We downloaded and uniformly reprocessed the archival data with CIAO v4.10 and CALDB v4.8.1, following the standard procedure\footnote{http://cxc.harvard.edu/ciao}.
-The CIAO tool \emph{reproject\_aspect} was employed to align the relative astrometry among the individual observations, by matching the centroids of commonly detected point sources. ObsID 9502, which has the longest exposure (164.1 ks), served as the reference frame.
-%The resultant accuracy in relative astrometry was typically better than $0\farcs1$.
-The level 2 event file was created for each ObsID, with the arrival time of each event corrected to the Solar System barycenter (i.e., Temps Dynamique Barycentrique time) by using the CIAO tool \emph{axbary}.
-We then constructed a merged event list, reprojecting all events to a common tangential point, [R.A., Decl.]=[267.86375, 29.58475].
-The individual observations cover a similar field-of-view (FoV) due to their similar aimpoints and roll angles, as illustrated in Figure~\ref{fig:FoV} which displays the merged 2--8 keV counts image.
-We have examined the light curve of each ObsID and found that the instrumental background was quiescent for the vast majority of time intervals.
-Hence we preserved all the science exposures for source detection and subsequent timing analysis, taking the advantage of uninterrupted signals within each observation.  
 
 %\decimalcolnumbers
 \begin{table*}
@@ -164,6 +155,14 @@ ObsID & Start Time & Nominal R.A. & Nominal Decl. &  Roll angle & Exposure & Mod
 \end{tabular}
 \end{table*}
 
+We downloaded and uniformly reprocessed the archival data with CIAO v4.10 and CALDB v4.8.1, following the standard procedure\footnote{http://cxc.harvard.edu/ciao}.
+The CIAO tool \emph{reproject\_aspect} was employed to align the relative astrometry among the individual observations, by matching the centroids of commonly detected point sources. ObsID 9502, which has the longest exposure (164.1 ks), served as the reference frame.
+%The resultant accuracy in relative astrometry was typically better than $0\farcs1$.
+The level 2 event file was created for each ObsID, with the arrival time of each event corrected to the Solar System barycenter (i.e., Temps Dynamique Barycentrique time) by using the CIAO tool \emph{axbary}.
+We then constructed a merged event list, reprojecting all events to a common tangential point, [R.A., Decl.]=[267.86375, 29.58475].
+The individual observations cover a similar field-of-view (FoV) due to their similar aimpoints and roll angles, as illustrated in Figure~\ref{fig:FoV} which displays the merged 2--8 keV counts image.
+We have examined the light curve of each ObsID and found that the instrumental background was quiescent for the vast majority of time intervals.
+Hence we preserved all the science exposures for source detection and subsequent timing analysis, taking the advantage of uninterrupted signals within each observation.  
 \subsection{Source detection}\label{subsec:detect}
 It is known that the LW suffers from moderate line-of-sight extinction, $N_{\rm H} \approx 7\times10^{21}{\rm~cm^{-2}}$ \citep{2011MNRAS.414..495R}, which obscures X-ray photons with energies $\lesssim$ 1 keV.
 %there would be a large number of active binaries (AB) as foreground sources. ABs emit X-rays mainly below 2keV. Thus we use 2-8 keV to do source detection. 
@@ -197,10 +196,10 @@ We further define for each source an inter-observation {\it variability index}, 
 \end{figure*}
 
 \section{Period Searching Method}\label{sec:methods}
-In this section, we first provide our motivation of employing the Gregory-Loredo (GL) algorithm, followed by a description of its basic principles (Section~\ref{subsec:GL}). We then elucidate our application of the GL algorithm to the {\it Chandra} data of the LW (Section~\ref{subsec:appli}). This is complemented by a set of simulations to evaluate the detection (in)completeness (Section~\ref{subsec:simulation}).  
+In this section, we first provide our motivation of employing the Gregory-Loredo (GL) algorithm, followed by a description of its basic principles (Section~\ref{subsec:GL}). We then elucidate our application of the GL algorithm to the {\it Chandra} data of the LW (Section~\ref{subsec:appli}). This is complemented by a set of simulations to evaluate the detection (in)completeness of periodic signals (Section~\ref{subsec:simulation}).  
 
 \subsection{The Gregory-Loredo Algorithm} \label{subsec:GL}
-There exists in the literature a variety of period-searching methods, which can be broadly divided into three categories according to their working principles. 
+There exists in the literature a variety of period searching methods, which can be broadly divided into three categories according to their working principles. 
 
 The most traditional method is based on Fourier transform and its power density spectra, which includes the classical Schuster periodogram \citep{1898TeMag...3...13S}, the Fourier analysis with unequally-spaced data \citep{1975Ap&SS..36..137D}, the correlation-based method \citep{1988ApJ...333..646E}, among others.
 
