@@ -109,16 +109,16 @@ In addition to that, the individual properties of CVs provide hints for the accr
 It has been suggested that the thousands of X-ray sources in galactic center are magnetic cataclysmic variables, particularly intermediate
 polars (IPs) \citep{2009ApJS..181..110M,2018ApJS..235...26Z}. Due to the lack of optical/infrared imaging and spectroscopy resulted from high extinction and source crowding, the direct identification of them has been really difficult.
 In fact, even the presence and characteristics of the He II $\lambda 4686$ and H$\beta$ line have been often used to judge if a CV is magnetic or not, the proof is far from conclusive. In \cite{1992PhDT.......119S}, many IPs with weak H$\beta$ lines could not be identified from non-magnetic systems using this diagnostic. 
-Hence the periodicity becomes a well recognized probe to study their population, because of their different features in periodic modulation (see section \ref{subsec:class}).  
+Hence the periodicity becomes a well recognized probe to study their population, because of their different features in periodic modulation (see Section~\ref{subsec:class}).  
 
 In \citet{2003ApJ...599..465M}, eight periodic sources were identified as mCVs in galactic center region (GCR). Then for galactic bulge region, ten periodic sources were found by using Lomb-Scargle methods \citep{2012ApJ...746..165H}. They were believed as an unusual type of mCVs with harder spectra like IPs while their period distribution resembles that of polars. The research was based on the observation of low-extinction Window fields (LW), locating at $1^{\circ}4$ south of the Galactic center. Its rarity of avoiding the obscuration from molecular cloud deserved our deeper excavation of these X-ray sources. 
 Besides, according to RK catalog \citep{2003A&A...404..301R}, the mCVs (mostly DNe) occupied 20\% in CVs sample, while for GCR, this fraction was reckoned over 30-40\% \citep{2016ApJ...826..160H,2012ApJ...746..165H}. The miss of non-mCVs demands reliable explanation from analyzing the properties of these sources. It may indicates that a large number of non-mCVs still awaits discovery since faint class can be always missed in flux-limited surveys.
 
 In this work, we have taken full usage of \emph{Chandra} observations for LW. Meanwhile, the methods with more efficiency and the simulation with higher accuracy have been both operated. We explored the X-ray properties of 22 periodic sources (ten of them identified in \cite{2012ApJ...746..165H}). 
-Section \ref{sec:obs} describes the observation we used and the source detection process. Section \ref{sec:methods} gives a brief overview about the main methods for period finding and focuses on the GL method we adopted in this work. 
-Section \ref{sec:results} is devoted to the confirmation of period finding results.
-Section \ref{sec:spectra} presents the spectra analysis for these periodic sources and the estimation of mass of WDs based on the Fe line diagnostic. 
-The comparison with previous work , the identification for these periodic sources and the X-ray source population in the LW would be discussed in Section \ref{sec:discussion}.
+Section~\ref{sec:obs} describes the observation we used and the source detection process. Section~\ref{sec:methods} gives a brief overview about the main methods for period finding and focuses on the GL method we adopted in this work. 
+Section~\ref{sec:results} is devoted to the confirmation of period finding results.
+Section~\ref{sec:spectra} presents the spectra analysis for these periodic sources and the estimation of mass of WDs based on the Fe line diagnostic. 
+The comparison with previous work , the identification for these periodic sources and the X-ray source population in the LW would be discussed in Section~\ref{sec:discussion}.
 
 \section{X-ray Data Preparation} \label{sec:obs}
 \subsection{{\it Chandra} observations} \label{subsec:xdata}
@@ -235,7 +235,7 @@ Though we did source detection in 2-8 keV band to reduce the contamination from 
 Besides, in order to compensate for uneven distribution over the bins, we provide "epoch" for each source. The "epoch" offered the start time and end time of each observations covered the source with at least one counts in source region. See Eqn.~\ref{A17} in appendix for detailed illustration about the use of epoch. 
 For the sake of changing aimpoint, we used individual source extract region for different observations. Explicitly, the 90\% ECR aperture  whose radius defined by specific PSF map was applied for counts in that observation. Since the phase-folding method directly manipulated each photons and we could not distinguish background photon from source photon, the local background information were not provided for timing analysis. The combination of each source event list and the corresponding epoch were then employed as the input of GL method. 
 
-As mentioned in section \ref{subsec:GL}, the GL method folds the dataset at trial period or frequency. Then the resolution of frequency must be balanced between computational power and  accuracy. Here we generate the frequency resolution depended on the data timescale.
+As mentioned in Section~\ref{subsec:GL}, the GL method folds the dataset at trial period or frequency. Then the resolution of frequency must be balanced between computational power and  accuracy. Here we generate the frequency resolution depended on the data timescale.
 
 For the data span in timescale T, the arrival time of photon $t_i$, the changing angular frequency influence the phase of photon more as $i$ grows. The most vulnerable photon is the last photon arrived, whose arrival time is T, and the change of phase is
 \begin{subequations}\label{fi}
@@ -471,7 +471,7 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039&-  &-&-&23.6&-
 \includegraphics[width=1.01\textwidth]{./figure/LW/324001_spec.pdf}
 \end{minipage}
 \caption{The phase-folded light curve at the two modulation periods (left), the long-term, inter-observation light curve (upper right) and the spectra (lower right) for \#1(\#14) source.
-For upper right panel, the valid detection (defined in section \ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations.
+For upper right panel, the valid detection (defined in Section~\ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in right panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations.
 For lower right panel, the spectrum are plotted over 1-8 keV to keep the same range with timing analysis.
 }
 \label{fig:pCV_sample_1}
@@ -491,7 +491,7 @@ For lower right panel, the spectrum are plotted over 1-8 keV to keep the same ra
 \end{figure*}
 
 \section{X-ray spectral analysis}\label{sec:spectra}
-We perform spectral analysis for all 23 confirmed periodic sources to gain insight on their nature. Source and background spectra are extracted from the same regions as described in Section~\ref{subsec:detect}, along with the ancillary response files (ARFs) and redistribution matrix files (RMFs), by using the CIAO tool \emph{specextract}. 
+We perform spectral analysis for all 23 confirmed periodic sources to gain insight on their nature. Source and background spectra are extracted from the same regions as described in section~\ref{subsec:detect}, along with the ancillary response files (ARFs) and redistribution matrix files (RMFs), by using the CIAO tool \emph{specextract}. 
 The spectra from individual observations are then coadded to form a combined spectrum of a given source, with the corresponding ARFs and RMFs weighted by the effective exposure. 
 Further, the spectrum is adaptively binned to achieve a minimum of 20 counts and a signal-to-noise ratio greater than 2 per bin.
 
@@ -505,10 +505,10 @@ Setting a lower value of $T_{\rm b}$, for instance, at 20 keV, does not affect o
 
 %The flux ratio of Fe XXVI to Fe XXV emission lines (hereafter $I_{7.0}/I_{6.7}$) could be interrelated to the $M_{WD}$ by uniting the $I_{7.0}/I_{6.7}$-$T_{max}$ and $T_{max}-M_{WD}$ relations \citep{2019ApJ...882..164X}. 
 Again due to the limited number of counts, most of the periodic sources show weak or non-detected Fe lines.  
-We have applied a bootstrapping method using the {\it multifake} tool in XSPEC to derive the 90\% confidence range for the fluxes of the three Fe lines. It turns out that only one sources, LW21 (same as LW22), shows a significant line at both 6.7 keV and 7.0 keV.  
-The flux ratio and its 90\% error are similarly determined for this sources, resulting in $I_{7.0}/I_{6.7} = 0.91^{+1.22}_{-0.56}$ for LW21 .   
+We have applied a bootstrapping method using the {\it multifake} tool in XSPEC to derive the 90\% confidence range for the fluxes of the three Fe lines. It turns out that only one sources, \#21 (same as \#22), shows a significant line at both 6.7 keV and 7.0 keV.  
+The flux ratio and its 90\% error are similarly determined for this sources, resulting in $I_{7.0}/I_{6.7} = 0.91^{+1.22}_{-0.56}$ for \#21 .   
 %The value of flux ratios are presented together with their 68.3\% confidence range (see column (4) and (5) in Table \ref{tab:spec}). 
-According to the empirical line ratio--WD mass  ($I_{7.0}/I_{6.7}$--$M_{\rm WD}$) relation of \citet{2019ApJ...882..164X}, which is calibrated with CVs in the solar neighborhood, we can infer $M_{\rm WD} \approx 0.8 \, (1.2) $  $M_\odot$ for LW21, provided that both sources are IPs (DNe).
+According to the empirical line ratio--WD mass  ($I_{7.0}/I_{6.7}$--$M_{\rm WD}$) relation of \citet{2019ApJ...882..164X}, which is calibrated with CVs in the solar neighborhood, we can infer $M_{\rm WD} \approx 0.8 \, (1.2) $  $M_\odot$ for \#21, provided that both sources are IPs (DNe).
 It is noteworthy that there exists no empirical $I_{7.0}/I_{6.7}$--$M_{\rm WD}$ relation for polars, mainly due to the small number of known polars in the solar neighborhood \citep{2019ApJ...882..164X}. 
 
 We further divide the 22 periodic sources into two groups based on their luminosities. Here source F1 is excluded since we are only interested in sources located in the bulge. The H (L) group consists of 6 (16) sources having an unabsorbed 1--8 keV luminosity above (below) $\rm 1.0\times10^{32}~erg ~s^{-1}$, which is derived from the individual best-fit spectral model. 
@@ -665,14 +665,14 @@ The improvement on detecting efficiency and data usage brought more periodic sig
 \label{subsec:class}
 These periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables. 
 Before we start to discuss the nature of these periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
-It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in section \ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
+It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
 
 \begin{figure*}
 \centering
 \includegraphics[scale=0.73]{./figure/CV/N_P.eps}
 \caption{The period distribution of the LW sources (dark-blue line), the spin (purple) and orbital (green) periods of IPs ,the periods (sky-blue) of polars and the orbital (red) periods of DNe from the RK catalog \citep{2003A&A...404..301R}, version 7.20). The famous period gap(yellow line) and period minimum(orange dashed line) are also plotted, whose value are taken from \citep{2011ApJS..194...28K}.\label{fig:N_P}}
 \end{figure*}
-For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in section \ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:pCV_sample_2}. 	While the simultaneous existence of \#21 and \#22 and the 2\% period difference suggest it might be an asynchronous intermediate polar. Besides, the central dip of \#3, \#18 and \#20 are also similar to this circumstance. Since the eclipse happens in nearly all types of CVs, we could only set three as an upper limit of number of DNe in our sample.
+For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in Section~\ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:pCV_sample_2}. 	While the simultaneous existence of \#21 and \#22 and the 2\% period difference suggest it might be an asynchronous intermediate polar. Besides, the central dip of \#3, \#18 and \#20 are also similar to this circumstance. Since the eclipse happens in nearly all types of CVs, we could only set three as an upper limit of number of DNe in our sample.
 
 For magnetic CVs, including IPs and polars, their orbit modulation could give rise to more complicated shape of light curve. For polars, consider the simplistic situation, whose accretion is nearly onto one pole, then the shape of light curve would be divided into two groups. Suppose an inclination $i$, the angle between rotation axis and magnetic axis is $\beta$, the magnetic colatitude of accretion is $\epsilon$. Then if $i+\beta+\epsilon > 90^{\circ}$, we would see alternately two poles, the shape would be like \#6, with half of orbit cycle showing no emission. This so-called "two-pole"  behavior are more complicated if the accretion goes to both two poles, the gap with half orbit cycle would be partially filled (like \#16) by second pole's emission. Sometimes it may completely reverse in hard X-ray band cause the accretion shock in second pole producing most of hard X-rays \citep{1985A&A...148L..14H}. On the other hand, if $i+\beta+\epsilon < 90^{\circ}$ and $\beta < i$, in which the accreting pole is always visible , the modulation would caused by the obscuring of accretion stream. The width and depth of the dip in phase space are determined by many reasons and totally unpredictable. 
 
