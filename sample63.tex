@@ -197,38 +197,41 @@ We further define for each source an inter-observation {\it variability index}, 
 \end{figure*}
 
 \section{Period Searching Method}\label{sec:methods}
-In this section, we first provide our motivation of employing the Gregory-Loredo (GL) algorithm, followed by a description of its basic principles (Section~\ref{subsec:GL}). We then elucidate our application of the GL algorithm to the {\it Chandra} data of the LW (Section~\ref{subsec:appli}). This is complemented by a set of simulations to evaluate the detection (in)completeness of periodic signals (Section~\ref{subsec:simulation}).  
+In this section, we first provide our motivation of employing the Gregory-Loredo (GL) algorithm, followed by a brief description of its basic principles (Section~\ref{subsec:GL}). We then elucidate our application of the GL algorithm to the {\it Chandra} data of the LW (Section~\ref{subsec:appli}). This is complemented by a set of simulations to evaluate the detection (in)completeness of periodic signals (Section~\ref{subsec:simulation}).  
 
 \subsection{The Gregory-Loredo Algorithm} \label{subsec:GL}
 There exists in the literature a variety of period searching methods, which can be broadly divided into three categories according to their working principles. 
 
 The most traditional method is based on Fourier transform and its power density spectra, which includes the classical Schuster periodogram \citep{1898TeMag...3...13S}, the Fourier analysis with unequally-spaced data \citep{1975Ap&SS..36..137D}, the correlation-based method \citep{1988ApJ...333..646E}, among others.
 
-Another widely-used method seeks to fit the data with a periodic model in the frequency space, employing statistics such as least-squares residuals to define the likelihood function and then selecting the frequency that maximizes the likelihood. The famous Lomb-Scargle periodogram \citep[hereafter LS]{1976Ap&SS..39..447L,1982ApJ...263..835S} belongs to this category. Note that when adopting trigonometric functions, the least-squares method falls into the Fourier method. Another variant is to replace the least-squares residuals with polynomial fits, such as that used in \citet{1996ApJ...460L.107S}.
+Another widely-used method seeks to fit the data with a periodic model in the frequency space, employing statistics such as least-squares residuals to define the likelihood function and then selecting the frequency that maximizes the likelihood. The famous Lomb-Scargle periodogram \citep[hereafter LS]{1976Ap&SS..39..447L,1982ApJ...263..835S} belongs to this category. Note that when adopting trigonometric functions, the least-squares method falls into the Fourier transformation category. Another variant is to replace the least-squares residuals with polynomial fits, such as that used in \citet{1996ApJ...460L.107S}.
 
-The last category is the phase-folding method. For each trial period the time-tagged data is folded as a function of phase, and the best-fit period is found by optimizing the cost function through the frequency space. Cost function are designed  to evaluate how much the phase-folded light curve deviate from constant.
-Methods belonging this category use diverse cost functions. Several widely known examples are the Epoch Folding (EF) algorithm \citep{1983ApJ...266..160L}, the Phase Dispersion Minimization \citep{1978ApJ...224..953S}, the GL algorithm \citep{1992ApJ...398..146G}.
+The last category is the phase-folding method. For each trial period the time-tagged data is folded as a function of phase, and the best-fit period is found by optimizing the cost function through the frequency space. Te cost function is designed to evaluate how much the phase-folded light curve deviates from constant.
+Methods belonging to this category use diverse cost functions. Several widely known examples are the Epoch Folding (EF) algorithm \citep{1983ApJ...266..160L}, the Phase Dispersion Minimization \citep{1978ApJ...224..953S}, and the GL algorithm \citep{1992ApJ...398..146G}.
 
 In X-ray observations, the detection of periodic signals is often involved with irregularly and sparsely sampled data. 
-The small number of photons often makes lower signal-to-noise ratio when using time bins to get photometric data.
-The relatively few detected photons makes it more appropriate for the last group of methods since they handle event data without binning. 
-Another characteristic for astronomical observation is the interrupted time series. In frequency space, this kind of window function leads to the heavy contamination for intrinsic data. Still, the phase-folding methods can avoid the effect of non-uniformed data since the process does not contain information in non-observed time. 
+When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since the dead time does not enter the algorithm.  
+Moreover, the number of available source counts is often only moderate. While one can in principle apply binning to satisfy the working function in the frequency space, it takes the price of potentially losing some temporal information.  
+Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
 
-Considering the above, here we use GL method to find periodic signals. GL method applies the Bayesian probability theory to the cost function. We would make a brief overview about Bayes's theorem and the identification of periodic signals in GL method in appendix \ref{GL}. The key of this algorithm is the multiplicity of the binned distribution of events. 
+Most X-ray sources in the LW share the characteristics of irregular sampling and limited source counts. 
+Therefore, it is appropriate to employ the GL algorithm, which applies the Bayesian probability theory to the cost function, to search for periodic signals for the LW sources. We provide a brief overview of Bayes's theorem and the GL algorithm in Appendix \ref{GL}. 
+The key of this algorithm is the multiplicity of the binned distribution of events. 
 \begin{equation}\label{multi}
-W_m(\omega, \phi)={{N!}\over{n_1!\; n_2!\; n_3!\cdots {n_m}!}}
+W_m(\omega, \phi)={{N!}\over{n_1!\; n_2!\; n_3!\cdots {n_m}!}}.
 \end{equation}
-$N$ represents the total number of counts in data, $m$ signifies the number of bins. $n_i(\omega, \phi)$ is the number of events falling into the $i$th of m phase bins by given the frequency $\omega$ and the phase $\phi$, where $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. For the data of N counts, the model defined by $\omega$ and $\phi$, the multiplicity is the number of ways that the distribution could have arisen by chance. The probability of periodic is inversely proportional to the multiplicity. It could be easily proved that when the value of $n_i$ are far apart, the multiplicity is reduced to a lower value. In simpler terms, the more the stepwise model deviate from constant, the higher the signal is periodic. 
+Here $N$ represents the total number of counts of a given source, $m$ denotes the number of phase bins, and $n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, where $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
+Given N, $\omega$ and $\phi$, the multiplicity is the number of ways that the binned distribution could have arisen by chance. The probability of a period is inversely proportional to the multiplicity. It can be easily proved that the more the values of $n_i$ differ from each other, the smaller the multiplicity. In a simpler term, the more the piecewise model deviates from constant, the more likely there exists a periodic signal. 
 
-In general, the GL method follows these steps:
+In general, the GL algorithm takes the following steps:
 
-(1) Compute the multiplicity for all the set of $(m,\omega, \phi)$. (Eqn.~\ref{multi})
+(i) Compute the multiplicity for all sets of $(m,\omega, \phi)$. (Eqn.~\ref{multi})
 
-(2) Apply the integration in $(\omega, \phi)$space, and produce the so-called "odds ratio" using Bayesian theorem when $m$ took a certain value. (Eqn.~\ref{A16})
+(ii) Given $m$, integrate over the $(\omega, \phi)$ space and calculate the so-called ``odds ratio'' using Bayes's theorem (Eqn.~\ref{A16}).
 
-(3) Add up the normalized odds ratio and the probability of whether the dataset is periodic would be obtained. (Eqn.~\ref{A20})
+(iii) Sum up the normalized odds ratios to determine the probability of a periodic signal (Eqn.~\ref{A20}).
 
-(4) Compare all the odds ratio integrated at only $\phi$ space, the $\omega$ with the highest odds ratio corresponds the period of signal. (Eqn.~\ref{A21})
+(iv) If the probability exceeds a threshold (typically set at 90\%), compare all the odds ratios integrated over the $\phi$ space, finding the value of $\omega$ with the highest odds ratio, which then gives the period $P=2{\pi}/\omega$ (Eqn.~\ref{A21}).
 
 %\section{Period searching procedure}\label{sec:timing}
 \subsection{Application to the LW}\label{subsec:appli}
@@ -273,7 +276,7 @@ Generally, for each source, we provide the dataset for GL method. Then we got th
 \subsection{Detection completeness}\label{subsec:simulation}
 For a given period searching algorithm, the detection rate depends on both the number of observed counts, the intrinsic shape of light curve, as well as the observing cadence. 
 To quantify the detection rate and hence gain insight on the nature of the periodic sources, we perform simulations following the merit of \citet{1998ApJ...498..666C}. 
-Two functional forms of light curve are considered: a sinusoidal function and a piecewise function. While these are admittedly idealized shapes, they can represent realistic light curves, e.g, resulted from rotational modulation or eclipsing. 
+Two functional forms of light curve are considered: a sinusoidal function and a piecewise function. While these are admittedly idealized shapes, they can represent realistic light curves, e.g, resulted from rotational modulation or eclipse. 
 
 A sinusoidal light curve follows,
 \begin{equation}
@@ -281,20 +284,25 @@ A sinusoidal light curve follows,
 \label{eqn:sin}
 \end{equation}
 where $\omega = 2{\pi}/P$, $A_0$ is the relative amplitude of variation, and $\lambda_0$ is the mean count rate which may include contribution from a constant background. The phase $\phi$ is arbitrarily set at zero.
-For a direct comparison with the observation, we relate $\lambda_0$ with the total number of counts, $C = \lambda_0 T$, where $T$ is the exposure time of a given observation. This holds since $T$ is typically much longer than the modulation period ($P$). 
+For a direct comparison with observations, we relate $\lambda_0$ with the total number of counts, $C = \lambda_0 T$, where $T$ is the exposure time of a given observation. This holds since $T$ is typically much longer than the modulation period ($P$). 
 The simulations are run with a selected number of parameters due to constraints in computational power. 
-Specifically, we adopt total counts $C$=50, 100, 200, 300, 400 and 500, amplitudes $A_0$=0.5, 0.6, 0.7, 0.8 and 0.9, and periods $P$=554, 5540 and 45540 sec, resulting in 6x5x3=90 combinations. 
+Specifically, we adopt $C$=50, 100, 200, 300, 400 and 500, $A_0$=0.5, 0.6, 0.7, 0.8 and 0.9, and $P$=554, 5540 and 45540 sec, resulting in a total of 6x5x3=90 combinations. 
 The chosen periods are representative of the actually searched ranges (Section~\ref{subsec:appli}), whereas
 the adopted total counts well sample the range of observed counts from the LW sources.
 
 We thus simulate 100 light curves for each combination of parameters, taking into account Poisson errors and the exact start and end times of the 13 ACIS-I observations. 
  The arrival time of each simulated count is further randomly modified by an amount of 3.2 sec to mimic the effect of ACIS frame time.
-The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as in Section~\ref{subsec:appli}.
-We claim a valid detection if the found period has a detection probability greater than 90\% and its value is consistent with the input period to within 0.1\%. 
-The detection rate for a given combination of parameters is taken to be the fraction of the 100 light curves with a valid detection.
+The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as for the real data (Section~\ref{subsec:appli}).
+We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 0.1\%. 
+The detection rate for a given combination of parameters is taken to be the fraction of the 100 light curves having a valid detection.
 
-The top, middle, bottom panel of Figure \ref{fig:detection} show the results of three period respectively. 
-We could think of 0.1 as extremely low. Then it is obviously illustrated that when counts equals 50, the detection rate are almost always extremely low despite the period and amplitude, except for the longest period and high amplitude. While for counts of 100, the detection rate could invariably exceed 50\%, which is sufficient enough for period finding procedure. Thus we could roughly say that when counts lower than 100, the detection rate is extremely low. The periodic signal in this circumstance are not reliable. Besides, it can be seen that the algorithm is nearly no bias of period, except a slight improvement of detection rate with increasing period.
+The top, middle and bottom panels of Figure \ref{fig:detection} show the result of the three test periods, respectively. 
+%could think of 0.1 as extremely low. Then 
+Intuitively, for a given period and amplitude, higher total counts would lead to higher detection rates, while for given total counts, a higher amplitude also leads to a higher detection rate. The simulation results confirm these expectations.  
+It is noteworthy that for total counts of 50, the detection rate is almost always below 10\% regardless of the period and amplitude. 
+%The periodic signal in this circumstance could be unreliable.
+%With more counts, the detection rate can exceed 50\%, which is sufficient enough for period finding procedure. 
+Besides, it can be seen that the algorithm is nearly no bias of period, except a slight improvement of detection rate with increasing period.
  
 \begin{figure}
 \begin{minipage}[b]{0.45\textwidth}
@@ -317,7 +325,7 @@ where $w$ accounts for the eclipsing width (duration) in phase space, and $f$ ch
 Again, $\lambda_0$ can be related to the total counts as $C=(1-fw)\lambda_0T$.
 We set $f=0.1$ and $w=0.1$ in our simulations, which are typical of eclipsing CVs, since the radius ratio of WD, companion star and orbit are about 1:10:50. 
 We test three values for the period, $P$=5258, 15258 and 45258 sec. 
-Then the simulation were run 100 times at each set of parameter. Results of detection rate(also taking 90\% as threshold) is shown is Figure \ref{fig:eclipse}. It is noteworthy that the efficiency soars to 1 when the number of counts goes up. And a marked rise appears with the growth of period.
+Then the simulation were run 100 times at each set of parameter. The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. It is noteworthy that the efficiency soars to 1 when the number of counts goes up. And a marked rise appears with the growth of period.
  
 \begin{figure}
 \centering
