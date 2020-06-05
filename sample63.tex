@@ -249,25 +249,27 @@ In practice, the resolution of frequency must be compromised between accuracy an
 %Here we generate the frequency resolution depended on the data timescale.
 
 {\bf [I still can't follow your logic below]}
-For the data span in timescale T, the arrival time of photon $t_i$, the changing angular frequency influence the phase of photon more as $i$ grows. The most vulnerable photon is the last photon arrived, whose arrival time is T, and the change of phase is
-\begin{subequations}\label{fi}
-\begin{equation}
-	d\phi_{N}=\phi_{N}^{'}-\phi_{N}
+Ideally, the resolution of frequency should keep the phase-folded light curve nearly the same between two adjacent frequency, i.e, the phase bin of each photon locating at should be unchanged.
+For the data span in timescale T, the arrival time of photon $t_i$ (taking $t_1$=0), the changing angular frequency influence the phase of photon more as $i$ grows. The most "vulnerable" photon is the last photon arrived, whose arrival time is T, and the change of phase is
+\begin{equation}\label{fi}
+\begin{split}
+	d\phi_{N}=&\phi_{N}^{'}-\phi_{N}\\
+	=&[(\omega +d\omega) \cdot T-\lfloor (\omega +d\omega) \cdot T \rfloor] -[\omega \cdot T-\lfloor \omega \cdot T \rfloor]
+\end{split}
 \end{equation}
-\begin{equation}
-	\phi_{N}^{'}=(\omega +d\omega) \cdot T-\lfloor (\omega +d\omega) \cdot T \rfloor
-\end{equation}
-\begin{equation}
-	\phi_{N}=\omega \cdot T-\lfloor \omega \cdot T \rfloor
-\end{equation}
-\end{subequations}
+%\begin{equation}
+%	\phi_{N}^{'}=(\omega +d\omega) \cdot T-\lfloor (\omega +d\omega) \cdot T \rfloor
+%\end{equation}
+%\begin{equation}
+%	\phi_{N}=\omega \cdot T-\lfloor \omega \cdot T \rfloor
+%\end{equation}
+%\end{subequations}
 \\
-
 Assuming $\lfloor (\omega +d\omega) \cdot T \rfloor = \lfloor \omega \cdot T \rfloor$, ($\lfloor a \rfloor$means the integral part of a), then 
 \begin{equation}
 	d\phi_{N}=d\omega \cdot T
 \end{equation}
-In this work, we take 12 as the largest number of phase bins, that demands the change of photon phase should be smaller than ${1\over 12}\cdot 2\pi $ to guarantee the nearly non-change of phase-folded light curve. Although we can not ensure every photon to meet the requirement since its location in the same phase bin could be arbitrary. It would satisfy the situation at nearly perfect level if we keep the deviation of phase of last photon smaller than ${1\over 12}\cdot 2\pi $. As shown in Eqn.~\ref{dfi}
+In this work, we take 12 as the largest number of phase bins, that demands the change of photon phase should be smaller than the length of bin, i.e, ${1\over 12}\cdot 2\pi $, to guarantee the nearly non-change of phase-folded light curve. Although we can not ensure every photon to meet the requirement since its location in the same phase bin could be arbitrary. It would satisfy the situation at nearly perfect level if we keep the deviation of phase of last photon smaller than ${1\over 12}\cdot 2\pi $. As shown in Eqn.~\ref{dfi}
 \begin{subequations}\label{dfi}
 \begin{equation}
 	d\phi_{N}=d\omega \cdot T< {1\over 12}\cdot 2\pi
