@@ -206,32 +206,33 @@ The most traditional method is based on Fourier transform and its power density 
 
 Another widely-used method seeks to fit the data with a periodic model in the frequency space, employing statistics such as least-squares residuals to define the likelihood function and then selecting the frequency that maximizes the likelihood. The famous Lomb-Scargle periodogram \citep[hereafter LS]{1976Ap&SS..39..447L,1982ApJ...263..835S} belongs to this category. Note that when adopting trigonometric functions, the least-squares method falls into the Fourier transformation category. Another variant is to replace the least-squares residuals with polynomial fits, such as that used in \citet{1996ApJ...460L.107S}.
 
-The last category is the phase-folding method. For each trial period the time-tagged data is folded as a function of phase, and the best-fit period is found by optimizing the cost function through the frequency space. Te cost function is designed to evaluate how much the phase-folded light curve deviates from constant.
+The last category is the phase-folding method. For each trial period the time-tagged data is folded as a function of phase, and the best-fit period is found by optimizing the cost function through the frequency space. The cost function is designed to evaluate how much the phase-folded light curve deviates from constant.
 Methods belonging to this category use diverse cost functions. Several widely known examples are the Epoch Folding (EF) algorithm \citep{1983ApJ...266..160L}, the Phase Dispersion Minimization \citep{1978ApJ...224..953S}, and the GL algorithm \citep{1992ApJ...398..146G}.
 
 In X-ray observations, the detection of periodic signals is often involved with irregularly and sparsely sampled data. 
 When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since the dead time does not enter the algorithm.  
-Moreover, the number of available source counts is often only moderate. While one can in principle apply binning to satisfy the working function in the frequency space, it takes the price of potentially losing some temporal information.  
+Moreover, the number of available source counts is often only moderate. While one can in principle apply binning to satisfy the working function in the frequency space, it takes the price of potentially losing temporal information.  
 Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
 
 Most X-ray sources in the LW share the characteristics of irregular sampling and limited source counts. 
-Therefore, it is appropriate to employ the GL algorithm, which applies the Bayesian probability theory to the cost function, to search for periodic signals for the LW sources. We provide a brief overview of Bayes's theorem and the GL algorithm in Appendix \ref{GL}. 
-The key of this algorithm is the multiplicity of the binned distribution of events. 
+Therefore, it is appropriate to employ the GL algorithm, which applies the Bayesian probability theory to the phase-folded light curve, to search for periodic signals for the LW sources. We provide a brief overview of Bayes's theorem and the GL algorithm in Appendix \ref{GL}. 
+The key of this algorithm is the multiplicity of the phase distribution of events,
 \begin{equation}\label{multi}
 W_m(\omega, \phi)={{N!}\over{n_1!\; n_2!\; n_3!\cdots {n_m}!}}.
 \end{equation}
-Here $N$ represents the total number of counts of a given source, $m$ denotes the number of phase bins, and $n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, where $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
-Given N, $\omega$ and $\phi$, the multiplicity is the number of ways that the binned distribution could have arisen by chance. The probability of a period is inversely proportional to the multiplicity. It can be easily proved that the more the values of $n_i$ differ from each other, the smaller the multiplicity. In a simpler term, the more the piecewise model deviates from constant, the more likely there exists a periodic signal. 
+Here $N$ represents the total number of counts of a given source, $m$ denotes the number of phase bins, and $n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, satistifying $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
+The multiplicity is the number of ways that the binned distribution could have arisen by chance. The probability of a period is inversely proportional to the multiplicity. It can be easily proved that the more the values of $n_i$ differ from each other, the smaller the multiplicity. In a simpler term, the more the piecewise model deviates from constant, the more likely there exists a periodic signal. 
 
 In general, the GL algorithm takes the following steps:
 
 (i) Compute the multiplicity for all sets of $(m,\omega, \phi)$ (Eqn.~\ref{multi}).
 
-(ii) Given $m$, integrate over the $(\omega, \phi)$ space and calculate the so-called ``odds ratio'' using Bayes's theorem (Eqn.~\ref{A16}).
+(ii) Given $m$, integrate over the $(\omega, \phi)$ space and calculate the so-called ``odds ratio'' using Bayes's theorem (Eqn.~\ref{A16}). The ``odds ratio'' determines the ratio of probabilities between a periodic model and a non-periodic (constant) model.
 
-(iii) Sum up the normalized odds ratios to determine the probability of a periodic signal (Eqn.~\ref{A20}).
+(iii) Sum up the normalized odds ratios of each $m$ to determine the probability of a periodic signal (Eqn.~\ref{A20}).
+If this probability exceeds a predefined threshold (default at 90\%), a periodic signal is favored. 
 
-(iv) If the probability exceeds a threshold (typically set at 90\%), compare all the odds ratios integrated over the $\phi$ space, finding the value of $\omega$ with the highest odds ratio, which then gives the period $P=2{\pi}/\omega$ (Eqn.~\ref{A21}).
+(iv) Finally, compare all the odds ratios integrated over the $\phi$ space, finding the value of $\omega$ with the highest odds ratio, which then gives the period $P=2{\pi}/\omega$ (Eqn.~\ref{A21}).
 
 %\section{Period searching procedure}\label{sec:timing}
 \subsection{Application to the LW}\label{subsec:appli}
