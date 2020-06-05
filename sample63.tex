@@ -225,7 +225,7 @@ Given N, $\omega$ and $\phi$, the multiplicity is the number of ways that the bi
 
 In general, the GL algorithm takes the following steps:
 
-(i) Compute the multiplicity for all sets of $(m,\omega, \phi)$. (Eqn.~\ref{multi})
+(i) Compute the multiplicity for all sets of $(m,\omega, \phi)$ (Eqn.~\ref{multi}).
 
 (ii) Given $m$, integrate over the $(\omega, \phi)$ space and calculate the so-called ``odds ratio'' using Bayes's theorem (Eqn.~\ref{A16}).
 
@@ -235,12 +235,20 @@ In general, the GL algorithm takes the following steps:
 
 %\section{Period searching procedure}\label{sec:timing}
 \subsection{Application to the LW}\label{subsec:appli}
-Though we did source detection in 2-8 keV band to reduce the contamination from non-CV sources, here we still extracted photons from sources in 1-8 keV band to keep as more as possible source information. 
-Besides, in order to compensate for uneven distribution over the bins, we provide "epoch" for each source. The "epoch" offered the start time and end time of each observations covered the source with at least one counts in source region. See Eqn.~\ref{A17} in appendix for detailed illustration about the use of epoch. 
-For the sake of changing aimpoint, we used individual source extract region for different observations. Explicitly, the 90\% ECR aperture  whose radius defined by specific PSF map was applied for counts in that observation. Since the phase-folding method directly manipulated each photons and we could not distinguish background photon from source photon, the local background information were not provided for timing analysis. The combination of each source event list and the corresponding epoch were then employed as the input of GL method. 
+We apply the GL algorithm to search for periodic signals in the LW sources. 
+For a given source, the 1--8 keV counts within the 90\% ECR of individual ACIS-I observations are extracted to form a time series.  
+In addition, we supply for each source the information of ``epoch'', i.e., the the start time and end time of each  observation in which the source has at least one count. This information is used to compensate for the uneven distribution over the phase bins (see Eqn.~\ref{A17} for a detailed illustration). 
+Since the GL algorithm determines the probability of a periodic signal against a constant light curve, there is no need to account for the background level at this point. 
+Nevertheless, we have measured the local background (Section~\ref{subsec:detect}) for each periodic source as a consistency check (see Section~\ref{sec:results}). 
+%Though we did source detection in 2-8 keV band to reduce the contamination from non-CV sources, here we still extracted photons from sources in 1-8 keV band to keep as more as possible source information. 
+%Besides, in order to compensate for uneven distribution over the bins, we provide "epoch" for each source. The "epoch" offered the start time and end time of each observations covered the source with at least one counts in source region. See Eqn.~\ref{A17} in appendix for detailed illustration about the use of epoch. 
+%For the sake of changing aimpoint, we used individual source extract region for different observations. Explicitly, the 90\% ECR aperture  whose radius defined by specific PSF map was applied for counts in that observation. Since the phase-folding method directly manipulated each photons and we could not distinguish background photon from source photon, the local background information were not provided for timing analysis. The combination of each source event list and the corresponding epoch were then employed as the input of GL method. 
 
-As mentioned in Section~\ref{subsec:GL}, the GL method folds the dataset at trial period or frequency. Then the resolution of frequency must be balanced between computational power and  accuracy. Here we generate the frequency resolution depended on the data timescale.
+As mentioned in Section~\ref{subsec:GL}, the GL algorithm folds the time series at a trial frequency (or period). 
+In practice, the resolution of frequency must be compromised between accuracy and computational power. Our choice of the frequency range and frequency resolution is determined as follows.
+%Here we generate the frequency resolution depended on the data timescale.
 
+{\bf [I still can't follow your logic below]}
 For the data span in timescale T, the arrival time of photon $t_i$, the changing angular frequency influence the phase of photon more as $i$ grows. The most vulnerable photon is the last photon arrived, whose arrival time is T, and the change of phase is
 \begin{subequations}\label{fi}
 \begin{equation}
