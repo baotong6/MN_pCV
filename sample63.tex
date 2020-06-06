@@ -220,7 +220,7 @@ The key of this algorithm is the multiplicity of the phase distribution of event
 \begin{equation}\label{multi}
 W_m(\omega, \phi)={{N!}\over{n_1!\; n_2!\; n_3!\cdots {n_m}!}}.
 \end{equation}
-Here $N$ represents the total number of counts of a given source, $m$ denotes the number of phase bins, and $n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, satistifying $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
+Here $N$ represents the total number of counts of a given source, $m$ denotes the number of phase bins, and $n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, satisfying $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
 The multiplicity is the number of ways that the binned distribution could have arisen by chance. The probability of a period is inversely proportional to the multiplicity. It can be easily proved that the more the values of $n_i$ differ from each other, the smaller the multiplicity. In a simpler term, the more the piecewise model deviates from constant, the more likely there exists a periodic signal. 
 
 In general, the GL algorithm takes the following steps:
@@ -246,11 +246,10 @@ Nevertheless, we have measured the local background (Section~\ref{subsec:detect}
 %For the sake of changing aimpoint, we used individual source extract region for different observations. Explicitly, the 90\% ECR aperture  whose radius defined by specific PSF map was applied for counts in that observation. Since the phase-folding method directly manipulated each photons and we could not distinguish background photon from source photon, the local background information were not provided for timing analysis. The combination of each source event list and the corresponding epoch were then employed as the input of GL method. 
 
 As mentioned in Section~\ref{subsec:GL}, the GL algorithm folds the time series at a trial frequency (or period). 
-In practice, the resolution of frequency must be compromised between accuracy and computational power. Our choice of the frequency range and frequency resolution is determined as follows.
+In practice, the resolution of frequency must be compromised between accuracy and computational power. We choose the frequency range and frequency resolution for the following considerations.
 %Here we generate the frequency resolution depended on the data timescale.
 
-{\bf [I still can't follow your logic below]}
-Ideally, the resolution of frequency should keep the phase-folded light curve nearly the same between two adjacent frequency, i.e, the phase bin of each photon locating at should be unchanged.
+Ideally, the resolution of frequency should keep the phase-folded light curve nearly the same between two adjacent frequency, i.e., the phase bin of each photon should be unchanged.
 For the data span in timescale T, the arrival time of photon $t_i$ (taking $t_1$=0), the changing angular frequency influence the phase of photon more as $i$ grows. The most "vulnerable" photon is the last photon arrived, whose arrival time is T, and the change of phase is
 \begin{equation}\label{fi}
 \begin{split}
