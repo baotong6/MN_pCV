@@ -606,7 +606,8 @@ $I_{7.0}/I_{6.7}$ &  $I_{6.7}$ & $\chi^2/dof$ & $L_{\rm 1-8}$
 24 & $0.83^{+3.31}_{-0.83}$ & $2.30^{+1.59}_{-0.85}$ &-&-&-&  0.80/2 & $0.77^{+7.82}_{-0.36}$ 
 \\
 \hline
-F1 & $0.35^{+0.16}_{-0.13}$ & $4.78^{+3.55}_{-1.58}$ &-&-&-& 1.19/55  & $8.73^{+1.09}_{-0.98}$ \\
+F1 & $0.35^{+0.16}_{-0.13}$ & $4.78^{+3.55}_{-1.58}$ &-&-&-& 1.19/55  & - \\
+%$8.73^{+1.09}_{-0.98}$
 \hline
 H & $1.99^{+0.10}_{-0.97}$ & 40 (fixed)  &  $0.28^{+0.10}_{-0.09}$ & $0.78^{+0.18}_{-0.16}$  & $8.76^{+3.57}_{-3.57}$ & 1.19/205 & $31.8^{+0.95}_{-0.95}	$
 \\
@@ -687,7 +688,10 @@ The improvement on detecting efficiency and data usage brought more periodic sig
 \subsection{Classifying the periodic X-ray sources}
 \label{subsec:class}
 Despite of source F1, whose luminosity can not be estimated for the uncertain distance, 
-these periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables. {\bf [We need to first explain why these sources cannot be ABs. can Source 24 be an AB?]}
+these periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables.
+We can barely exclude the probability of these sources being coronally active binaries (ABs), since most ABs are with luminosities lower than $\rm 10^{31}~erg~s^{-1}$ \citep{2006A&A...450..117S}. 
+
+While the case is not applicable for source \#24, with luminosity about $\rm 0.77 \times 10^{31}~erg~s^{-1}$ and plasma temperature about 2 keV. All these features are typical for ABs. Besides, its phase-folded light curve exhibits no emission in half of cycle, indicating the similar radius for two stars. The nearly no emission from one star hinted it could be an A-type star. Then the orbit radius would be around 0.022 AU, taking $5M_\odot$ as the total mass.  
 
 Before we start to discuss the nature of these periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
@@ -707,6 +711,8 @@ dwarf surface \citep{1993MNRAS.260..299H}, or the "disc-overflow" model in \cite
 
 Based on our current understanding of the shape and distribution of orbital modulation, we conclude that the periodic sources discoverd are mostly polars, with several IPs(two determined) and DNe(three as upper limit). 
 
+
+
 \subsection{CV populations in the Galactic bulge}
 Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$. The sinusoidal variation happens in "two-pole" situation, which takes $90^\circ$ in total $180^\circ$. Assuming the fraction of accretion onto one pole is 50\%, then we can set 25\% as the lower limit of fraction for polars with sinusoidal variation intrinsically. We assumed the even distribution for amplitude from 0.5 to 0.9 and took the simulation results for P=5540s and P=45540s as the detection rate for period under(60\% of the total number) and beyond the period gap(40\% of the total number). The value of 60\% and 40\% are estimated from Figure \ref{fig:N_P}. Then we set width=100 for our binning of counts, from 75 to 3575, which consist nearly all detected sources. The choice of value balance the number of counts taken from observation and simulation. 
  The predicted number of periodic sources which "should" be detected in each bin is calculated by:
@@ -724,12 +730,12 @@ Intrinsically, the eclipse of white dwarf depends on the inclination angle, radi
 {R_{orb}\times cos(90-\beta)}\leq { R_1+R_2}
 \end{equation}
 We took parameters from simulation operated by \citep{2011ApJS..194...28K}, in which $R_1$ is fixed at when $M_{WD}$ equals 0.75 solar mass. Assuming that inclination is even distributed in $(0,90^\circ)$, the probability of eclipsing(hereafter EP) are plotted in Figure \ref{fig:simpCV}.
-
 \begin{figure}
 \centering
 \includegraphics[scale=0.55]{./figure/p_inCV.eps}
 \caption{Probability of eclipsing in CVs. The break around 3.2hours resulted by different model for CVs beyond and below the period gap.\label{fig:simpCV}}
 \end{figure}
+
 We utilized the simulation results of 5258s and 15258s as the detection rate for period under (75\% of the total number) and beyond the period gap (25\% of the total number). The fraction was taken from the DNe distribution in solar neighborhood. Besides, EP was chosen as 0.18 and 0.20 for this two types.
 Similarly, the predicted number of periodic non-mCVs which "should" be detected in each counts bin is:
 \begin{equation}
