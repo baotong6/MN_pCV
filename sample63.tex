@@ -304,20 +304,18 @@ the adopted total counts well sample the range of observed counts from the LW so
 We thus simulate 100 light curves for each combination of parameters, taking into account Poisson errors and the exact start and end times of the 13 ACIS-I observations. 
  The arrival time of each simulated count is further randomly modified by an amount of 3.2 sec to mimic the effect of ACIS frame time.
 The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as for the real data (Section~\ref{subsec:appli}).
-We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. Besides, the harmonics have also been considered as valid detection here with the same accuracy threshold, i.e, the deviation between found period and resonance cycle within 1\%.
+We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. Besides, the harmonics have also been considered as valid detection  with the same threshold, i.e, the deviation between determined period and resonance cycle within 1\%.
 
-
-The detection rate for a given combination of parameters is taken to be the fraction of the 100 light curves having a valid detection.
-
-The top, middle and bottom panels of Figure \ref{fig:detection} show the result of the three test periods, respectively. 
+The detection rate for a given combination of parameters is taken to be the fraction of the 100 light curves having a valid detection. The top, middle and bottom panels of Figure \ref{fig:detection} show the result of the three test periods, respectively. 
 %could think of 0.1 as extremely low. Then 
 Intuitively, for a given period and amplitude, higher total counts would lead to higher detection rates, while for given total counts, a higher amplitude also leads to a higher detection rate. The simulation results confirm these expectations.  
 In our simulation, the effect of harmonics only happens in the first period range due to the selection of parameter value, with fraction of harmonics detection about 20\%, concentrated at higher amplitude.
-For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, adopting $C$=500 and $A_0$=0.9, and found there is no harmonics detection. 
+For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, adopting $C$=500 and $A_0$=0.9, and found there is no harmonics detection.
+ 
 It is noteworthy that for total counts of 50, the detection rate is almost always below 10\% regardless of the period and amplitude. 
 %The periodic signal in this circumstance could be unreliable.
 %With more counts, the detection rate can exceed 50\%, which is sufficient enough for period finding procedure. 
-Besides, it can be seen that the algorithm is nearly no bias of period, except a slight improvement of detection rate with increasing period. We exhaust every possibility to figure out the origin of improvement. After trial simulation, it turns out that statistically the multiplicity (see Eqn.~\ref{multi}) has lower value with longer period, contributing to higher detection rate. Mathematically, this is due to the integral over time of counts rate (see Eqn.~\ref{eqn:sin}). The integral process brings about the value of deviation, between constant and variation, proportional to signal period because of the contribution of $w$ on denominator, resulting the negative association between  multiplicity and period.
+Besides, it can be seen that the algorithm is nearly no bias of period, except a slight improvement of detection rate with increasing period. We exhaust every possibility to figure out the origin of improvement. After trial simulation, it turns out that statistically the multiplicity (see Eqn.~\ref{multi}) has lower value with longer period, contributing to higher detection rate. Mathematically, this is due to the integral over time of counts rate (see Eqn.~\ref{eqn:sin}). The integral process brings about the value of deviation, between constant and variation, proportional to signal period because of the contribution of $w$ on denominator, resulting the negative association between multiplicity and period.
  
 \begin{figure}
 \begin{minipage}[b]{0.45\textwidth}
