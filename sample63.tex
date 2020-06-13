@@ -317,7 +317,7 @@ For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, ado
 It is noteworthy that for total counts of 50, the detection rate is almost always below 10\% regardless of the period and amplitude. 
 %The periodic signal in this circumstance could be unreliable.
 %With more counts, the detection rate can exceed 50\%, which is sufficient enough for period finding procedure. 
-Besides, it can be seen that the algorithm is nearly no bias of period, except a slight improvement of detection rate with increasing period. We exhaust every possibility to figure out the origin of improvement. After trial simulation, it turns out that statistically the multiplicity (see Eqn.~\ref{multi}) has lower value with longer period, contributing to higher detection rate. 
+Besides, it can be seen that the algorithm is nearly no bias of period, except a slight improvement of detection rate with increasing period. We exhaust every possibility to figure out the origin of improvement. After trial simulation, it turns out that statistically the multiplicity (see Eqn.~\ref{multi}) has lower value with longer period, contributing to higher detection rate. Mathematically, this is due to the integral over time of counts rate (see Eqn.~\ref{eqn:sin}). The integral process brings about the value of deviation, between constant and variation, proportional to signal period because of the contribution of $w$ on denominator, resulting the negative association between  multiplicity and period.
  
 \begin{figure}
 \begin{minipage}[b]{0.45\textwidth}
@@ -337,10 +337,10 @@ f\lambda_0 & \text{$\phi(t) \in[(1-w)\pi,(1+w)\pi]$},
 \end{cases}	
 \end{equation}
 where $w$ accounts for the eclipsing width (duration) in phase space, and $f$ characterizes the relative depth of the eclipse ($0\leq f \leq 1$; $f = 0$ corresponds to total eclipse). Here the eclipse is assumed to occur around $\phi = \pi$. 
-Again, $\lambda_0$ can be related to the total counts as $C=(1-fw)\lambda_0T$.
+Again, $\lambda_0$ can be related to the total counts as $C=[1-(1-f)w]\lambda_0T$.
 We set $f=0.1$ and $w=0.1$ in our simulations, which are typical of eclipsing CVs, since the radius ratio of WD, companion star and orbit are about 1:10:50. 
 We test three values for the period, $P$=5258, 15258 and 45258 sec. 
-Then the simulation were run 100 times at each set of parameter. The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. It is noteworthy that the efficiency soars to 1 when the number of counts goes up. And a marked rise appears with the growth of period.
+Then the simulation were run 100 times at each set of parameter. The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. It is noteworthy that the efficiency soars to 1 when the number of counts goes up. And a marked rise appears with the growth of period, owing to the higher value of deviation between constant and variation in longer period.
  
 \begin{figure}
 \centering
