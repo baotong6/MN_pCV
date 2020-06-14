@@ -211,8 +211,8 @@ The last category is the phase-folding method. For each trial period the time-ta
 Methods belonging to this category use diverse cost functions. Several widely known examples are the Epoch Folding (EF) algorithm \citep{1983ApJ...266..160L}, the Phase Dispersion Minimization \citep{1978ApJ...224..953S}, and the GL algorithm \citep{1992ApJ...398..146G}.
 
 In X-ray observations, the detection of periodic signals is often involved with irregularly and sparsely sampled data. 
-When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since {\bf the dead time does not enter the algorithm [can we say so?].}  
-Moreover, the number of detected source counts is often only moderate. While one can in principle apply binning to {\bf satisfy the working function [do you have a better term?]} in the frequency space, it takes the price of potentially losing temporal information.  
+When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since the dead time does not enter the algorithm.
+Moreover, the number of detected source counts is often only moderate. While one can in principle apply binning to get photometric light curve, it takes the price of potentially losing temporal information.  
 Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
 
 Most X-ray sources in the LW share the characteristics of irregular sampling and limited source counts. 
@@ -308,7 +308,7 @@ We thus simulate 100 light curves for each combination of parameters, taking int
 The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as for the real data (Section~\ref{subsec:appli}).
 We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. 
 %Besides, the harmonics have also been considered as valid detection  with the same threshold, i.e, the deviation between determined period and resonance cycle within 1\%.
-{\bf We notice that for in a small fraction of simulate light curves of the shortest period (554 sec), the second harmonics (i.e., 2 times the true period) is detected with an even higher probability than the true period. We also consider such cases a valid detection as long as the true period fulfills the above criteria.}
+We notice that for in a small fraction of simulate light curves of the shortest period (554 sec), the second harmonics (i.e., 2 times the true period) is detected with an even higher probability than the true period. We also consider such cases a valid detection as long as the true period fulfills the above criteria.
 %In our simulation, the effect of harmonics only happens in the first period range due to the selection of parameter value, with fraction of harmonics detection about 20\%, concentrated at higher amplitude.
 %For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, adopting $C$=500 and $A_0$=0.9, and found there is no harmonics detection.
 
@@ -343,7 +343,7 @@ where $w$ accounts for the eclipsing width (duration) in phase space, and $f$ ch
 Again, $\lambda_0$ can be related to the total counts as $C=[1-(1-f)w]\lambda_0T$.
 We set $f=0.1$ and $w=0.1$ in our simulations, which are not atypical of eclipsing CVs. 
 %since the radius ratio of WD, companion star and orbit are about 1:10:50. 
-We test three values of the period, $P$=5258, 15258 and 45258 sec and adopt trial total counts of {\bf ??}.  
+We test three values of the period, $P$=5258, 15258 and 45258 sec and adopt trial mean count rate from 1.0 to 10.0 with interval of 1, added with 15.0 and 20.0 to get the full trend.
 For each combination of parameters, 100 simulated light curves are again generated and fed to the GL algorithm. 
 The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. 
 The detection rate is generally higher for a longer period for the aforementioned reason.
@@ -355,7 +355,7 @@ For total counts below $\sim$500, the detection rate is below $\sim$10\%; only w
 \caption{Detection rate obtained from simulation results for eclipsing models. Magenta, red and green denotes for P=45258s, 15258s and 5258s respectively. }\label{fig:eclipse}
 \end{figure}
 
-We have also run simulations to estimate the rate of false detection, which refers to the detection of a periodic signal from a constant light curve. We use a sinusoidal light curve with $P$=5 yr and $A_0$=0.5 to approximate a constant flux {\bf [why not a strictly constant light curve?]}, finding no detection of periodic signals at any given values of total counts from 50 to 5000. 
+We have also run simulations to estimate the rate of false detection, which refers to the detection of a periodic signal from a constant light curve. We use a sinusoidal light curve with $P$=5 yr and $A_0$=0.5 to approximate a constant flux with slight variation, finding no detection of periodic signals at any given values of total counts from 50 to 5000. 
 Thus it seems safe to conclude that the false detection rate is essentially zero for the GL algorithm applied to the LW data. 
 
 \section{Period Searching Results}\label{sec:results}
@@ -367,8 +367,8 @@ Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signal
 
 (i) By design, the ACIS is dithered to distribute photons over more CCD pixels to avoid pile-up and to fill CCD gaps. The dither period is 706.96 s in pitch and 999.96 s in yaw. Any signal detected at these two periods and their harmonics are thus excluded. These are mostly found in sources located close to CCD gaps, where dithering significantly reduces the number of detected source in a periodic fashion. 
 A related concern is how dithering would affect the detection of genuine periods.  
-We run simulations to test this effect. Specifically, we generate simulated sinusoidal light curves with $P$ = ?? sec and $C$ = ??. 
-This choice is motivated by one particular periodic source, which has a fractional detector coverage of 0.74 (in other words, 26\% of the intrinsic flux is lost due to dithering into the CCD gap), the lowest among all detected periodic sources (see below). The dithering effect is mimicked by artificially removing the simulated counts according to a probability distribution calculated by the CIAO tool ??. 
+We run simulations to test this effect. Specifically, we generate simulated sinusoidal light curves with $P$ = 5072.97 sec and $C$ = 293. 
+This choice is motivated by the particular periodic source \#5, which has a fractional detector coverage of 0.74 (in other words, 26\% of the intrinsic flux is lost due to dithering into the CCD gap), the lowest among all detected periodic sources (see below). The dithering effect is mimicked by artificially removing the simulated counts according to a probability distribution calculated by the CIAO tool \emph{dither\_region}. 
 No difference is found in the resultant detection rate, compared to that without dithering. 
 %Out of concern about the dither effect on period searching, we compute the fractional area covered by chips (hereafter FA) for each source in each observation. FA equals 1 when source region are not affected by gaps. After, weighting the FA in total exposure time, we define $\overline{FA}$ for each source. Most of $\overline{FA}$ are beyond 0.9, except for \#5, which is 0.74. Thus we run 100 simulation for this source in two cases. One for no dithering and the other for dithering. It turns out no difference in detection rate. In general, we can neglect the dither effect. 
 
@@ -566,6 +566,8 @@ $I_{7.0}/I_{6.7}$ &  $I_{6.7}$ & $\chi^2/dof$ & $L_{\rm 1-8}$
 \\
 (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8)
 \\
+LW & $10^{22}\rm~cm^{-2}$ & keV & & & $10^{-8}\rm~ph~cm^{-2}~s^{-1}$ & & $10^{31}\rm~erg~s^{-1}$ 
+\\
 \hline
 
 1$^\dag$ & $0.51^{+0.75}_{-0.34}$ & 40 (fixed)  &-&-&-& 1.14/5  & $1.82^{+0.64}_{-0.51}$
@@ -609,13 +611,13 @@ $I_{7.0}/I_{6.7}$ &  $I_{6.7}$ & $\chi^2/dof$ & $L_{\rm 1-8}$
 \\
 20 & $2.09^{+2.45}_{-1.16}$ & $4.04^{+28.2}_{-2.54}$ &-&-&-& 1.04/12  & $5.39^{+1.81}_{-1.47}$
 \\
-21$^\ddag$ & $2.83^{+0.25}_{-0.23}$ & 40 (fixed)  & $0.47^{+0.72}_{-0.35}$ & $0.91^{+1.22}_{-0.56}$ & 31.7 & 1.10/147  & $60.0^{+3.25}_{-3.12}$
+21$^\ddag$ & $2.83^{+0.25}_{-0.23}$ & 40 (fixed)  & $0.47^{+0.72}_{-0.35}$ & $0.91^{+1.22}_{-0.56}$ & 31.7 & 1.10/147  & $60.00^{+3.25}_{-3.12}$
 \\
-22$^\ddag$ & $2.83^{+0.25}_{-0.23}$ & 40 (fixed)  & $0.47^{+0.72}_{-0.35}$ & $0.91^{+1.22}_{-0.56}$ &  31.7 & 1.10/147  & $60.0^{+3.25}_{-3.12}$
+22$^\ddag$ & $2.83^{+0.25}_{-0.23}$ & 40 (fixed)  & $0.47^{+0.72}_{-0.35}$ & $0.91^{+1.22}_{-0.56}$ &  31.7 & 1.10/147  & $60.00^{+3.25}_{-3.12}$
 \\
 23 & $1.83^{+0.44}_{-0.37}$ & 40 (fixed)  & - &-& - & 1.47/35  & $9.23^{+1.22}_{-1.13}$
 \\
-24 & $0.83^{+3.31}_{-0.83}$ & $2.30^{+1.59}_{-0.85}$ &-&-&-&  0.80/2 & $0.77^{+7.82}_{-0.36}$ 
+24 & $0.83^{+3.31}_{-0.83}$ & $2.30^{+1.59}_{-0.85}$ &-&-&-&  0.80/2 & $0.75^{+0.30}_{-0.28}$ 
 \\
 \hline
 F1 & $0.35^{+0.16}_{-0.13}$ & $4.78^{+3.55}_{-1.58}$ &-&-&-& 1.19/55  & - \\
@@ -632,12 +634,12 @@ L & $1.33^{+0.12}_{-0.11}$ & 40 (fixed)  & $<0.18$  & $<0.39$ & $2.53^{+1.10}_{-
       \item
       Notes: 
       (1) Source sequence number as in Table~\ref{tab:src}, except ``H'' and ``L'', which refer to the bright and faint group of sources (excluding source F1), i.e., having 1--8 keV luminosity above (below) $10^{32}\rm~erg~s^{-1}$. {\dag}Sources 1 and 14 are the same source with two different periods; {\ddag}Sources 21 and 22 are the same source with two different periods. 
-(2) Line-of-sight absorption column density, in units of $10^{22}\rm~cm^{-2}$.
+(2) Line-of-sight absorption column density.
 (3) The bremsstrahlung temperature, in units of keV. Fixed at a value of 40 keV when the spectrum provides no signficant constraint to this parameter.
  (4)-(5) Flux ratio of the 6.4 or 7.0 keV line to the 6.7 keV line.
- (6) Integrated flux of the 6.7 keV line, in units of $10^{-8}\rm~ph~cm^{-2}~s^{-1}$.
+ (6) Integrated flux of the 6.7 keV line.
  (7) $\chi^2$ and degree of freedom of the best-fit model.
- (8) 1--8 keV unabsorbed luminosity, in units of $10^{31}\rm~erg~s^{-1}$. Quoted errors are at the 90\% confidence level.
+ (8) 1--8 keV unabsorbed luminosity. Quoted errors are at the 90\% confidence level.
 \end{tablenotes} 
 \end{threeparttable}
 \end{table*} 
@@ -703,7 +705,7 @@ Despite of source F1, whose luminosity can not be estimated for the uncertain di
 these periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables.
 We can barely exclude the probability of these sources being coronally active binaries (ABs), since most ABs are with luminosities lower than $\rm 10^{31}~erg~s^{-1}$ \citep{2006A&A...450..117S}. 
 
-While the case is not applicable for source \#24, with luminosity about $\rm 0.77 \times 10^{31}~erg~s^{-1}$ and plasma temperature about 2 keV. All these features are typical for ABs. Besides, its phase-folded light curve exhibits no emission in half of cycle, indicating the similar radius for two stars. The nearly no emission from one star hinted it could be an A-type star. Then the orbit radius would be around 0.02 AU, taking $3M_\odot$ as the total mass.  
+While the case is not applicable for source \#24, with luminosity about $\rm 0.75 \times 10^{31}~erg~s^{-1}$ and plasma temperature about 2 keV. All these features are typical for ABs. Besides, its phase-folded light curve exhibits no emission in half of cycle, indicating the similar radius for two stars. The nearly no emission from one star hinted it could be an A-type star. Then the orbit radius would be around 0.02 AU, taking $3M_\odot$ as the total mass.  
 
 Before we start to discuss the nature of these periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
@@ -779,8 +781,12 @@ We thank Xiaojie Xu and Zhenlin Zhu for helpful discussions. This work is suppor
 %% Each Appendix (indicated with \section) will be lettered A, B, C, etc.
 %% The equation counter will reset when it encounters the \appendix
 %% command and will number appendix equations (A1), (A2), etc. The
+
+\bibliography{sample63}{}
+\bibliographystyle{mnras}
+
 \newpage
-\onecolumn
+%\onecolumn
 \appendix
 \section{A brief introduction to the Gregory-Loredo algorithm}\label{GL}
 The basic rules for Bayesian probabilities are the sum rule:
@@ -837,7 +843,10 @@ p(M_m|I)={1\over {2\nu}}	, \quad \nu =m_{max}-1
 \end{equation}
 Since the essence of the algorithm is not our subject, we directly introduce the Eqn.~ 5.27 in \citep{1992ApJ...398..146G} as follows. It must be emphasized that this equation worked for the situation when the period and phase are both unknown. 
 \begin{equation}\label{5.27}
-p(D|M_m)={{{\Delta t}^N (m-1)! N! \gamma(N+1,A_{max})T}\over{2\pi A_{max} (N+m-1)!T^{N+1} \ln(\omega_{hi}/\omega_{lo})}}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}}	
+\begin{split}
+p(D|M_m)={{{\Delta t}^N (m-1)! N! \gamma(N+1,A_{max})T}\over{2\pi A_{max} (N+m-1)!T^{N+1} \ln(\omega_{hi}/\omega_{lo})}}\\
+\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}}	
+\end{split}
 \end{equation}
 Substituting $m=1$ into \ref{5.27}, we got:
 \begin{equation}\label{15}
@@ -845,8 +854,12 @@ p(D|M_1)={{{\Delta t}^N N!\gamma(N+1,A_{max})T}\over {A_{max}N!T^{N+1}}}
 \end{equation}
 Substituting \ref{12}, \ref{13}, \ref{5.27}, \ref{15} into \ref{11}, the odds ratio could be written as follows, which is the same as equation 5.28 in GL method:
 \begin{equation}\label{A16}
-O_{m1}={1\over{2\pi \nu \ln(\omega_{hi}/\omega_{lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}} 
+\begin{split}
+O_{m1}={1\over{2\pi \nu \ln(\omega_{hi}/\omega_{lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\\
+\times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}} 
+\end{split}
 \end{equation}
+
 In astronomical dataset, the observation always brings data gaps. For example, when the period is long and the exposure time for single observation is low, different bins may not be covered fairly. Then the initial assumptions above mentioned may fail, leading to some fake detections especially at low frequencies. In appendix B to \citep{1992ApJ...398..146G}, a solution to this problem has been proposed. They defined a weighting factor $S(\omega,\phi)$, where ${\tau_{j}(\omega,\phi)}$ signifies the exposure time in each bin:
 \begin{equation}\label{A17}
 S(\omega,\phi)={\prod_{j=1}^m s_j^{-n_j}}
@@ -856,7 +869,10 @@ s_j(\omega,\phi)={{\tau_{j}(\omega,\phi)}\over {T/m}}
 \end{equation}
 Then the odds ratio should be modified as:
 \begin{equation}\label{A19}
-O_{m1}={1\over{2\pi \nu \ln(\omega_{hi}/\omega_{lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\times {\int_0^{2\pi}d\phi{S(\omega,\phi)m^N\over W_m(\omega,\phi)}} 
+\begin{split}
+O_{m1}={1\over{2\pi \nu \ln(\omega_{hi}/\omega_{lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\\
+\times {\int_0^{2\pi}d\phi{S(\omega,\phi)m^N\over W_m(\omega,\phi)}}
+\end{split} 
 \end{equation}
 Ultimately, the probability of whether the dataset is periodic is:
 \begin{equation}\label{A20}
@@ -960,10 +976,6 @@ Then we extract the 0.2-10 keV light curve and folded it from PN data for it has
 %% bibtext sample63
 %% pdflatex sample63.tex
 %% pdflatex sample63.tex
-\clearpage
-\newpage
-\bibliography{sample63}{}
-\bibliographystyle{mnras}
 
 
 \end{document}
