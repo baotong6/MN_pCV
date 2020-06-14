@@ -172,7 +172,7 @@ Here we focus on sources prominent in the 2--8 keV band, which are most likely C
 
 Source detection was performed following the procedures detailed in \citet{2018ApJS..235...26Z}.
 Briefly, we first generated for each observation an exposure map as well as point-spread function (PSF) maps with enclosed count fraction (ECF) of 50\% and 90\%. 
-Both the exposure and PSF maps were weighted by a fiducial spectrum, which is an absorbed bremsstrahlung with a plasma temperature of 10 keV and a column density of $N_{\rm H}=10^{22}{\rm~cm^{-2}}$, typical of the X-ray sources in the LW. 
+Both the exposure and PSF maps were weighted by a fiducial spectrum, which is an absorbed bremsstrahlung with a plasma temperature of 10 keV and a column density of $N_{\rm H}=10^{22}{\rm~cm^{-2}}$, representative of the X-ray sources in the LW. 
 We then reprojected the individual exposure maps to form a stacked exposure map in the same way as for the counts images; the PSF maps were similarly stacked, weighted by the corresponding exposure map. 
 Next, we employed {\it wavdetect} to identify discrete sources in the merged 2--8 keV counts image, supplying the algorithm with the stacked exposure map and the 50\%-ECF PSF map and adopting a false-positive probability threshold of $10^{-6}$. 
 This resulted in a raw list of 847 independent sources in the 2--8 keV band. 
@@ -181,7 +181,7 @@ This resulted in a raw list of 847 independent sources in the 2--8 keV band.
 
 The source centroid derived from {\it wavdetect} was refined using a maximum likelihood method that iterates over the detected counts within the 90\% enclosed counts radius (ECR).
 Starting from this step we consider the 1--8 keV band to maximize the signal from potential sources in the LW. 
-Then, for each ObsID, source counts were extracted from the 90\% ECR, while background counts were extracted from a concentric annulus with inner-to-outer radii of 2--4 times the 90\% ECR, excluding any pixels falling within 2 times the 90\% ECR of neighboring sources.
+Then, for each ObsID, source counts were extracted from the 90\% ECR, while background counts were extracted from a concentric annulus with inner-to-outer radii of 2--4 times the 90\% ECR, excluding any pixel falling within 2 times the 90\% ECR of neighboring sources.
 Source crowding is not a general concern in the LW, but in a few cases the source extraction region was reduced to 50\% ECR due to otherwise overlapping sources. 
 The total source and background counts were obtained by summing up the individual observations. 
 Photometry (i.e., net photon flux and its error) for individual sources were calculated using the CIAO tool \emph{aprates}, which takes into account the local effective exposure, background and ECF. 
@@ -211,8 +211,8 @@ The last category is the phase-folding method. For each trial period the time-ta
 Methods belonging to this category use diverse cost functions. Several widely known examples are the Epoch Folding (EF) algorithm \citep{1983ApJ...266..160L}, the Phase Dispersion Minimization \citep{1978ApJ...224..953S}, and the GL algorithm \citep{1992ApJ...398..146G}.
 
 In X-ray observations, the detection of periodic signals is often involved with irregularly and sparsely sampled data. 
-When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since the dead time does not enter the algorithm.  
-Moreover, the number of available source counts is often only moderate. While one can in principle apply binning to satisfy the working function in the frequency space, it takes the price of potentially losing temporal information.  
+When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since {\bf the dead time does not enter the algorithm [can we say so?].}  
+Moreover, the number of detected source counts is often only moderate. While one can in principle apply binning to {\bf satisfy the working function [do you have a better term?]} in the frequency space, it takes the price of potentially losing temporal information.  
 Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
 
 Most X-ray sources in the LW share the characteristics of irregular sampling and limited source counts. 
@@ -221,8 +221,10 @@ The key of this algorithm is the multiplicity of the phase distribution of event
 \begin{equation}\label{multi}
 W_m(\omega, \phi)={{N!}\over{n_1!\; n_2!\; n_3!\cdots {n_m}!}}.
 \end{equation}
-Here $N$ represents the total number of counts of a given source, $m$ denotes the number of phase bins, and $n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, satisfying $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
-The multiplicity is the number of ways that the binned distribution could have arisen by chance. The probability of a period is inversely proportional to the multiplicity. It can be easily proved that the more the values of $n_i$ differ from each other, the smaller the multiplicity. In a simpler term, the more the piecewise model deviates from constant, the more likely there exists a periodic signal. 
+Here $N$ represents the total number of counts of a given source, 
+%$m$ denotes the number of phase bins, and 
+$n_i(\omega, \phi)$ is the number of events falling into the $i$th of $m$ phase bins given the frequency $\omega$ and the phase $\phi$, satisfying $\sum\limits_{i=1}^{m}n_i(\omega, \phi)=N$. 
+The multiplicity is the number of ways that the binned distribution could have arisen by chance. It can be easily shown that the more the values of $n_i$ differ from each other, the smaller the multiplicity. In other words, the more the piecewise model defined the $m$ phase bins deviates from constant, the more likely there exists a periodic signal, the probability of which is inversely proportional to the multiplicity.  
 
 In general, the GL algorithm takes the following steps:
 
@@ -239,8 +241,8 @@ If this probability exceeds a predefined threshold (default at 90\%), a periodic
 \subsection{Application to the LW}\label{subsec:appli}
 We apply the GL algorithm to search for periodic signals in the LW sources. 
 For a given source, the 1--8 keV counts within the 90\% ECR of individual ACIS-I observations are extracted to form a time series.  
-In addition, we supply for each source the information of ``epoch'', i.e., the the start time and end time of each  observation in which the source has at least one count. This information is used to compensate for the uneven distribution over the phase bins (see Eqn.~\ref{A17} for a detailed illustration). 
-Since the GL algorithm determines the probability of a periodic signal against a constant light curve, there is no need to account for the background level at this point. 
+In addition, we supply for each source the information of ``epoch'', i.e., the start time and end time of each ObsID in which the source has at least one detected count. This information is used to compensate for the uneven distribution over the phase bins (see Eqn.~\ref{A17} for a detailed illustration). 
+Since the GL algorithm determines the probability of a periodic signal against a constant light curve, there is no need to separately account for the background level, which is absorbed into the constant. 
 Nevertheless, we have measured the local background (Section~\ref{subsec:detect}) for each periodic source as a consistency check (see Section~\ref{sec:results}). 
 %Though we did source detection in 2-8 keV band to reduce the contamination from non-CV sources, here we still extracted photons from sources in 1-8 keV band to keep as more as possible source information. 
 %Besides, in order to compensate for uneven distribution over the bins, we provide "epoch" for each source. The "epoch" offered the start time and end time of each observations covered the source with at least one counts in source region. See Eqn.~\ref{A17} in appendix for detailed illustration about the use of epoch. 
@@ -285,16 +287,16 @@ The total span of 13 observation is about three years, i.e., $10^8$ s, so the re
 Generally, for each source, we provide the dataset for GL method. Then we got the most periodic signal with its probability in three period ranges. Taking 90\% as threshold to determine the periodicity, finally we choose all the candidate sources with at least one periodic signal.
 
 \subsection{Detection completeness}\label{subsec:simulation}
-For a given period searching algorithm, the detection rate depends on both the number of observed counts, the intrinsic shape of light curve, as well as the observing cadence. 
-To quantify the detection rate and hence gain insight on the nature of the periodic sources, we perform simulations following the merit of \citet{1998ApJ...498..666C}. 
-Two functional forms of light curve are considered: a sinusoidal function and a piecewise function. While these are admittedly idealized shapes, they can represent realistic light curves, e.g, resulted from rotational modulation or eclipse. 
+For a given period searching algorithm, the detection rate depends on both the number of observed counts, the intrinsic shape of the light curve, as well as the observing cadence. 
+To quantify the detection rate and hence gain insight on the nature of the periodic sources in the LW, we perform simulations following the merit of \citet{1998ApJ...498..666C}. 
+Two functional forms of light curve are considered: a sinusoidal function and a piecewise function. While these are admittedly idealized shapes, they can represent realistic light curves, e.g., resulted from rotational modulation or eclipse. 
 
 A sinusoidal light curve follows,
 \begin{equation}
 \lambda (t)=\lambda_0[1+A_{0}{\rm sin}(\omega t+\phi)], 
 \label{eqn:sin}
 \end{equation}
-where $\omega = 2{\pi}/P$, $A_0$ is the relative amplitude of variation, and $\lambda_0$ is the mean count rate which may include contribution from a constant background. The phase $\phi$ is arbitrarily set at zero.
+where $\omega = 2{\pi}/P$, $A_0$ is the relative amplitude of variation, and $\lambda_0$ is the mean count rate which may include contribution from a constant background. The phase $\phi$ can be arbitrarily set at zero.
 For a direct comparison with observations, we relate $\lambda_0$ with the total number of counts, $C = \lambda_0 T$, where $T$ is the exposure time of a given observation. This holds since $T$ is typically much longer than the modulation period ($P$). 
 The simulations are run with a selected number of parameters due to constraints in computational power. 
 Specifically, we adopt $C$=50, 100, 200, 300, 400 and 500, $A_0$=0.5, 0.6, 0.7, 0.8 and 0.9, and $P$=554, 5540 and 45540 sec, resulting in a total of 6x5x3=90 combinations. 
@@ -304,14 +306,16 @@ the adopted total counts well sample the range of observed counts from the LW so
 We thus simulate 100 light curves for each combination of parameters, taking into account Poisson errors and the exact start and end times of the 13 ACIS-I observations. 
  The arrival time of each simulated count is further randomly modified by an amount of 3.2 sec to mimic the effect of ACIS frame time.
 The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as for the real data (Section~\ref{subsec:appli}).
-We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. Besides, the harmonics have also been considered as valid detection  with the same threshold, i.e, the deviation between determined period and resonance cycle within 1\%.
+We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. 
+%Besides, the harmonics have also been considered as valid detection  with the same threshold, i.e, the deviation between determined period and resonance cycle within 1\%.
+{\bf We notice that for in a small fraction of simulate light curves of the shortest period (554 sec), the second harmonics (i.e., 2 times the true period) is detected with an even higher probability than the true period. We also consider such cases a valid detection as long as the true period fulfills the above criteria.}
+%In our simulation, the effect of harmonics only happens in the first period range due to the selection of parameter value, with fraction of harmonics detection about 20\%, concentrated at higher amplitude.
+%For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, adopting $C$=500 and $A_0$=0.9, and found there is no harmonics detection.
 
 The detection rate for a given combination of parameters is taken to be the fraction of the 100 light curves having a valid detection. The top, middle and bottom panels of Figure \ref{fig:detection} show the result of the three test periods, respectively. 
 %could think of 0.1 as extremely low. Then 
 Intuitively, for a given period and amplitude, higher total counts would lead to higher detection rates, while for given total counts, a higher amplitude also leads to a higher detection rate. The simulation results confirm these expectations.  
-In our simulation, the effect of harmonics only happens in the first period range due to the selection of parameter value, with fraction of harmonics detection about 20\%, concentrated at higher amplitude.
-For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, adopting $C$=500 and $A_0$=0.9, and found there is no harmonics detection.
- 
+
 It is noteworthy that for total counts of 50, the detection rate is almost always below 10\% regardless of the period and amplitude. 
 %The periodic signal in this circumstance could be unreliable.
 %With more counts, the detection rate can exceed 50\%, which is sufficient enough for period finding procedure. 
