@@ -249,7 +249,7 @@ Nevertheless, we have measured the local background (Section~\ref{subsec:detect}
 
 As mentioned in Section~\ref{subsec:GL}, the GL algorithm folds the time series at a trial frequency (or period). 
 In practice, the resolution of frequency must be compromised between accuracy and computational power. %We choose the frequency range and frequency resolution for the following considerations.
-Thus we restrict our analysis on three period ranges: (300, 3000), (3000, 10000) and (10000, 50000) sec, with a frequency resolution of $10^{-7}$, $10^{-8}$ and $10^{-9}$ {\bf Hz?}, respectively. 
+Thus we restrict our analysis on three period ranges: (300, 3000), (3000, 10000) and (10000, 50000) sec, with a frequency resolution of $10^{-7}$, $10^{-8}$ and $10^{-9}$ Hz, respectively. 
 The period ranges are chosen based on the expectation that most, if not all, detectable periodic X-ray sources in the LW should be CVs. 
 The orbital period distribution of CV is known to exhibit a minimum at around 70 minutes, a gap between 2--3 hours, and a maximum around 10 hours \citep{2003A&A...404..301R}. 
 The second and third period ranges well cover these characteristic periods, whereas the first range probes the spin periods of fast rotating IPs.
@@ -662,7 +662,7 @@ this difference must be owing to the different period searching methods employed
 %extracted only the several nearby observations, all the observations were applied here for timing analysis. That difference was caused by the mechanisms of methods. 
 which, as described in Section~\ref{subsec:GL}, handles the photometric light curve, while the GL algorithm processes the phase-folded light curve with tolerance for observing gaps. We have applied the LS periodogram to our data in essentially the same way as \cite{2012ApJ...746..165H} and confirmed that only those 10 periods found in their work can be detected by this method. 
 The other 15 periods do not result in a significant detection in the LS periodogram, mainly due to its low efficiency with low-count sources.
-The detection rate is essentially zero for net counts down to 100 and never exceeds 20\% for net counts of $\sim$150, based on the simulations presented in \cite{2012ApJ...746..165H}.
+The detection rate is essentially zero for net counts $\lesssim$100 and never exceeds 20\% for net counts of 150, based on the simulations presented in \cite[figure 7 therein]{2012ApJ...746..165H}.
 
 For comparison, we provide an estimate on the detection rate of the same 10 periodic signals using the GL algorithm. For practical purposes we assume an intrinsic sinusoidal shape (Eqn.~\ref{eqn:sin}), 
 for which the total counts and period are taken directly from the observed values, whereas the relative amplitude is taken to be $A_{M}={1-R_{\rm min}}/R_{\rm max}$ and $A_{M}=2A_0/({1+A_0})$, where $R_{\rm min} (R_{\rm max})$ is the minimum (maximum) count rate of the folded light curve.
@@ -681,11 +681,12 @@ In \citet{2012ApJ...746..165H}, they got $A_0$ from $A_{\mathrm{rms}}$ depended 
 %\end{equation}
 %\end{subequations}
 %where equation \ref{Arms} only works for sinusoidal modulations. N and B represent the total counts in source region and local background respectively. $t_{j}$ and $\phi\left(t_{j}\right)$ refer to the arrival time and phase of each photon. $Z_{1}^{2}$ is the classical Rayleigh statistic method \citep{1983A&A...128..245B,2003ApJ...599..465M}.
-Though $A_{M}$ depends on the bin size of phase-folded light curve, we still prefer it rather than $A_{rms}$ to get the amplitude, i.e, $A_0$, since the deviation between sinusoidal variation and real shape sometimes made $A_{0}$ exceeds one when it was calculated from $A_{\mathrm{rms}}$. 
+Though $A_{M}$ depends on the bin size of phase-folded light curve, we still prefer it rather than $A_{rms}$ to get the amplitude, i.e, $A_0$, since the deviation between sinusoidal variation and real shape sometimes made $A_{0}$ exceeds one when it was calculated from $A_{\mathrm{rms}}$. $A_{M}$ is obtained with bin size fixed at 20.
 
 For each of the 10 sources, 100 simulated light curves are produced and fed to the GL algorithm.
-Again, we take the 90\% probability threshold and an period accuracy of 0.1\% to define a valid detection. The percentage of valid detections $P_{det}$, as shown in column (9) in Table \ref{tab:src}. And $A_{M}$ was obtained with bin size fixed at 20. For directly comparison, we also ran the simulation based on the same $A_{0}$ defined in \citet{2012ApJ...746..165H} for the ten collective sources. A flagrant contrast was illustrated in Figure \ref{fig:com} based on that two columns. 
-Clearly, GL method has better performance compared with LS method.
+Again, we take the 90\% probability threshold and an period accuracy of 0.1\% to define a valid detection. The percentage of valid detections, $P_{det}$ (see column 9 in Table \ref{tab:src}), is plotted in Figure \ref{fig:com}. 
+For directly comparison, we also ran the simulation based on the same $A_{0}$ defined in \citet{2012ApJ...746..165H} for the ten collective sources, the result of which is also plotted in Figure \ref{fig:com}.
+Clearly, the GL algorithm works better in almost all cases compared to the LS method.
 
 %The improvement on detecting efficiency and data usage brought more periodic signals than \cite{2012ApJ...746..165H}. Additionally, we operated the simulation not only for sinusoidal variation, but also for eclipsing models to describe the dip in orbital modulation. Combining the simulation results and more than twice the sample, we were allowed to discuss the source properties and the distribution of CVs in galactic bulge region on a better level.
 
