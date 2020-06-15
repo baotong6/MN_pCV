@@ -63,7 +63,7 @@
 %\title[Short title, max. 45 characters]{Periodic X-ray Sources in the Galactic Bulge}
 %\author{Bao \& Li}
 
-\title[Periodic Cataclysmic Variables in the Galactic Bulge]{Periodic Cataclysmic Variables in the Galactic Bulge: Application of the Gregory-Loredo Algorithm}
+\title[Periodic X-ray Sources in the Galactic Bulge]{Periodic Cataclysmic Variables in the Galactic Bulge: Application of the Gregory-Loredo Algorithm}
 
 \author[Bao \& Li]{
 Tong Bao,$^{1,2}$\thanks{E-mail: baotong@smail.nju.edu.cn}
@@ -212,8 +212,7 @@ Methods belonging to this category use diverse cost functions. Several widely kn
 
 In X-ray observations, the detection of periodic signals is often involved with irregularly and sparsely sampled data. 
 When working in frequency space, such a sampling can lead to spurious signals and hevay contamination to the real signal. Phase-folding methods, on the other hand, can avoid the effect of non-uniform data since the dead time does not enter the algorithm.
-Moreover, the number of detected source counts is often only moderate. While one can in principle apply binning to get photometric light curve, it takes the price of potentially losing temporal information.  
-Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
+Moreover, the number of detected source counts is often only moderate. While one can in principle apply binning to create photometric light curve, it takes the price of potentially losing temporal information. Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
 
 Most X-ray sources in the LW share the characteristics of irregular sampling and limited source counts. 
 Therefore, it is appropriate to employ the GL algorithm, which applies the Bayesian probability theory to the phase-folded light curve, to search for periodic signals for the LW sources. We provide a brief overview of Bayes's theorem and the GL algorithm in Appendix \ref{GL}. 
@@ -233,7 +232,7 @@ In general, the GL algorithm takes the following steps:
 (ii) Given $m$, integrate over the $(\omega, \phi)$ space and calculate the so-called ``odds ratio'' using Bayes's theorem (Eqn.~\ref{A16}). The ``odds ratio'' determines the ratio of probabilities between a periodic model and a non-periodic (constant) model.
 
 (iii) Sum up the normalized odds ratios of each $m$ to determine the probability of a periodic signal (Eqn.~\ref{A20}).
-If this probability exceeds a predefined threshold (default at 90\%), a periodic signal is favored. 
+If this probability exceeds a predefined threshold (for instance, 90\%), a periodic signal is favored. 
 
 (iv) Finally, compare all the odds ratios integrated over the $\phi$ space, finding the value of $\omega$ with the highest odds ratio, which then gives the period $P=2{\pi}/\omega$ (Eqn.~\ref{A21}).
 
@@ -303,8 +302,7 @@ Specifically, we adopt $C$=50, 100, 200, 300, 400 and 500, $A_0$=0.5, 0.6, 0.7, 
 The chosen periods are representative of the actually searched ranges (Section~\ref{subsec:appli}), whereas
 the adopted total counts well sample the range of observed counts from the LW sources.
 
-We thus simulate 100 light curves for each combination of parameters, taking into account Poisson errors and the exact start and end times of the 13 ACIS-I observations. 
- The arrival time of each simulated count is further randomly modified by an amount of 3.2 sec to mimic the effect of ACIS frame time.
+We thus simulate 100 light curves for each combination of parameters, taking into account Poisson errors and the exact start and end times of the 13 ACIS-I observations. The arrival time of each simulated count is further randomly modified by an amount of 3.2 sec to mimic the effect of ACIS frame time.
 The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as for the real data (Section~\ref{subsec:appli}).
 We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. 
 %Besides, the harmonics have also been considered as valid detection  with the same threshold, i.e, the deviation between determined period and resonance cycle within 1\%.
@@ -343,7 +341,7 @@ where $w$ accounts for the eclipsing width (duration) in phase space, and $f$ ch
 Again, $\lambda_0$ can be related to the total counts as $C=[1-(1-f)w]\lambda_0T$.
 We set $f=0.1$ and $w=0.1$ in our simulations, which are not atypical of eclipsing CVs. 
 %since the radius ratio of WD, companion star and orbit are about 1:10:50. 
-We test three values of the period, $P$=5258, 15258 and 45258 sec and adopt trial mean count rate from 1.0 to 10.0 with interval of 1, added with 15.0 and 20.0 to get the full trend.
+We test three values of the period, $P$=5258, 15258 and 45258 sec and adopt trial mean count rate $\lambda_0 = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15$ and $20\times10^{-4}{\rm~cts~s^{-1}}$.
 For each combination of parameters, 100 simulated light curves are again generated and fed to the GL algorithm. 
 The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. 
 The detection rate is generally higher for a longer period for the aforementioned reason.
@@ -356,7 +354,7 @@ For total counts below $\sim$500, the detection rate is below $\sim$10\%; only w
 \end{figure}
 
 We have also run simulations to estimate the rate of false detection, which refers to the detection of a periodic signal from a constant light curve. We use a sinusoidal light curve with $P$=5 yr and $A_0$=0.5 to approximate a constant flux with slight variation, finding no detection of periodic signals at any given values of total counts from 50 to 5000. 
-Thus it seems safe to conclude that the false detection rate is essentially zero for the GL algorithm applied to the LW data. 
+Therefore it seems safe to conclude that the false detection rate is essentially zero for the GL algorithm applied to the LW data. 
 
 \section{Period Searching Results}\label{sec:results}
 %\subsection{Filtering detections}
@@ -368,7 +366,7 @@ Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signal
 (i) By design, the ACIS is dithered to distribute photons over more CCD pixels to avoid pile-up and to fill CCD gaps. The dither period is 706.96 s in pitch and 999.96 s in yaw. Any signal detected at these two periods and their harmonics are thus excluded. These are mostly found in sources located close to CCD gaps, where dithering significantly reduces the number of detected source in a periodic fashion. 
 A related concern is how dithering would affect the detection of genuine periods.  
 We run simulations to test this effect. Specifically, we generate simulated sinusoidal light curves with $P$ = 5072.97 sec and $C$ = 293. 
-This choice is motivated by the particular periodic source \#5, which has a fractional detector coverage of 0.74 (in other words, 26\% of the intrinsic flux is lost due to dithering into the CCD gap), the lowest among all detected periodic sources (see below). The dithering effect is mimicked by artificially removing the simulated counts according to a probability distribution calculated by the CIAO tool \emph{dither\_region}. 
+This choice is motivated by one particular periodic source (\#5 in Table~\ref{tab:src}), which has a fractional detector coverage of 0.74 (in other words, 26\% of the intrinsic flux is lost due to dithering into the CCD gap), the lowest among all detected periodic sources. The dithering effect is mimicked by artificially removing the simulated counts according to a probability distribution calculated by the CIAO tool \emph{dither\_region}. 
 No difference is found in the resultant detection rate, compared to that without dithering. 
 %Out of concern about the dither effect on period searching, we compute the fractional area covered by chips (hereafter FA) for each source in each observation. FA equals 1 when source region are not affected by gaps. After, weighting the FA in total exposure time, we define $\overline{FA}$ for each source. Most of $\overline{FA}$ are beyond 0.9, except for \#5, which is 0.74. Thus we run 100 simulation for this source in two cases. One for no dithering and the other for dithering. It turns out no difference in detection rate. In general, we can neglect the dither effect. 
 
