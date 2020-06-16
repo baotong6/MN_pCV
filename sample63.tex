@@ -27,6 +27,7 @@
 % installations will be fine) or prefer the old Computer Modern fonts, comment
 % out the following line
 \usepackage{newtxtext,newtxmath}
+\usepackage{stfloats}
 \usepackage[flushleft]{threeparttable}
 % Depending on your LaTeX fonts installation, you might get better results with one of these:
 %\usepackage{mathptmx}
@@ -193,7 +194,7 @@ We further define for each source an inter-observation {\it variability index}, 
 \begin{figure*}
 \centering
 \includegraphics[scale=0.8]{./figure/LW/ds9.eps}
-\caption{2--8 keV counts image of the Limiting Window, combining 13 {\it Chandra}/ACIS-I observations. Locations of the 23 periodic sources are marked with colored circles ({\it magenta}: ten sources previously reported by \citep{2012ApJ...746..165H}; {\it red}: twelve newly discovered in this work and belonging to the Galactic bulge; {\it green}: one newly discovered and located in the foreground). Source numbering is the same as in Table~\ref{tab:src}. In particular, 1/14 and 21/22 are the two sources each showing two periodic signals.}
+\caption{2--8 keV counts image of the Limiting Window, combining 13 {\it Chandra}/ACIS-I observations. Locations of the 23 periodic sources are marked with colored circles ({\it magenta}: ten sources previously reported by \citep{2012ApJ...746..165H}; {\it red}: thirteen newly discovered in this work and belonging to the Galactic bulge.). Source numbering is the same as in Table~\ref{tab:src}. In particular, 1/14 and 21/22 are the two sources each showing two periodic signals.}
 \label{fig:FoV}
 \end{figure*}
 
@@ -378,7 +379,13 @@ This choice is motivated by one particular periodic source (\#5 in Table~\ref{ta
 No difference is found in the resultant detection rate, compared to that without dithering. 
 %Out of concern about the dither effect on period searching, we compute the fractional area covered by chips (hereafter FA) for each source in each observation. FA equals 1 when source region are not affected by gaps. After, weighting the FA in total exposure time, we define $\overline{FA}$ for each source. Most of $\overline{FA}$ are beyond 0.9, except for \#5, which is 0.74. Thus we run 100 simulation for this source in two cases. One for no dithering and the other for dithering. It turns out no difference in detection rate. In general, we can neglect the dither effect. 
 
-(ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of double-peak or triple-peak in the phase-folded light curve, provided that the intrinsic signal has a single-peak structure. However, the intrinsic structure might be double-peak, in which case it is more difficult to distinguish between the true period and the half harmonics (i.e., half the true period). Hence we assume that there is no half harmonics in the LW sources and always take the lowest period as the true period. This assumption is supported by our extensive simulations (Section~\ref{subsec:simulation}), in which no half harmonics is found.  Appendix~\ref{harmonics} provides more discussions about harmonics.
+(ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of double-peak or triple-peak in the phase-folded light curve, provided that the intrinsic signal has a single-peak structure. However, the intrinsic structure might be double-peak, in which case it is more difficult to distinguish between the true period and the half harmonic (i.e., half the true period). Hence we assume that there is no half harmonic in the LW sources and always take the lowest period as the true period. This assumption is supported by our extensive simulations (Section~\ref{subsec:simulation}), in which no half harmonic is found.  
+
+The physical origin of periodic signals in CVs holds out the assumption additionally.
+If the half harmonic exists, the longer period has to serve as true signal. While theoretically, the double-peak shape generally only happens in IPs with an accretion column. When viewed from a specific angle, the two poles alternatively drift across the front side of the WD, producing the double-peaked shape in the X-ray light curve. In this kind of situation, the modulation period must be the spin period of IPs, typically under one hour, as illustrated in \ref{fig:N_P}.
+In our results, most of the double-peak shape light curves come up with period longer than 3 hour, far beyond the range of spin period in IPs. 
+For the above reasons, we preferentially take the single-peaked signal, normally due to the shortest period, as the true period. The second harmonic leading to a double-peaked shape is treated as a spurious period. 
+%Appendix~\ref{harmonics} provides more discussions about harmonics.
 
 (iii) Strong flux variations or outbursts occupying one particular observation can also cause a false periodic signature. This is because the GL algorithm, which analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may ``think'' there exists a period especially in the period range of (10000, 50000) sec. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We thus reanalyze their light curves using two subsets of observations: those covering only the outburst and those excluding the outburst. For three of them, the tentative period cannot be recovered in either subset. Therefore, these three are probably fake signals. The remaining source is retained since its period can be recovered in both the outbursting and quiescent subsets.
 
@@ -463,11 +470,9 @@ LW & $\circ$ & $\circ$ & (s) & & & & \% & &
 \\
 23 & 267.84487 &	 -29.57680 & 12002.70 & 1.00000 & H7 & 307  & 100   & 1.86 & \text{Second}
 \\
-24 & 267.83142 &	 -29.65992 & 47317.12 & 0.98850 &- & 138  &-&- &-
+24 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039 &-&23.6&-
 \\
-\hline
-%\hline
-F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039 &-&-&23.6&-
+25 & 267.83142 &	 -29.65992 & 47317.12 & 0.98850 &- & 138  &-&- &-
 \\
 \hline
 \end{tabular}
@@ -475,7 +480,7 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039 &-&-&23.6&-
       \small
       \item 
       Notes:
-      (1) Source sequence number assigned in the order of increasing period. The same source with multiple period signal was denoted as \dag and \ddag. F1 represents the periodic foreground source.
+      (1) Source sequence number assigned in the order of increasing period. The same source with multiple period signal was denoted as \dag and \ddag. 
 (2) R.A.(J2000) of the centroid of source. 
 (3) Decl.(J2000) of the centroid of source. 
 (4) The modulation period determined by GL method.
@@ -484,7 +489,7 @@ F1 & 267.90974 &	-29.71112 & 42219.03 & 1.00000 & - &1039 &-&-&23.6&-
 (7) The number of counts in the 1-8 keV band. 
 (8) The detection probability of periodicity based on simulations of 100 sinusoidal light curves for each source.
 (9) The detection probability of periodicity simulated as the same process described in column(9), while the amplitude are taken from \cite{2012ApJ...746..165H}.
-(10) $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections. For source \#10 and \#24, no VI are provided since the lack of valid detections.
+(10) $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections. For source \#10 and \#25, no VI are provided since the lack of valid detections.
 (11) The note gives the significant harmonic detected by the algorithm.
     \end{tablenotes}
 \end{threeparttable}
@@ -539,8 +544,7 @@ The flux ratio and its 90\% error are similarly determined for this sources, res
 According to the empirical line ratio--WD mass  ($I_{7.0}/I_{6.7}$--$M_{\rm WD}$) relation of \citet{2019ApJ...882..164X}, which is calibrated with CVs in the solar neighborhood, we can infer $M_{\rm WD} \approx 0.8 \, (1.2) $  $M_\odot$ for \#21, provided that both sources are IPs (DNe). 
 It is noteworthy that there exists no empirical $I_{7.0}/I_{6.7}$--$M_{\rm WD}$ relation for polars, mainly due to the small number of known polars in the solar neighborhood \citep{2019ApJ...882..164X}. 
 
-Based on their best-fit results, the source with $N_H$ lower than $5 \times 10^{21} cm ^{-2}$ are considered as foreground source.
-We further divide the 22 periodic sources into two groups based on their luminosities. Here source F1 is excluded since we are only interested in sources located in the bulge. The H (L) group consists of 6 (16) sources having an unabsorbed 1--8 keV luminosity above (below) $\rm 1.0\times10^{32}~erg ~s^{-1}$, which is derived from the individual best-fit spectral model. 
+We further divide the 23 periodic sources into two groups based on their luminosities. The H (L) group consists of 6 (17) sources having an unabsorbed 1--8 keV luminosity above (below) $\rm 1.0\times10^{32}~erg ~s^{-1}$, which is derived from the individual best-fit spectral model. 
 The cumulative spectrum of each group is fitted with the same fiducial model, i.e., bremsstrahlung plus three Gaussian lines. The improved S/N in the cumulative spectrum allows us to detect all three Fe lines and constrain their flux ratios.  
 %And the best-fit results are presented in Table \ref{tab:spec}. 
 %The H and L spectra are shown in Figure \ref{fig:pCV_spec} over the energy range of 0.5-8 keV. 
@@ -614,11 +618,11 @@ LW & $10^{22}\rm~cm^{-2}$ & keV & & & $10^{-8}\rm~ph~cm^{-2}~s^{-1}$ & & $10^{31
 \\
 23 & $1.83^{+0.44}_{-0.37}$ & 40 (fixed)  & - &-& - & 1.47/35  & $9.23^{+1.22}_{-1.13}$
 \\
-24 & $0.83^{+3.31}_{-0.83}$ & $2.30^{+1.59}_{-0.85}$ &-&-&-&  0.80/2 & $0.75^{+0.30}_{-0.28}$ 
+24 & $0.35^{+0.16}_{-0.13}$ & $4.78^{+3.55}_{-1.58}$ &-&-&-& 1.19/55  & 
+$8.73^{+1.09}_{-0.98}$
 \\
-\hline
-F1 & $0.35^{+0.16}_{-0.13}$ & $4.78^{+3.55}_{-1.58}$ &-&-&-& 1.19/55  & - \\
-%$8.73^{+1.09}_{-0.98}$
+25 & $0.83^{+3.31}_{-0.83}$ & $2.30^{+1.59}_{-0.85}$ &-&-&-&  0.80/2 & $0.75^{+0.30}_{-0.28}$ 
+\\
 \hline
 H & $1.99^{+0.10}_{-0.97}$ & 40 (fixed)  &  $0.28^{+0.10}_{-0.09}$ & $0.78^{+0.18}_{-0.16}$  & $8.76^{+3.57}_{-3.57}$ & 1.19/205 & $31.8^{+0.95}_{-0.95}	$
 \\
@@ -630,7 +634,7 @@ L & $1.33^{+0.12}_{-0.11}$ & 40 (fixed)  & $<0.18$  & $<0.39$ & $2.53^{+1.10}_{-
       \small
       \item
       Notes: 
-      (1) Source sequence number as in Table~\ref{tab:src}, except ``H'' and ``L'', which refer to the bright and faint group of sources (excluding source F1), i.e., having 1--8 keV luminosity above (below) $10^{32}\rm~erg~s^{-1}$. {\dag}Sources 1 and 14 are the same source with two different periods; {\ddag}Sources 21 and 22 are the same source with two different periods. 
+      (1) Source sequence number as in Table~\ref{tab:src}, except ``H'' and ``L'', which refer to the bright and faint group of sources, i.e., having 1--8 keV luminosity above (below) $10^{32}\rm~erg~s^{-1}$. {\dag}Sources 1 and 14 are the same source with two different periods; {\ddag}Sources 21 and 22 are the same source with two different periods. 
 (2) Line-of-sight absorption column density.
 (3) The bremsstrahlung temperature, in units of keV. Fixed at a value of 40 keV when the spectrum provides no signficant constraint to this parameter.
  (4)-(5) Flux ratio of the 6.4 or 7.0 keV line to the 6.7 keV line.
@@ -695,17 +699,15 @@ Clearly, the GL algorithm works better in almost all cases compared to the LS pe
 %\begin{minipage}[b]{\textwidth}
 \centering
 \includegraphics[width=0.49\textwidth]{./figure/LW/P_comp.eps}
-\includegraphics[width=0.49\textwidth]{./figure/sim_LW/Pdet_com.eps}
+\includegraphics[width=0.46\textwidth]{./figure/sim_LW/Pdet_com.eps}
 %\end{minipage}
-\caption{Comparison between the periods ({\it Left}) and detection rate ({\it right}) of the 10 signals commonly found by the GL and LS methods. The H-ID is the sequence number given in \cite{2012ApJ...746..165H}, same as listed in column 6 of Table \ref{tab:src}. 
-}
-\label{fig:com}
+\caption{Comparison between the periods ({\it left}) and detection rate ({\it right}) of the 10 signals commonly found by the GL and LS methods.The H-ID is the sequence number given in \citet{2012ApJ...746..165H}, same as listed in column 6 of Table \ref{tab:src}. 
+\label{fig:com}}
 \end{figure*}
 
 \subsection{Classifying the periodic X-ray sources}
 \label{subsec:class}
-Despite of source F1, whose luminosity can not be estimated for the uncertain distance, 
-these periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables.
+These periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables.
 We can barely exclude the probability of these sources being coronally active binaries (ABs), since most ABs are with luminosities lower than $\rm 10^{31}~erg~s^{-1}$ \citep{2006A&A...450..117S}. 
 
 \begin{figure*}
@@ -718,7 +720,7 @@ For source \#1, the width in phase with flux lower than average is about 0.5, lo
 While for source \#21, the weak variation indicates the rotation modulation. And the apparent sharp, narrow eclipsing in \#22 strongly sustain that the orbit modulation with high inclination angle. Considering that the angle between magnetic axis and rotation axis is usually small, it also support for the weak variation of spin modulation.
 The characteristics of the phase-folded light curves provide important clues to the source origin, which will be further addressed in Section~\ref{subsec:class}.
 
-While the case is not applicable for source \#24, with luminosity about $\rm 0.75 \times 10^{31}~erg~s^{-1}$ and plasma temperature about 2 keV. All these features are typical for ABs. Besides, its phase-folded light curve exhibits no emission in half of cycle, indicating the similar radius for two stars. The nearly no emission from one star hinted it could be an A-type star. Then the orbit radius would be around 0.02 AU, taking $3M_\odot$ as the total mass.  
+While the case is not applicable for source \#25, with luminosity about $\rm 0.75 \times 10^{31}~erg~s^{-1}$ and plasma temperature about 2 keV. All these features are typical for ABs. Besides, its phase-folded light curve exhibits no emission in half of cycle, indicating the similar radius for two stars. The nearly no emission from one star hinted it could be an A-type star. Then the orbit radius would be around 0.02 AU, taking $3M_\odot$ as the total mass.  
 
 Before we start to discuss the nature of these periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
@@ -795,8 +797,6 @@ We thank Xiaojie Xu and Zhenlin Zhu for helpful discussions. This work is suppor
 
 \bibliography{sample63}{}
 \bibliographystyle{mnras}
-
-\newpage
 %\onecolumn
 \appendix
 \section{A brief introduction to the Gregory-Loredo algorithm}\label{GL}
@@ -896,42 +896,47 @@ O_{m1}(\omega)={1\over{2\pi \nu}} {{N+m-1}	\choose N}^{-1} \times {\int_0^{2\pi}
 The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest value.
 
 
-\section{Treatment of harmonics}\label{harmonics}
-
-\begin{figure*}
-\begin{minipage}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_20.eps}
-\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_20_second.eps}
-\end{minipage}
-\begin{minipage}[b]{0.45\textwidth}
-\includegraphics[width=\textwidth]{./figure/CV/pfold_lc_J1817_2508_spin_half.eps}
-\includegraphics[width=\textwidth]{./figure/CV/pfold_lc_J1817_2508_spin.eps}
-\end{minipage}
-\caption{The top left and bottom left panel show the folded light curve of LW 6, at true period and second harmonics, respectively. The top right and bottom right panel display the folded light curve of J1817-2508. While for this source, the double-peaked shape (bottom right) at 1660s are the real signal of rotation. \label{fig:6thfig}}
-\end{figure*}
-\indent
-To distinguish the fundamental period--whether it is the spin period or orbital period---from the harmonics, the significance of the signal is not the sufficient condition. 
-%In that the intensities of signals could not reflect the authenticity of the signal precisely.
-%Rather, the physical mechanism of period in CVs must be introduced. 
-Here we take source \#6 as an illustration. This source has two detected periods both exceeding the 90\% probability threshold. 
-The phase-folded light curves of the fundamental period and the second harmonics, plotted in the top panels of Figure \ref{fig:6thfig}, show a classical single-peak and double-peak shape, respectively. 
-
-For comparison, we present the phase-folded light curves of J1817-2508 {\bf (what is this source?)} (lower panels of Figure~\ref{fig:6thfig}), based on an {\it XMM-Newton} observation (obsID=0601270301) with an exposure of ?? ks.
-We processed the EPIC/PN data with the standard tool \emph{emchain} and \emph{epchain} in SAS v18.0.0. The MOS data were neglected for simplicity.
-The photon arrival times were corrected to the Solar barycenter by applying the task \emph{barycen}.
-We then extracted the 0.2-10 keV counts of J1817-2508 from an enclosed energy fraction of ??\% (or a circle of ??$\arcsec$).
-
-J1817-2508, also known as IGR J18173-2509, was first found to exhibit a periodic signal at 830.70 sec by {\it Swift}-XRT observations (reference?). An additional periodic signal of 1660 sec was detected by {\it Chandra} observations \citep{2009ATel.2354....1N}; a slightly larger period at 1690 sec was found by optical observations \citep{2012A&A...542A..22B}. 
-Together these strongly suggest that the true spin period is about 1660 sec, twice the {\it Swift}-detected period, even though when folded at the second harmonics the light curve exhibits two highly similar peaks, as shown in the lower right panel of Figure~\ref{fig:6thfig}.
- 
-The case of J1817-2508 indicates that the phase-folded light curve itself could be highly deceptive under the circumstance of symmetric dipole structure. We cannot unambiguously determine the true spin period without additional information, e.g., from optical observations. Fortunately, the physical origin of the periodic signal may provide help diagnostics.  The double-peak shape generally only happens in IPs with an accretion column. %The two poles where accretion region lied on, would be the brightest. 
-When viewed from a specific angle, the two poles alternatively drift across the front side of the WD, producing the double-peaked shape in the X-ray light curve. In this kind of situation, the modulation period must be the spin period, typically under one hour. 
-For comparison, the second harmonics found in the LW sources are mostly above 3 hours, thus they are unlikely to be the true spin period. 
-On the other hand, while the WD in polars may have a spin period of few hours due to synchronization with the orbital period, their accretion stream always fall onto a single pole, emitting most of the X-rays. Thus the double-peaked shape is almost impossible in polars. 
- 
-For the above reasons, we preferentially take the single-peaked signal, normally due to the shortest period, as the true period. The second harmonics leading to a double-peaked shape is treated as a spurious period. 
-%\clearpage
-%\newpage
+%\section{Treatment of harmonics}\label{harmonics}
+%
+%\begin{figure*}
+%\begin{minipage}[b]{0.45\textwidth}
+%\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_20.eps}
+%\includegraphics[width=\textwidth]{./figure/CV/pfold_lc_J1817_2508_spin_half.eps}
+%\end{minipage}
+%\begin{minipage}[b]{0.45\textwidth}
+%\includegraphics[width=\textwidth]{./figure/LW/pfold_lc_20_second.eps}
+%\includegraphics[width=\textwidth]{./figure/CV/pfold_lc_J1817_2508_spin.eps}
+%\end{minipage}
+%\caption{The top left and right panel show the folded light curve of LW 6, at true period and second harmonics, respectively. The lower left panel displays the folded light curve of J1817-2508. While for this source, the double-peaked shape (lower right) at 1660s are the real signal of rotation. \label{fig:6thfig}}
+%\end{figure*}
+%\indent
+%To distinguish the fundamental period--whether it is the spin period or orbital period---from the harmonics, the significance of the signal is not the sufficient condition. 
+%We have already assumed that no half harmonics in the LW sources (see \ref{subsec:simulation}) based on our simulation. This assumption can be  extra supported by physical origin of periodic signals in CVs.
+%%In that the intensities of signals could not reflect the authenticity of the signal precisely.
+%%Rather, the physical mechanism of period in CVs must be introduced. 
+%Here we take source \#6 as an illustration. This source has two detected periods both exceeding the 90\% probability threshold. 
+%The phase-folded light curves of the fundamental period and the second harmonics, plotted in the top panels of Figure \ref{fig:6thfig}, show a classical single-peak and double-peak shape, respectively. 
+%If the half harmonics exists, the longer period has to serve as true signal. While theoretically, the double-peak shape generally only happens in IPs with an accretion column. When viewed from a specific angle, the two poles alternatively drift across the front side of the WD, producing the double-peaked shape in the X-ray light curve. In this kind of situation, the modulation period must be the spin period of IPs, typically under one hour, as illustrated in \ref{fig:N_P}.
+%In our results, most of the double-peak shape light curves come up with period longer than 3 hour, far beyond the range of spin period in IPs. 
+%For the above reasons, we preferentially take the single-peaked signal, normally due to the shortest period, as the true period. The second harmonics leading to a double-peaked shape is treated as a spurious period. 
+%
+%%As supplement for the theory , we present the phase-folded light curves of an IP called J1817-2508, who has the double-peak shape in rotational modulation (lower panels of Figure~\ref{fig:6thfig}), based on an {\it XMM-Newton} observation (obsID=0601270301) with an exposure of 32 ks.
+%%We processed the EPIC/PN data with the standard tool \emph{emchain} and \emph{epchain} in SAS v18.0.0. The MOS data were neglected for simplicity.
+%%The photon arrival times were corrected to the Solar barycenter by applying the task \emph{barycen}.
+%%We then extracted the 0.2-10 keV counts of J1817-2508 from a circle of 25$\arcsec$).
+%%
+%%J1817-2508, also known as IGR J18173-2509, was first found to exhibit a periodic signal at 830.70 sec by {\it Swift}-XRT observations (reference?). An additional periodic signal of 1660 sec was detected by {\it Chandra} observations \citep{2009ATel.2354....1N}; a slightly larger period at 1690 sec was found by optical observations \citep{2012A&A...542A..22B}. 
+%%Together these strongly suggest that the true spin period is about 1660 sec, twice the {\it Swift}-detected period, even though when folded at the second harmonics the light curve exhibits two highly similar peaks, as shown in the lower right panel of Figure~\ref{fig:6thfig}.
+%% 
+%%The case of J1817-2508 indicates that the phase-folded light curve itself could be highly deceptive under the circumstance of symmetric dipole structure. We cannot unambiguously determine the true spin period without additional information, e.g., from optical observations. 
+%%
+%%Fortunately, the physical origin of the periodic signal may provide help diagnostics.  The double-peak shape generally only happens in IPs with an accretion column. %The two poles where accretion region lied on, would be the brightest. 
+%%When viewed from a specific angle, the two poles alternatively drift across the front side of the WD, producing the double-peaked shape in the X-ray light curve. In this kind of situation, the modulation period must be the spin period, typically under one hour. 
+%%For comparison, the second harmonics found in the LW sources are mostly above 3 hours, thus they are unlikely to be the true spin period. 
+%%On the other hand, while the WD in polars may have a spin period of few hours due to synchronization with the orbital period, their accretion stream always fall onto a single pole, emitting most of the X-rays. Thus the double-peaked shape is almost impossible in polars. 
+% 
+%%\clearpage
+%%\newpage
 \section{Additional figures of the periodic X-ray sources}\label{appen:fig}
   \begin{figure*}
     \centering
