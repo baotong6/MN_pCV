@@ -198,7 +198,7 @@ We further define for each source an inter-observation {\it variability index}, 
 \end{figure*}
 
 \section{Period Searching Method}\label{sec:methods}
-In this section, we first provide our motivation of employing the Gregory-Loredo (GL) algorithm, followed by a brief description of its basic principles (Section~\ref{subsec:GL}). We then elucidate our application of the GL algorithm to the {\it Chandra} data of the LW (Section~\ref{subsec:appli}). This is complemented by a set of simulations to evaluate the detection (in)completeness of periodic signals (Section~\ref{subsec:simulation}).  
+In this section, we first provide our motivation of employing the Gregory-Loredo (GL) algorithm, followed by an outline of its basic principles (Section~\ref{subsec:GL}). We then describe our application of the GL algorithm to the {\it Chandra} data of the LW (Section~\ref{subsec:appli}). This is complemented by a set of simulations to evaluate the detection (in)completeness of periodic signals (Section~\ref{subsec:simulation}).  
 
 \subsection{The Gregory-Loredo Algorithm} \label{subsec:GL}
 There exists in the literature a variety of period searching methods, which can be broadly divided into three categories according to their working principles. 
@@ -227,7 +227,7 @@ The multiplicity is the number of ways that the binned distribution could have a
 
 In general, the GL algorithm takes the following steps:
 
-(i) Compute the multiplicity for all sets of $(m,\omega, \phi)$ (Eqn.~\ref{multi}). In practice, the highest value of $m$ is set to be 12.
+(i) Compute the multiplicity for all sets of $(m,\omega, \phi)$ (Eqn.~\ref{multi}). In this work, the highest value of $m$ is set to be 12.
 
 (ii) Given $m$, integrate over the $(\omega, \phi)$ space and calculate the so-called ``odds ratio'' using Bayes's theorem (Eqn.~\ref{A16}). The ``odds ratio'' determines the ratio of probabilities between a periodic model and a non-periodic (constant) model.
 
@@ -248,11 +248,11 @@ Nevertheless, we have measured the local background (Section~\ref{subsec:detect}
 %For the sake of changing aimpoint, we used individual source extract region for different observations. Explicitly, the 90\% ECR aperture  whose radius defined by specific PSF map was applied for counts in that observation. Since the phase-folding method directly manipulated each photons and we could not distinguish background photon from source photon, the local background information were not provided for timing analysis. The combination of each source event list and the corresponding epoch were then employed as the input of GL method. 
 
 As mentioned in Section~\ref{subsec:GL}, the GL algorithm folds the time series at a trial frequency (or period). 
-In practice, the resolution of frequency must be compromised between accuracy and computational power. %We choose the frequency range and frequency resolution for the following considerations.
+In practice, the resolution and range of frequency must be compromised between accuracy and computational power. %We choose the frequency range and frequency resolution for the following considerations.
 Thus we restrict our analysis on three period ranges: (300, 3000), (3000, 10000) and (10000, 50000) sec, with a frequency resolution of $10^{-7}$, $10^{-8}$ and $10^{-9}$ Hz, respectively. 
 The period ranges are chosen based on the expectation that most, if not all, detectable periodic X-ray sources in the LW should be CVs. 
-The orbital period distribution of CV is known to exhibit a minimum at around 70 minutes, a gap between 2--3 hours, and a maximum around 10 hours \citep{2003A&A...404..301R}. 
-The second and third period ranges well cover these characteristic periods, whereas the first range probes the spin periods of fast rotating IPs.
+The orbital period distribution of CVs is known to exhibit a minimum at about 70 minutes, a gap between 2--3 hours, and a maximum around 10 hours \citep{2003A&A...404..301R}. 
+The second and third period ranges well cover these characteristic periods, whereas the first range probes the spin period of fast rotating IPs.
 Given the timespan of $\sim10^8$ sec between the first and last ACIS-I observations, the chosen frequency resolutions are optimal for an efficient search of periodic signals.  
 
 %Ideally, the frequency resolution should keep the phase-folded light curve nearly the same between two adjacent frequencies, that is, the same photon falls within the same phase bin.
@@ -293,7 +293,7 @@ Given the timespan of $\sim10^8$ sec between the first and last ACIS-I observati
 \subsection{Detection completeness}\label{subsec:simulation}
 For a given period searching algorithm, the detection rate depends on both the number of observed counts, the intrinsic shape of the light curve, as well as the observing cadence. 
 To quantify the detection rate and hence gain insight on the nature of the periodic sources in the LW, we perform simulations following the merit of \citet{1998ApJ...498..666C}. 
-Two functional forms of light curve are considered: a sinusoidal function and a piecewise function. While these are admittedly idealized shapes, they can represent realistic light curves, e.g., resulted from rotational modulation or eclipse. 
+Two functional forms of light curve are considered: a sinusoidal function and a piecewise function. While these are admittedly idealized shapes, they can represent realistic light curves, e.g., the former resulted from rotational modulation and the latter due to eclipse. 
 
 A sinusoidal light curve follows,
 \begin{equation}
@@ -309,13 +309,13 @@ the adopted total counts well sample the range of observed counts from the LW so
 
 We thus simulate 100 light curves for each combination of parameters, taking into account Poisson errors and the exact start and end times of the 13 ACIS-I observations. The arrival time of each simulated count is further randomly modified by an amount of 3.2 sec to mimic the effect of ACIS frame time.
 The simulated light curve is then searched for a periodic signal using the GL algorithm in the same manner as for the real data (Section~\ref{subsec:appli}).
-We claim a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. 
+We count a valid detection if the found period has a detection probability greater than 90\% and its value consistent with the input period to within 1\%. 
 %Besides, the harmonics have also been considered as valid detection  with the same threshold, i.e, the deviation between determined period and resonance cycle within 1\%.
-We notice that for in a small fraction of simulate light curves of the shortest period (554 sec), the second harmonics (i.e., 2 times the true period) is detected with an even higher probability than the true period. We also consider such cases a valid detection as long as the true period fulfills the above criteria.
+We notice that in a small fraction of simulated light curves of the shortest input period (554 sec), the second harmonics (i.e., 2 times the true period) is detected with an even higher probability than the true period. We also consider such cases a valid detection as long as the true period itself fulfills the above criteria.
 %In our simulation, the effect of harmonics only happens in the first period range due to the selection of parameter value, with fraction of harmonics detection about 20\%, concentrated at higher amplitude.
 %For completeness, we ran the same process at $P$=4000 sec and $P$=20000 sec, adopting $C$=500 and $A_0$=0.9, and found there is no harmonics detection.
 
-The detection rate for a given combination of parameters is taken to be the fraction of the 100 light curves having a valid detection. The top, middle and bottom panels of Figure \ref{fig:detection} show the result of the three test periods, respectively, in which several trends are apparent. 
+The detection rate for a given combination of parameters is taken to be the fraction of the 100 simulated light curves having a valid detection. The top, middle and bottom panels of Figure \ref{fig:detection} show the result of the three test periods, respectively, in which several trends are apparent. 
 First and intuitively, for a given period and amplitude, higher total counts would lead to higher detection rates, while for given total counts, a higher amplitude also leads to a higher detection rate. The simulation results confirm these expectations.  
 Second, for the same total counts and amplitude, the detection rate is generally higher for a longer period.  
 This can be understood as due to a statistical behavior in the 
@@ -331,7 +331,8 @@ Lastly, for total counts of 50, the detection rate is almost always below 10\% r
 \includegraphics[width=\textwidth]{./figure/sim_LW/detection_5540.eps}
 \includegraphics[width=\textwidth]{./figure/sim_LW/detection_45540.eps}
 \end{minipage}
-\caption{Detection rate obtained from simulation results for sinusoidal variation. The results of top, middle, bottom are respectively from modulation period as 554s, 5540s, 45540s. The other two parameters, $A_{0}$ and number of counts, are labeled by x-axis and colors. \label{fig:detection}}
+\caption{Detection rates as a function of relative variation amplitude, based on simulated sinusoidal light curves. The top, middle and bottom panels are for modulation period of 554, 5540 and 45540 sec, respectively. The different colored lines represent different values of total counts, as labeled. See text for details.
+\label{fig:detection}}
 \end{figure}
 
 The piecewise function, which mimics an eclipse against an otherwise constant flux, takes the form of
@@ -349,45 +350,47 @@ We set $f=0.1$ and $w=0.1$ in our simulations, which are not atypical of eclipsi
 We test three values of the period, $P$=5258, 15258 and 45258 sec and adopt trial count rates $\lambda_0 = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15$ and $20\times10^{-4}{\rm~cts~s^{-1}}$.
 For each combination of parameters, 100 simulated light curves are again generated and fed to the GL algorithm. 
 The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. 
-The detection rate is generally higher for a longer period for the aforementioned reason.
-For total counts below $\sim$500, the detection rate is $\lesssim$10\%; only when the total counts approach and exceed $\sim$1500, the detection rates become 100\% for all tested periods. 
+As expected, the detection rate is generally higher for a longer period.
+It can also be seen that for total counts below $\sim$300, the detection rate is $\lesssim$10\% regardless of the period; only when total counts exceed $\sim$1500, the detection rate becomes 100\% for all test periods. 
  
 \begin{figure}
 \centering
 \includegraphics[scale=0.61]{./figure/sim_LW/eclipse_cut.eps}
-\caption{Detection rate obtained from simulation results for eclipsing models. Magenta, red and green denotes for P=45258s, 15258s and 5258s respectively. }\label{fig:eclipse}
+\caption{Detection rates as a function of total counts, based on simulated piecewise light curves. Different colored lines represent different periods, as labeled. See text for details.}\label{fig:eclipse}
 \end{figure}
 
-We have also run simulations to estimate the rate of false detection, which refers to the detection of a periodic signal from a constant light curve. We use a sinusoidal light curve with $P$=5 yr and $A_0$=0.5 to approximate a constant flux with slight variation, finding no detection of periodic signals at any given values of total counts from 50 to 5000. 
-Therefore it seems safe to conclude that the false detection rate is essentially zero for the GL algorithm applied to the LW data. 
+We have also run simulations to estimate the rate of false detection, which refers to the detection of a periodic signal from an intrinsically constant light curve. 
+Considering that most LW sources can have a low-amplitude long-term variation, we approximate a semi-constant light curve with a sinusoidal function with $P$=5 yr and $A_0$=0.5. 
+Simulated light curves are generated with totals counts from 50 to 5000 and fed to the GL algorithm. No false detection of periodic signals, at any value between 300--50000 sec, is found. 
+Therefore, it seems safe to conclude that the false detection rate is essentially zero for the GL algorithm applied to the LW data. 
 
 \section{Period Searching Results}\label{sec:results}
 %\subsection{Filtering detections}
-According to the simulations in Section~\ref{subsec:simulation}, a periodic signal is hard to detect in sources with total counts $C\lesssim$100, even in the case of high variation amplitudes.  
+According to the simulations in Section~\ref{subsec:simulation}, a periodic signal is hard to detect in LW sources with total counts $C<100$, even in the case of high variation amplitudes.  
 Therefore, we restrict our period searching to sources with $C \geq 100$, which include 667 of the 847 sources in the raw list.
 
 Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signals from the three period ranges. However, it is necessary to filter spurious detections, which may be caused by several effects:
 
-(i) By design, the ACIS is dithered to distribute photons over more CCD pixels to avoid pile-up and to fill CCD gaps. The dither period is 706.96 s in pitch and 999.96 s in yaw. Any signal detected at these two periods and their harmonics are thus excluded. These are mostly found in sources located close to CCD gaps, where dithering significantly reduces the number of detected source in a periodic fashion. 
+(i) By design, the ACIS is dithered to distribute photons over more CCD pixels to avoid pile-up and to fill CCD gaps. The dither period is 706.96 s in pitch and 999.96 s in yaw. Any signal detected at these two periods and their harmonics are thus excluded. These are mostly found in sources located close to CCD gaps, where dithering significantly reduces the number of detected counts in a periodic fashion. 
 A related concern is how dithering would affect the detection of genuine periods.  
 We run simulations to test this effect. Specifically, we generate simulated sinusoidal light curves with $P$ = 5072.97 sec and $C$ = 293. 
-This choice is motivated by one particular periodic source (\#5 in Table~\ref{tab:src}), which has a fractional detector coverage of 0.74 (in other words, 26\% of the intrinsic flux is lost due to dithering into the CCD gap), the lowest among all detected periodic sources. The dithering effect is mimicked by artificially removing the simulated counts according to a probability distribution calculated by the CIAO tool \emph{dither\_region}. 
+This choice is motivated by one particular periodic source (\#5 in Table~\ref{tab:src}), which has a fractional detector coverage of 0.74 (in other words, 26\% of the intrinsic flux is lost due to dithering into the CCD gap), the lowest among all valid periodic sources (see below). The dithering effect is mimicked by artificially removing the simulated counts according to a probability distribution calculated by the CIAO tool \emph{dither\_region}. 
 No difference is found in the resultant detection rate, compared to that without dithering. 
 %Out of concern about the dither effect on period searching, we compute the fractional area covered by chips (hereafter FA) for each source in each observation. FA equals 1 when source region are not affected by gaps. After, weighting the FA in total exposure time, we define $\overline{FA}$ for each source. Most of $\overline{FA}$ are beyond 0.9, except for \#5, which is 0.74. Thus we run 100 simulation for this source in two cases. One for no dithering and the other for dithering. It turns out no difference in detection rate. In general, we can neglect the dither effect. 
 
-(ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of double-peak or triple-peak in the phase-folded light curve, provided that the intrinsic signal has a single-peak structure. However, the intrinsic structure might be double-peak, and in such cases it is more difficult to distinguish the true period and the half harmonics (i.e., half the true period). Hence we assume that there is no half harmonics and always take the lowest period among the multiple detections as the true period. This is consistent with the outcome of our simulations (Section~\ref{subsec:simulation}). Appendix~\ref{harmonics} provides more discussions about harmonics.
+(ii) In certain sources, multiple detections can be caused by second and third harmonics of the same intrinsic signal (i.e., 2 and 3 times the true period). These can be easily identified by the sign of double-peak or triple-peak in the phase-folded light curve, provided that the intrinsic signal has a single-peak structure. However, the intrinsic structure might be double-peak, in which case it is more difficult to distinguish between the true period and the half harmonics (i.e., half the true period). Hence we assume that there is no half harmonics in the LW sources and always take the lowest period as the true period. This assumption is supported by our extensive simulations (Section~\ref{subsec:simulation}), in which no half harmonics is found.  Appendix~\ref{harmonics} provides more discussions about harmonics.
 
-(iii) Strong flux variations or outbursts occupying one particular observation can also cause a false periodic signature. This is because the GL algorithm, which analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may "think" there exists a period especially in the third period range. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We thus reanalyze their light curves from two subsets of observations: (i) those covering only the outburst and (ii) those excluding the outburst. For three of them, the tentative period cannot be recovered in either subset. Therefore, these three signals are probably false detections. The remaining source is kept since its period can be recovered in both the outbursting and quiescent epochs.
+(iii) Strong flux variations or outbursts occupying one particular observation can also cause a false periodic signature. This is because the GL algorithm, which analyzes the phase-folded light curve, can be fooled if there were too many photons found in a single observation, producing excess in certain phase bins. In this case the algorithm may ``think'' there exists a period especially in the period range of (10000, 50000) sec. Among the sources with tentative periods, four exhibit a variability index VI$>10$, indicating strong variations. We thus reanalyze their light curves using two subsets of observations: those covering only the outburst and those excluding the outburst. For three of them, the tentative period cannot be recovered in either subset. Therefore, these three are probably fake signals. The remaining source is retained since its period can be recovered in both the outbursting and quiescent subsets.
 
 %\subsection{Confirmed Periods}
 The above filtering thus results in 25 valid periodic signals in 23 sources.
-Among them, 10 periodic signals were reported by \citet{2012ApJ...746..165H} and are confirmed here with the GL algorithm, while the remaining 15 periods are new discoveries (a comparison between our work and \citealp{2012ApJ...746..165H} is addressed in Section~\ref{subsec:compare}). 
+Among them, 10 signals were previously reported by \citet{2012ApJ...746..165H} and are confirmed here with the GL algorithm, while the remaining 15 periods are new discoveries (a comparison between our work and \citealp{2012ApJ...746..165H} is further addressed in Section~\ref{subsec:compare}). 
 The basic information of these periodic sources are listed in Table~\ref{tab:src}, sorted by the order of increasing period. The source locations are marked in Figure~\ref{fig:FoV}.
 
 Two sources each exhibit two different periods, hence we have assigned each of them two IDs: \#1/\#14 and \#21/\#22.  
 The phase-folded light curves at the two modulation periods are shown for source \#1/\#14 in the upper panels of  Figure~\ref{fig:pCV_sample_1} and for source \#21/\#22 in the upper panels of Figure~\ref{fig:pCV_sample_2}. 
 The number of phase bins, between 20 to 50, is chosen to optimally display substructures in the light curve. While the GL algorithm does not rely on quantifying the local background, for comparison we plot in these panels the estimated background level (yellow strip, the width of which represents 1\,$\sigma$ Poisson error; Section~\ref{subsec:detect}). 
-We defer discussion on the shape of the light curve, which contains important information on the nature of the periodic sources, to Section~\ref{subsec:class}. 
+We defer discussions on the shape of the light curve, which contains important information on the nature of the periodic sources, to Section~\ref{subsec:class}. 
  
 The phase-folded light curves are complemented by the long-term, inter-observation light curve, shown in the lower left panel of Figures~\ref{fig:pCV_sample_1} and \ref{fig:pCV_sample_2}, 
 and by the source spectrum (see Section~\ref{sec:spectra}),
@@ -651,7 +654,9 @@ L & $1.33^{+0.12}_{-0.11}$ & 40 (fixed)  & $<0.18$  & $<0.39$ & $2.53^{+1.10}_{-
 \section{Discussion}\label{sec:discussion}
 \subsection{Comparison with previous work} \label{subsec:compare}
 We have detected 25 periodic signals from 23 sources in the LW (Table~\ref{tab:src}). 
-In particular, our detections fully recover the 10 periodic signals from 10 sources found by  \cite{2012ApJ...746..165H}, while the remaining 15 periods are new detections. 
+Our detections fully recover the 10 periodic signals from 10 sources found by  \cite{2012ApJ...746..165H}. 
+As illustrated in the upper panel of Figure~\ref{fig:com}, the measured periods between the two methods agree with each other to within 0.6\% and show no systematic bias.
+The remaining 15 periods are new detections. 
 Since \cite{2012ApJ...746..165H} and this work have used the same set of {\it Chandra} observations, 
 this difference must be owing to the different period searching methods employed.
 
@@ -659,11 +664,11 @@ this difference must be owing to the different period searching methods employed
 %extracted only the several nearby observations, all the observations were applied here for timing analysis. That difference was caused by the mechanisms of methods. 
 which, as described in Section~\ref{subsec:GL}, handles the photometric light curve, while the GL algorithm processes the phase-folded light curve with tolerance for observing gaps. We have applied the LS periodogram to our data in essentially the same way as \cite{2012ApJ...746..165H} and confirmed that only those 10 periods found in their work can be detected by this method. 
 The other 15 periods do not result in a significant detection in the LS periodogram, mainly due to its low efficiency with low-count sources.
-The detection rate is essentially zero for net counts $\lesssim$100 and never exceeds 20\% for net counts of 150, based on the simulations presented in \cite[figure 7 therein]{2012ApJ...746..165H}.
+The detection rate is essentially zero for net counts $\lesssim$100 and never exceeds 20\% for net counts of 150, according to the simulations presented in \citet[figure 7 therein]{2012ApJ...746..165H}.
 
-For comparison, we provide an estimate on the detection rate of the same 10 periodic signals using the GL algorithm. For practical purposes we assume an intrinsic sinusoidal shape (Eqn.~\ref{eqn:sin}), 
-%for which the total counts and period are taken directly from the observed values, whereas the relative amplitude is taken to be $A_{M}={1-R_{\rm min}}/R_{\rm max}$ and $A_{M}=2A_0/({1+A_0})$, where $R_{\rm min} (R_{\rm max})$ is the minimum (maximum) count rate of the folded light curve.
-In \citet{2012ApJ...746..165H}, they got $A_0$ from $A_{\mathrm{rms}}$ depended on Rayleigh statistics.\citep{1983A&A...128..245B,2003ApJ...599..465M}. 
+For comparison, we provide an estimate on the detection rate of the 10 commonly detected periodic signals using the GL algorithm. For practical purposes we assume an intrinsic sinusoidal shape (Eqn.~\ref{eqn:sin}), for which the total counts and period are taken directly from the observed values, whereas the relative amplitude ($A_0$) is taken 
+%to be $A_{M}={1-R_{\rm min}}/R_{\rm max}$ and $A_{M}=2A_0/({1+A_0})$, where $R_{\rm min} (R_{\rm max})$ is the minimum (maximum) count rate of the folded light curve.
+from \citet{2012ApJ...746..165H}, which was  based on the Rayleigh statistics \citep{1983A&A...128..245B,2003ApJ...599..465M}. 
 %The definition of $A_{\mathrm{rms}}$ and the relation between 
 %$A_{\mathrm{rms}}$ and $A_0$, which were taken by \cite{2012ApJ...746..165H}, are described below.
 %\begin{subequations}
@@ -679,30 +684,35 @@ In \citet{2012ApJ...746..165H}, they got $A_0$ from $A_{\mathrm{rms}}$ depended 
 %\end{subequations}
 %where equation \ref{Arms} only works for sinusoidal modulations. N and B represent the total counts in source region and local background respectively. $t_{j}$ and $\phi\left(t_{j}\right)$ refer to the arrival time and phase of each photon. $Z_{1}^{2}$ is the classical Rayleigh statistic method \citep{1983A&A...128..245B,2003ApJ...599..465M}.
 %Though $A_{M}$ depends on the bin size of phase-folded light curve, we still prefer it rather than $A_{rms}$ to get the amplitude, i.e, $A_0$, since the deviation between sinusoidal variation and real shape sometimes made $A_{0}$ exceeds one when it was calculated from $A_{\mathrm{rms}}$. $A_{M}$ is obtained with bin size fixed at 20.
-For each of the 10 sources, 100 simulated light curves are produced and fed to the GL algorithm with $A_{0}$ provided in \citet{2012ApJ...746..165H}.
-Again, we take the 90\% probability threshold and an period accuracy of 1\% to define a valid detection. The percentage of valid detections, $P_{det}$ (see column 9 in Table \ref{tab:src}), is plotted in the upper panel of Figure \ref{fig:com}, compared with the detection rate of LS method, taken from \citet{2012ApJ...746..165H}.
+For each of the 10 signals, 100 simulated light curves are produced and fed to the GL algorithm.
+Again, we take the 90\% probability threshold and a period accuracy of 1\% to define a valid detection. The percentage of valid detections, $P_{\rm det}$ (also listed in column 9 of Table~\ref{tab:src}), is plotted in the upper panel of Figure~\ref{fig:com}, along with the detection rate of the LS periodogram taken from \citet{2012ApJ...746..165H}.
 %For directly comparison, we also ran the simulation based on the same $A_{0}$ defined in \citet{2012ApJ...746..165H} for the ten collective sources, the result of which is also plotted in Figure \ref{fig:com}.
-Clearly, the GL algorithm works better in almost all cases compared to the LS method.
+Clearly, the GL algorithm works better in almost all cases compared to the LS periodogram. 
 
 %The improvement on detecting efficiency and data usage brought more periodic signals than \cite{2012ApJ...746..165H}. Additionally, we operated the simulation not only for sinusoidal variation, but also for eclipsing models to describe the dip in orbital modulation. Combining the simulation results and more than twice the sample, we were allowed to discuss the source properties and the distribution of CVs in galactic bulge region on a better level.
 
-\begin{figure}
-\begin{minipage}[b]{0.45\textwidth}
-\includegraphics[scale=0.5]{./figure/sim_LW/Pdet_com.eps}
-\includegraphics[scale=0.5]{./figure/LW/P_comp.eps}
-\end{minipage}
-\caption{The comparison of efficiency(up) and period determined(down) between two methods. For upper panel, the  H-ID is the sequence number given by \citep{2012ApJ...746..165H}, same as column(6) in Table \ref{tab:src} \label{fig:com}.The detection rate of LS method are taken from Table 2 in \citep{2012ApJ...746..165H}. For lower panel, $P_1$ and $P_2$ denotes for period determined by GL and LS method, respectively.}
-\end{figure}
-\begin{figure}
-\includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
-\caption{The comparison between estimated and the real detected number of sources. \label{fig:NP_sim}}
-\end{figure}
+\begin{figure*}
+%\begin{minipage}[b]{\textwidth}
+\centering
+\includegraphics[width=0.49\textwidth]{./figure/LW/P_comp.eps}
+\includegraphics[width=0.49\textwidth]{./figure/sim_LW/Pdet_com.eps}
+%\end{minipage}
+\caption{Comparison between the periods ({\it Left}) and detection rate ({\it right}) of the 10 signals commonly found by the GL and LS methods. The H-ID is the sequence number given in \cite{2012ApJ...746..165H}, same as listed in column 6 of Table \ref{tab:src}. 
+}
+\label{fig:com}
+\end{figure*}
 
 \subsection{Classifying the periodic X-ray sources}
 \label{subsec:class}
 Despite of source F1, whose luminosity can not be estimated for the uncertain distance, 
 these periodic sources are with luminosities ranged from $\rm 10^{31}$ to $\rm 10^{33}~erg~s^{-1}$, combined with the period distribution, mostly about 1-3 hours. All of these properties suggest that they belong to cataclysmic variables.
 We can barely exclude the probability of these sources being coronally active binaries (ABs), since most ABs are with luminosities lower than $\rm 10^{31}~erg~s^{-1}$ \citep{2006A&A...450..117S}. 
+
+\begin{figure*}
+\centering
+\includegraphics[scale=0.73]{./figure/CV/N_P.eps}
+\caption{The period distribution of the LW sources (dark-blue line), the spin (purple) and orbital (green) periods of IPs ,the periods (sky-blue) of polars and the orbital (red) periods of DNe from the RK catalog \citep{2003A&A...404..301R}, version 7.20). The famous period gap(yellow line) and period minimum(orange dashed line) are also plotted, whose value are taken from \citep{2011ApJS..194...28K}.\label{fig:N_P}}
+\end{figure*}
 
 For source \#1, the width in phase with flux lower than average is about 0.5, longer than the value for \#14, which is about 0.3. This difference holds out the view that the short period caused by rotation with the alternation of accretion column.
 While for source \#21, the weak variation indicates the rotation modulation. And the apparent sharp, narrow eclipsing in \#22 strongly sustain that the orbit modulation with high inclination angle. Considering that the angle between magnetic axis and rotation axis is usually small, it also support for the weak variation of spin modulation.
@@ -712,12 +722,6 @@ While the case is not applicable for source \#24, with luminosity about $\rm 0.7
 
 Before we start to discuss the nature of these periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap. According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm. 
-
-\begin{figure*}
-\centering
-\includegraphics[scale=0.73]{./figure/CV/N_P.eps}
-\caption{The period distribution of the LW sources (dark-blue line), the spin (purple) and orbital (green) periods of IPs ,the periods (sky-blue) of polars and the orbital (red) periods of DNe from the RK catalog \citep{2003A&A...404..301R}, version 7.20). The famous period gap(yellow line) and period minimum(orange dashed line) are also plotted, whose value are taken from \citep{2011ApJS..194...28K}.\label{fig:N_P}}
-\end{figure*}
 
 For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in Section~\ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:pCV_sample_2}. 	While the simultaneous existence of \#21 and \#22 and the 2\% period difference suggest it might be an asynchronous intermediate polar. Besides, the central dip of \#3, \#18 and \#20 are also similar to this circumstance. Since the eclipse happens in nearly all types of CVs, we could only set three as an upper limit of number of DNe in our sample.
 
@@ -736,6 +740,11 @@ Firstly, we assumed that the fraction of polars in the total sample of 667 sourc
 Np_{i}=N_i\times DR \times 25\% \times 667 \times \alpha	
 \end{equation}
 $N_i$ is the product of number of sources detected in the bin. DR denotes the detection rate weighted from simulation. Then we sum all $Np_{i}$ together and force it equals to 20,  getting $\alpha$ about 16\%. The comparison between $Np_{i}$ and the real detected 20 periodic sources(two determined IPs and one foreground source excluded) are plotted in Figure \ref{fig:NP_sim}. The perfect agreement between their population proves the validity of estimation.
+
+\begin{figure}
+\includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
+\caption{The comparison between estimated and the real detected number of sources. \label{fig:NP_sim}}
+\end{figure}
 
 Since the real luminosity function should be gentle than that of  total sample, which means there could be more polars at the bright band, then it demanding lower numbers of polar to balance the high detection rate for bright sources. Besides, with the intrinsic fraction (25\% as the lower limit) increasing, the $\alpha$ decreasing.
 In general, the 16\% should be treated as the upper limit for polars, especially when we considered all the 20 sources(already excluding the two IPs) are polars. 
@@ -901,17 +910,26 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
 \caption{The top left and bottom left panel show the folded light curve of LW 6, at true period and second harmonics, respectively. The top right and bottom right panel display the folded light curve of J1817-2508. While for this source, the double-peaked shape (bottom right) at 1660s are the real signal of rotation. \label{fig:6thfig}}
 \end{figure*}
 \indent
-To determine the intrinsic period, whether it's rotation period or orbital period, from primary period and harmonics, we should not focus on data and the significance of signals. In that the intensities of signals could not reflect the authenticity of the signal precisely. For the sake of  identification, the physical mechanism of period in CVs must be introduced. 
+To distinguish the fundamental period--whether it is the spin period or orbital period---from the harmonics, the significance of the signal is not the sufficient condition. 
+%In that the intensities of signals could not reflect the authenticity of the signal precisely.
+%Rather, the physical mechanism of period in CVs must be introduced. 
+Here we take source \#6 as an illustration. This source has two detected periods both exceeding the 90\% probability threshold. 
+The phase-folded light curves of the fundamental period and the second harmonics, plotted in the top panels of Figure \ref{fig:6thfig}, show a classical single-peak and double-peak shape, respectively. 
 
-Here we take the 6th signal as an illustration, the phase-folded light curve of primary period and second harmonic show classic  single-peak shape and double-peak shape, see the left two panels in Figure \ref{fig:6thfig}. For comparison, we also present the phase-folded light curve of J1817-2508 based on XMM-Newton observations (obsID=0601270301).
-We processed the EPIC PN and MOS data with the standard tool \emph{emchain} and \emph{epchain} in SAS v18.0.0. Similarly, the arrival time of photons were corrected at the Solar barycenter  by applying the task \emph{barycen}.
-Then we extract the 0.2-10 keV light curve and folded it from PN data for it has the largest effective area.
+For comparison, we present the phase-folded light curves of J1817-2508 {\bf (what is this source?)} (lower panels of Figure~\ref{fig:6thfig}), based on an {\it XMM-Newton} observation (obsID=0601270301) with an exposure of ?? ks.
+We processed the EPIC/PN data with the standard tool \emph{emchain} and \emph{epchain} in SAS v18.0.0. The MOS data were neglected for simplicity.
+The photon arrival times were corrected to the Solar barycenter by applying the task \emph{barycen}.
+We then extracted the 0.2-10 keV counts of J1817-2508 from an enclosed energy fraction of ??\% (or a circle of ??$\arcsec$).
 
- The J1817-2508, which was also called IGR J18173-2509, has been determined with pulsation at 830.70s from Swift-XRT detection. Then the signal of 1660s has also been detected from Chandra observation \citep{2009ATel.2354....1N} and the optical period of 1690s \citep{2012A&A...542A..22B}. All the above strongly suggests that the true spin period is about 1660s, twice the first detected X-ray period, even though the two peaks in modulation are quite similar, as shown in the lower right panel in Figure \ref{fig:6thfig}.
+J1817-2508, also known as IGR J18173-2509, was first found to exhibit a periodic signal at 830.70 sec by {\it Swift}-XRT observations (reference?). An additional periodic signal of 1660 sec was detected by {\it Chandra} observations \citep{2009ATel.2354....1N}; a slightly larger period at 1690 sec was found by optical observations \citep{2012A&A...542A..22B}. 
+Together these strongly suggest that the true spin period is about 1660 sec, twice the {\it Swift}-detected period, even though when folded at the second harmonics the light curve exhibits two highly similar peaks, as shown in the lower right panel of Figure~\ref{fig:6thfig}.
  
- The properties of J1817-2508 indicates that phase-folded light curve could be extremely deceptive under the circumstances that sources with symmetric dipole structure. We could not precisely determine the true rotation period without optical observations. However, the physical origins of periodic signals may provide additional constrains on the judgement. The double-peak shape only happens in IP with accretion column model. The two poles where accretion region lied on, would be the brightest. When we look at them at a specific angle, the two poles alternatively flitting across the face of WDs, and then produce the double-peaked pulsation. In this kind of situation, the modulation period must be the rotation period of WDs, mostly under one hour. While the second harmonics of our sources, are mostly beyond 3 hours. It would be a risky assumption if these harmonics served as spin period. On the other hand, despite the WDs in polars may have such long rotation period from synchronization effect, their accretion stream always falls on the single pole, emitting most of the soft X-ray radiation. Then the double-peaked pulsation are almost impossible. 
+The case of J1817-2508 indicates that the phase-folded light curve itself could be highly deceptive under the circumstance of symmetric dipole structure. We cannot unambiguously determine the true spin period without additional information, e.g., from optical observations. Fortunately, the physical origin of the periodic signal may provide help diagnostics.  The double-peak shape generally only happens in IPs with an accretion column. %The two poles where accretion region lied on, would be the brightest. 
+When viewed from a specific angle, the two poles alternatively drift across the front side of the WD, producing the double-peaked shape in the X-ray light curve. In this kind of situation, the modulation period must be the spin period, typically under one hour. 
+For comparison, the second harmonics found in the LW sources are mostly above 3 hours, thus they are unlikely to be the true spin period. 
+On the other hand, while the WD in polars may have a spin period of few hours due to synchronization with the orbital period, their accretion stream always fall onto a single pole, emitting most of the X-rays. Thus the double-peaked shape is almost impossible in polars. 
  
- In conclusion, according to the length of period in our sources, we took the single-peaked signal, normally the shortest period, as the real orbital period. The double-peaked shape in harmonics are treated as spurious signal. 
+For the above reasons, we preferentially take the single-peaked signal, normally due to the shortest period, as the true period. The second harmonics leading to a double-peaked shape is treated as a spurious period. 
 %\clearpage
 %\newpage
 \section{Additional figures of the periodic X-ray sources}\label{appen:fig}
