@@ -841,98 +841,105 @@ We thank Xiaojie Xu and Zhenlin Zhu for helpful discussions. This work is suppor
 %\onecolumn
 \appendix
 \section{A brief introduction to the Gregory-Loredo algorithm}\label{GL}
-The basic rules for Bayesian probabilities are the sum rule:
+The basic rules for Bayesian probabilities are the sum rule,
 \begin{equation}
-p(H_i|I)+p(\bar{H_i}|I)	=1
+p(H_i|I)+p(\bar{H_i}|I)	=1,
 \end{equation}
-And the product rule:
+and the product rule,
 \begin{equation}\label{2.2}
-p(H_i,D|I)=p(H_i|I)\cdot p(D|H_i,I)=p(D|I)\cdot p(H_i|D,I)
+p(H_i,D|I)=p(H_i|I)\cdot p(D|H_i,I)=p(D|I)\cdot p(H_i|D,I).
 \end{equation}
-From equation \ref{2.2} we could easily derive Bayes's theorem.
+From Eqn.~\ref{2.2} we can derive Bayes's theorem,
 \begin{equation}\label{2.5} 
-p(H_i|D,I)=p(H_i|I)\cdot {p(D|H_i,I)\over p(D|I)}
+p(H_i|D,I)=p(H_i|I)\cdot {p(D|H_i,I)\over p(D|I)}.
 \end{equation}
-The symbols in this work follow the same expression used in \citep{1992ApJ...398..146G}. Throughout this work, these symbols could be briefly practically understood. $H_i$ signifies model, $D$ signifies dataset, $I$ represents the ensemble of all the hypotheses considered i.e. all the model used.
-GL method employs piecewise function for periodic signal. Each model has $(m+2)$ parameters: angular frequency $\omega={2\pi/P}$, P represents period; phase parameter $\phi$; and m values $r_j$, signifies the counts rate in each phase bin where j=1 to m. The following we replace $H_i$ with $M_i$ to denote the model where $i$ represents the number of bins in piecewise model. Then the Bayes's theorem can be written as:
+The symbols here follow \cite{1992ApJ...398..146G}. Specifically, $p$ is the Bayesian posterior probability, $H_i$ denotes the $i$-th hypothesis, $D$ for the data, and $I$ for the ensemble of all hypotheses, i.e.， all the models used.
+The GL algorithm employs a stepwise function to detect periodic signal. Each model has $(m+2)$ parameters: the angular frequency $\omega={2\pi/P}$ ($P$ is the period), the phase parameter $\phi$, and $m$ values of $r_j$, which denotes the count rate in each phase bin where $j$=1 to $m$. In the following we replace $H_i$ by $M_i$ to denote the model where $i$ represents the number of bins in the stepwise model. Then the Bayes's theorem can be written as,
  \begin{equation}\label{2.11}
- p(M_i|D,I)=p(M_i|I)\cdot {p(D|M_i,I)\over p(D|I)}
+ p(M_i|D,I)=p(M_i|I)\cdot {p(D|M_i,I)\over p(D|I)}.
  \end{equation} 
-We could write $I=M_1+M_2+M_3+\cdots$, where ``+'' stands for ``or''. Thus the proposition ($M_i$,I) is true if and only if model $M_i$ is true i.e. ($M_i$,I) = $M_i$. GL method defines odds ratio to make the model comparison.
+We can write $I=M_1+M_2+M_3+\cdots$, where ``+'' stands for ``or''. Thus the proposition ($M_i$, $I$) is true if and only if model $M_i$ is true, i.e. ($M_i$, $I$) = $M_i$. The GL algorithm defines an odds ratio for model comparison,
 \begin{equation}\label{2.12}
 O_{ij}={p(M_i|D,I)\over p(M_j|D,I)}={p(M_i|I)\over p(M_j|I)}\cdot {p(D|M_i)\over p(D|M_j)}
 \end{equation}
-Note that $M_1$ means constant model, $M_i$(i=2,3,4 $\cdots N_{mod}$, where $N_{mod}$ is the total number of models considered.) represents periodic model. The probabilities for each model can be deduced by \ref{2.12}
+Note that $M_1$ means a constant model, $M_i$ ($i$=2,3,4...$N_{\rm mod}$, where $N_{\rm mod}$ is the total number of models considered) represents a periodic model. The probability for each model can be deduced from Eqn.~\ref{2.12},
 \begin{equation}\label{6}
-p(M_i|D,I)=O_{i1}\cdot p(M_1|D,I)
+p(M_i|D,I)=O_{i1}\cdot p(M_1|D,I),
 \end{equation}
+thus
 \begin{equation}\label{7}
-p(M_1|D,I)={{\sum_{j=1}^{N_{mod}} p(M_j|D,I)}\over {\sum_{j=1}^{N_{mod}} O_{j1}}}
-={1\over {\sum_{j=1}^{N_{mod}} O_{j1}}}	
+p(M_1|D,I)={{\sum_{j=1}^{N_{\rm mod}} p(M_j|D,I)}\over {\sum_{j=1}^{N_{\rm mod}} O_{j1}}}
+={1\over {\sum_{j=1}^{N_{\rm mod}} O_{j1}}}.
 \end{equation}
-Substitute \ref{7} into \ref{6}, we got
+Substituting Eqn.~\ref{7} into Eqn.~\ref{6}, we have
 \begin{equation}\label{2.13}
-p(M_i|D,I)={O_{i1}\over {\sum_{j=1}^{N_{mod}} O_{j1}}}
+p(M_i|D,I)={O_{i1}\over {\sum_{j=1}^{N_{\rm mod}} O_{j1}}}.
 \end{equation}
-Then the probability that the signal is periodic is :
+Then the probability of a periodic signal is
 \begin{equation}\label{5.2}
-p(M_m(m>1)|D,I)={{\sum_{m=2}^{m_{max}} O_{m1}}\over {1+\sum_{m=2}^{m_{max}} O_{m1}}}
+p(M_m(m>1)|D,I)={{\sum_{m=2}^{m_{\rm max}} O_{m1}}\over {1+\sum_{m=2}^{m_{\rm max}} O_{m1}}},
 \end{equation}
-The odds ratio can be calculated by the probability for model:
+where $m_{\rm max}$ is the maximum value of $m$.
+The odds ratio can be calculated from the probability of the model,
 \begin{equation}
-O_{m1}={{p(M_m|D.I)}\over {p(M_1|D.I)}}
+O_{m1}={{p(M_m|D,I)}\over {p(M_1|D,I)}}.
 \end{equation}
-Using Bayes's theorem shown as \ref{2.11},
+Using Bayes's theorem (Eqn.~\ref{2.11}), 
 \begin{equation}\label{11}
-O_{m1}={{p(M_m|I)\cdot p(D|M_m)}\over {p(M_1|I)\cdot p(D|M_1)}}
+O_{m1}={{p(M_m|I)\cdot p(D|M_m)}\over {p(M_1|I)\cdot p(D|M_1)}}.
 \end{equation}
-Following the same assignment by \citep{1992ApJ...398..146G}, we also consider the probability of periodic and aperiodic signals are the same. Then the priors for model can be written explicitly as :
+Following the assignment by \citet{1992ApJ...398..146G}, we assume that the periodic and aperiodic signals have the same probability. Then the priors for the models can be written explicitly as,
 \begin{equation}\label{12}
-p(M_1|I)={1\over 2}	
+p(M_1|I)={1\over 2},	
 \end{equation}
 \begin{equation}\label{13}
-p(M_m|I)={1\over {2\nu}}	, \quad \nu =m_{max}-1
+p(M_m|I)={1\over {2\nu}}, \quad \nu =m_{\rm max}-1.
 \end{equation}
-Since the essence of the algorithm is not our subject, we directly introduce the Eqn.~ 5.27 in \citep{1992ApJ...398..146G} as follows. It must be emphasized that this equation worked for the situation when the period and phase are both unknown. 
+
+For astronomical data of Poisson distribution, it can be shown that (Equation 5.27 in \citealp{1992ApJ...398..146G}),
 \begin{equation}\label{5.27}
 \begin{split}
-p(D|M_m)={{{\Delta t}^N (m-1)! N! \gamma(N+1,A_{max})T}\over{2\pi A_{max} (N+m-1)!T^{N+1} \ln(\omega_{hi}/\omega_{lo})}}\\
-\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}}	
+p(D|M_m)={{{\Delta t}^N (m-1)! N! \gamma(N+1,A_{\rm max})T}\over{2\pi A_{\rm max} (N+m-1)!T^{N+1} \ln(\omega_{\rm hi}/\omega_{\rm lo})}}\\
+\times {\int_{\omega_{\rm lo}}^{\omega_{\rm hi}}}{{d\omega}\over{\omega}}\times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}},	
 \end{split}
 \end{equation}
-Substituting $m=1$ into \ref{5.27}, we got:
+where $\omega_{\rm lo}$ and $\omega_{\rm hi}$ are the lower and upper bounds of the frequency range.
+It should be emphasized that the above equation holds for the case in which the period and phase are both unknown.
+Substituting $m=1$ into Eqn.~\ref{5.27}, we have
 \begin{equation}\label{15}
-p(D|M_1)={{{\Delta t}^N N!\gamma(N+1,A_{max})T}\over {A_{max}N!T^{N+1}}}
+p(D|M_1)={{{\Delta t}^N N!\gamma(N+1,A_{\rm max})T}\over {A_{\rm max}N!T^{N+1}}}.
 \end{equation}
-Substituting \ref{12}, \ref{13}, \ref{5.27}, \ref{15} into \ref{11}, the odds ratio could be written as follows, which is the same as equation 5.28 in GL method:
+Substituting Eqns.~\ref{12}, \ref{13}, \ref{5.27} and \ref{15} into Eqn.~\ref{11}, the odds ratio can be written as follows, which is the same as Equation 5.28 in \cite{1992ApJ...398..146G},
 \begin{equation}\label{A16}
 \begin{split}
-O_{m1}={1\over{2\pi \nu \ln(\omega_{hi}/\omega_{lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\\
+O_{m1}={1\over{2\pi \nu \ln(\omega_{\rm hi}/\omega_{\rm lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{\omega_{\rm lo}}^{\omega_{\rm hi}}}{{d\omega}\over{\omega}}\\
 \times {\int_0^{2\pi}d\phi{m^N\over W_m(\omega,\phi)}} 
 \end{split}
 \end{equation}
 
-In astronomical dataset, the observation always brings data gaps. For example, when the period is long and the exposure time for single observation is low, different bins may not be covered fairly. Then the initial assumptions above mentioned may fail, leading to some fake detections especially at low frequencies. In appendix B to \citep{1992ApJ...398..146G}, a solution to this problem has been proposed. They defined a weighting factor $S(\omega,\phi)$, where ${\tau_{j}(\omega,\phi)}$ signifies the exposure time in each bin:
+Astronomical data are often subject to observational gaps. %For example, when the period is long and the exposure time for single observation is low, different bins may not be covered fairly. 
+This may result in unevenly covered phase bins, leading to spurious detections especially at low frequencies. \cite{1992ApJ...398..146G} provides a solution to this problem, by introducing a weighting factor 
 \begin{equation}\label{A17}
-S(\omega,\phi)={\prod_{j=1}^m s_j^{-n_j}}
+S(\omega,\phi)={\prod_{j=1}^m s_j^{-n_j}},
 \end{equation}
 \begin{equation}
-s_j(\omega,\phi)={{\tau_{j}(\omega,\phi)}\over {T/m}}
+s_j(\omega,\phi)={{\tau_{j}(\omega,\phi)}\over {T/m}},
 \end{equation}
-Then the odds ratio should be modified as:
+where $T$ is the total time span between the first and last photons and ${\tau_{j}(\omega,\phi)}$ denotes the exposure time in each phase bin.
+Then the odds ratio should be modified as,
 \begin{equation}\label{A19}
 \begin{split}
-O_{m1}={1\over{2\pi \nu \ln(\omega_{hi}/\omega_{lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{w_{lo}}^{w_{hi}}}{{d\omega}\over{\omega}}\\
-\times {\int_0^{2\pi}d\phi{S(\omega,\phi)m^N\over W_m(\omega,\phi)}}
+O_{m1}={1\over{2\pi \nu \ln(\omega_{\rm hi}/\omega_{\rm lo})}} {{N+m-1}	\choose N}^{-1}\times {\int_{\omega_{\rm lo}}^{\omega_{\rm hi}}}{{d\omega}\over{\omega}}\\
+\times {\int_0^{2\pi}d\phi{S(\omega,\phi)m^N\over W_m(\omega,\phi)}}.
 \end{split} 
 \end{equation}
-Ultimately, the probability of whether the dataset is periodic is:
+Ultimately, the probability of whether the dataset is periodic is,
 \begin{equation}\label{A20}
-p(periodic)={{\sum_{m=2}^{m_{max}} O_{m1}}\over {1+\sum_{m=2}^{m_{max}} O_{m1}}}
+p({\rm periodic})={{\sum_{m=2}^{m_{\rm max}} O_{m1}}\over {1+\sum_{m=2}^{m_{\rm max}} O_{m1}}}.
 \end{equation}
-The posterior probability of the frequency indicates the period of the signal:
+The posterior probability of the frequency contains the period of the signal,
 \begin{equation}\label{A21}
-O_{m1}(\omega)={1\over{2\pi \nu}} {{N+m-1}	\choose N}^{-1} \times {\int_0^{2\pi}d\phi{S(\omega,\phi)m^N\over W_m(\omega,\phi)}} 
+O_{m1}(\omega)={1\over{2\pi \nu}} {{N+m-1}	\choose N}^{-1} \times {\int_0^{2\pi}d\phi{S(\omega,\phi)m^N\over W_m(\omega,\phi)}}.
 \end{equation}
 The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest value.
 
