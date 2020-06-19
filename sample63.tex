@@ -253,7 +253,7 @@ As mentioned in Section~\ref{subsec:GL}, the GL algorithm folds the time series 
 In practice, the resolution and range of frequency must be compromised between accuracy and computational power. %We choose the frequency range and frequency resolution for the following considerations.
 Thus we restrict our analysis on three period ranges: (300, 3000), (3000, 10000) and (10000, 50000) sec, with a frequency resolution of $10^{-7}$, $10^{-8}$ and $10^{-9}$ Hz, respectively. 
 The period ranges are chosen based on the expectation that most, if not all, detectable periodic X-ray sources in the LW should be CVs. 
-The orbital period distribution of CVs is known to exhibit a minimum at about 70 minutes, a gap between 2--3 hours, and a maximum around 10 hours \citep{2003A&A...404..301R}. 
+The orbital period distribution of CVs is known to exhibit a minimum at about 82 minutes, a gap between 2--3 hours, and a maximum around 10 hours \citep{2003A&A...404..301R}. 
 The second and third period ranges well cover these characteristic periods, whereas the first range probes the spin period of fast rotating IPs.
 Given the timespan of $\sim10^8$ sec between the first and last ACIS-I observations, the chosen frequency resolutions are optimal for an efficient search of periodic signals.  
 
@@ -720,14 +720,14 @@ Clearly, the GL algorithm works better in almost all cases compared to the LS pe
 While it is generally difficult to unambiguously identify the nature of an X-ray source without knowing its optical counterpart, which is the case for most LW sources, the X-ray temporal and spectral properties of the 23 periodic sources contain useful information that actually allow for a reasonable classification for many of them. 
 First of all, all but one (\#25) of these sources are found in the 1--8 keV luminosity range of $10^{31}-10^{33}\rm~erg~s^{-1}$ (Table~\ref{tab:spec}), which is typical of CVs. 
 On the contrary, coronally active binaries (ABs), which are thought to dominate the number of detectable X-ray sources in the LW \citep{2009Natur.458.1142R}, generally have unabsorbed X-ray luminosities below $\rm 10^{31}~erg~s^{-1}$ \citep{2006A&A...450..117S}. 
-This stems from the empirical fact that the coronal X-ray emission from low-mass stars saturates at $\sim$10$^{-3}$ of the bolometric luminosity {\bf (G{\"u}del 2004)}
+This stems from the empirical fact that the coronal X-ray emission from low-mass stars saturates at $\sim$10$^{-3}$ of the bolometric luminosity \citep{2004A&ARv..12...71G}.
 The X-ray spectra of these sources are less informative, since except in one case (\#21/\#22) they lack the unambiguous sign of Fe lines due to the moderate S/N (Section~\ref{sec:spectra}), which otherwise would be another characteristic signature of CVs (e.g., \citealp{2016ApJ...818..136X}).
 Nevertheless, most of these sources do show a very hard continuum that are again typical of CVs, although this could be partly owing to the fact that our parent source list is based on the 2--8 keV band (Section~\ref{subsec:detect}).
 Furthermore, the vast majority of the detected periods fall between 1--4 hours, which are also consistent with the known period range of CVs in the solar neighborhood \citep{2003A&A...404..301R}, as illustrated in Figure~\ref{fig:N_P}.
-Therefore, the global X-ray properties point to CVs dominating the detected periodic sources, a conclusion also drawn by \citet{2012ApJ...746..165H}.
+Therefore, the global X-ray properties point to CVs dominating the detected periodic sources, a conclusion also drawn by \cite{2012ApJ...746..165H}.
 
 It will then be interesting to ask to which sub-class of CVs these periodic sources belong. The phase-folded light curves may provide useful hints to this question. 
-In magnetic CVs, including polars and IPs, their orbital and spin modulations can give rise to a complex light curve. For polars, let us consider the simplistic situation in which hard X-rays (photon energy $\gtrsim$1 keV) are produced in only one of the two magnetic poles\footnote{In this picture, accretion can still take place in the other pole, in fact, at a much higher accretion rate, producing quasi-black-body emission peaking at the soft X-ray and extreme ultraviolet bands {\bf (Hellier book)}.}. 
+In magnetic CVs, including polars and IPs, their orbital and spin modulations can give rise to a complex light curve. For polars, let us consider the simplistic situation in which hard X-rays (photon energy $\gtrsim$1 keV) are produced in only one of the two magnetic poles\footnote{In this picture, accretion can still take place in the other pole, in fact, at a much higher accretion rate, producing quasi-black-body emission peaking at the soft X-ray and extreme ultraviolet bands \citep{2001cvs..book.....H}.} 
 %Then the shape of light curve would be divided into two groups.
 Denoting $i$ the angle between the line-of-sight and the spin axis, $\beta$ the angle between the spin and magnetic axes, and $\epsilon$ the magnetic colatitude of the accretion column, when $i+\beta+\epsilon > 90^{\circ}$, the two poles will alternately drift across the front side of the WD. 
 The resultant light curve will look like that of source \#6 , \#8 and \#10, with nearly half of the cycle showing no significant hard X-ray emission \citep{1985A&A...148L..14H}. 
@@ -738,9 +738,10 @@ On the other hand, if $i+\beta+\epsilon < 90^{\circ}$ and $\beta < i$, the hard 
 
 IPs share the above one-pole or two-pole behavior. 
 In addition, the orbital modulation can result in eclipse of the WD by the companion star \citep{1993MNRAS.260..299H}, by the accretion stream, or by the ``disc overflow'' \citep{1996MNRAS.280..937N}. 
-Thus the light curve shape of IPs are complex and can exhibit both sinusoidal variations and dips,  Examples of this kind are found in sources \#2, \#3, \#7, \#11, \#18 and \#20
+Thus the light curve shape of IPs are complex and can exhibit both sinusoidal variations and dips,  Examples of this kind are found in sources \#2, \#3, \#7, \#11, \#18 and \#20.
+
 %seem to possess sinusoidal variations plus dips at occasional phase, better be explained as orbital variation with obscuration by the accretion stream.
-In addition, source \#19, which has the highest X-ray luminosity with only moderate sinusoidal variation, is most likely an IP.
+In addition, source \#19, which has the highest X-ray luminosity with only moderate sinusoidal variation, is most likely the orbital modulation of an IP.
 
 The most robust identification of IPs is to detect both the spin and orbital periods. Among our sources, \#1 (\#14) and \#21 (\#22) show two different periods.
 For \#1, the period is 853.8 sec and the corresponding phase-folded light curve is consistent with the one-pole behavior (Figures~\ref{fig:pCV_sample_1}). This is naturally understood in terms of a spin modulation. 
@@ -750,10 +751,11 @@ The light curve of \#22 exhibits a narrow dip near phase 0.5 (Figure~\ref{fig:pC
 On the other hand, the light curve of \#21 shows only gentle variation and is best understood as due to spin modulation. 
 Considering that the angle between the magnetic and spin axes ($\beta$) is usually small, the moderate variation also makes sense.
 In this regard, source \#21/\#22 is probably an IP or a so-called asynchronous polar. 
-{\bf [Comment on the non-detection of spin period for the IP candidates? \#2 is more likely the spin period. Why no orbital period?]}
+
+In addition to these two, for source \#2, the determined period is not only lower than 82 minutes (obtained from observation, \citet{2009MNRAS.397.2170G}), but also below the theoretical period minimum in the standard model, i.e., 65 minutes \citep{2011ApJS..194...28K}. Thus we consider it is more likely to be the spin period of an IP. While the miss of its orbital period detection could arisen from low inclination angle. 
+Generally, the poor detection of spin period for IP candidates brings about the uncertainty for IP identification. It could mostly be resulted from the lower detection rate for short period, as demonstrated in \ref{subsec:simulation}.
 
 For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in Section~\ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:pCV_sample_2}. While the simultaneous existence of \#21 and \#22 and the 5\% period difference suggest it might be an intermediate polar. Except for this, No more clear sign of eclipse are found in these sources, indicating nearly no DNe detected in our sample. It could be explained by the lower detection rate of eclipse-model in Section \ref{subsec:simulation}. 
-%Besides, the central dip of \#3, \#18 and \#20 are also similar to this circumstance. Since the eclipse happens in nearly all types of CVs, we could only set three as an upper limit of number of DNe in our sample.
 
 Lastly, we remark on the possible non-CV source \#25. This source has an unabsorbed 1--8 keV luminosity of $\rm 7.5 \times 10^{30}~erg~s^{-1}$, the lowest among all 23 sources. Its X-ray spectra, characterized by a best-fit plasma temperature of 2.3 keV (notably with large uncertainties; Table~\ref{tab:spec}), is also the softest among all sources.
 These values are more typical of ABs. 
