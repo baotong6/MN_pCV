@@ -853,7 +853,8 @@ From Eqn.~\ref{2.2} we can derive Bayes's theorem,
 \begin{equation}\label{2.5} 
 p(H_i|D,I)=p(H_i|I)\cdot {p(D|H_i,I)\over p(D|I)}.
 \end{equation}
-The symbols here follow \cite{1992ApJ...398..146G}. Specifically, $p$ is the Bayesian posterior probability, $H_i$ denotes the $i$-th hypothesis, $D$ for the data, and $I$ for the ensemble of all hypotheses, i.e.， all the models used.
+The symbols here follow \citep{1992ApJ...398..146G}.
+Specifically, $p$ is the Bayesian posterior probability, $H_i$ denotes the $i$-th hypothesis, $D$ for the data, and I for the ensemble of all hypotheses, i.e., all the model used.
 The GL algorithm employs a stepwise function to detect periodic signal. Each model has $(m+2)$ parameters: the angular frequency $\omega={2\pi/P}$ ($P$ is the period), the phase parameter $\phi$, and $m$ values of $r_j$, which denotes the count rate in each phase bin where $j$=1 to $m$. In the following we replace $H_i$ by $M_i$ to denote the model where $i$ represents the number of bins in the stepwise model. Then the Bayes's theorem can be written as,
  \begin{equation}\label{2.11}
  p(M_i|D,I)=p(M_i|I)\cdot {p(D|M_i,I)\over p(D|I)}.
