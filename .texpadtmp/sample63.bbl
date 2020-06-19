@@ -22,14 +22,6 @@
 {Aigrain} S.,  {Favata} F.,  2002, \mn@doi [\aap] {10.1051/0004-6361:20021290},
   \href {https://ui.adsabs.harvard.edu/abs/2002A&A...395..625A} {395, 625}
 
-\bibitem[\protect\citeauthoryear{{Bernardini}, {de Martino}, {Falanga},
-  {Mukai}, {Matt}, {Bonnet-Bidaud}, {Masetti}  \& {Mouchet}}{{Bernardini}
-  et~al.}{2012}]{2012A&A...542A..22B}
-{Bernardini} F.,  {de Martino} D.,  {Falanga} M.,  {Mukai} K.,  {Matt} G.,
-  {Bonnet-Bidaud} J.~M.,  {Masetti} N.,   {Mouchet} M.,  2012, \mn@doi [\aap]
-  {10.1051/0004-6361/201219233}, \href
-  {https://ui.adsabs.harvard.edu/abs/2012A&A...542A..22B} {542, A22}
-
 \bibitem[\protect\citeauthoryear{{Buccheri} et~al.,}{{Buccheri}
   et~al.}{1983}]{1983A&A...128..245B}
 {Buccheri} R.,  et~al., 1983, \aap, \href
@@ -56,10 +48,20 @@
 {Edelson} R.~A.,  {Krolik} J.~H.,  1988, \mn@doi [\apj] {10.1086/166773}, \href
   {https://ui.adsabs.harvard.edu/abs/1988ApJ...333..646E} {333, 646}
 
+\bibitem[\protect\citeauthoryear{{G{\"a}nsicke} et~al.,}{{G{\"a}nsicke}
+  et~al.}{2009}]{2009MNRAS.397.2170G}
+{G{\"a}nsicke} B.~T.,  et~al., 2009, \mn@doi [\mnras]
+  {10.1111/j.1365-2966.2009.15126.x}, \href
+  {https://ui.adsabs.harvard.edu/abs/2009MNRAS.397.2170G} {397, 2170}
+
 \bibitem[\protect\citeauthoryear{{Gregory} \& {Loredo}}{{Gregory} \&
   {Loredo}}{1992}]{1992ApJ...398..146G}
 {Gregory} P.~C.,  {Loredo} T.~J.,  1992, \mn@doi [\apj] {10.1086/171844}, \href
   {https://ui.adsabs.harvard.edu/abs/1992ApJ...398..146G} {398, 146}
+
+\bibitem[\protect\citeauthoryear{{G{\"u}del}}{{G{\"u}del}}{2004}]{2004A&ARv..12...71G}
+{G{\"u}del} M.,  2004, \mn@doi [\aapr] {10.1007/s00159-004-0023-2}, \href
+  {https://ui.adsabs.harvard.edu/abs/2004A&ARv..12...71G} {12, 71}
 
 \bibitem[\protect\citeauthoryear{{Hailey} et~al.,}{{Hailey}
   et~al.}{2016}]{2016ApJ...826..160H}
@@ -71,6 +73,9 @@
 {Heise} J.,  {Brinkman} A.~C.,  {Gronenschild} E.,  {Watson} M.,  {King} A.~R.,
    {Stella} L.,   {Kieboom} K.,  1985, \aap, \href
   {https://ui.adsabs.harvard.edu/abs/1985A&A...148L..14H} {148, L14}
+
+\bibitem[\protect\citeauthoryear{{Hellier}}{{Hellier}}{2001}]{2001cvs..book.....H}
+{Hellier} C.,  2001, {Cataclysmic Variable Stars}
 
 \bibitem[\protect\citeauthoryear{{Hellier}, {Garlick}  \& {Mason}}{{Hellier}
   et~al.}{1993}]{1993MNRAS.260..299H}
@@ -129,18 +134,17 @@
 {Muno} M.~P.,  et~al., 2009, \mn@doi [\apjs] {10.1088/0067-0049/181/1/110},
   \href {https://ui.adsabs.harvard.edu/abs/2009ApJS..181..110M} {181, 110}
 
-\bibitem[\protect\citeauthoryear{{Nichelli}, {Israel}, {Moretti}, {Campana},
-  {Bernabei}, {Mason}, {G{\"o}tz}  \& {Stella}}{{Nichelli}
-  et~al.}{2009}]{2009ATel.2354....1N}
-{Nichelli} E.,  {Israel} G.~L.,  {Moretti} A.,  {Campana} S.,  {Bernabei} S.,
-  {Mason} E.,  {G{\"o}tz} D.,   {Stella} L.,  2009, The Astronomer's Telegram,
-  \href {https://ui.adsabs.harvard.edu/abs/2009ATel.2354....1N} {2354, 1}
-
 \bibitem[\protect\citeauthoryear{{Norton}, {Beardmore}  \& {Taylor}}{{Norton}
   et~al.}{1996}]{1996MNRAS.280..937N}
 {Norton} A.~J.,  {Beardmore} A.~P.,   {Taylor} P.,  1996, \mn@doi [\mnras]
   {10.1093/mnras/280.3.937}, \href
   {https://ui.adsabs.harvard.edu/abs/1996MNRAS.280..937N} {280, 937}
+
+\bibitem[\protect\citeauthoryear{{Rappaport}, {Joss}  \& {Webbink}}{{Rappaport}
+  et~al.}{1982}]{1982ApJ...254..616R}
+{Rappaport} S.,  {Joss} P.~C.,   {Webbink} R.~F.,  1982, \mn@doi [\apj]
+  {10.1086/159772}, \href
+  {https://ui.adsabs.harvard.edu/abs/1982ApJ...254..616R} {254, 616}
 
 \bibitem[\protect\citeauthoryear{{Revnivtsev}, {Sazonov}, {Churazov}, {Forman},
   {Vikhlinin}  \& {Sunyaev}}{{Revnivtsev} et~al.}{2009}]{2009Natur.458.1142R}
@@ -158,6 +162,12 @@
   {Kolb}}{2003}]{2003A&A...404..301R}
 {Ritter} H.,  {Kolb} U.,  2003, \mn@doi [\aap] {10.1051/0004-6361:20030330},
   \href {https://ui.adsabs.harvard.edu/abs/2003A&A...404..301R} {404, 301}
+
+\bibitem[\protect\citeauthoryear{{Sazonov}, {Revnivtsev}, {Gilfanov},
+  {Churazov}  \& {Sunyaev}}{{Sazonov} et~al.}{2006}]{2006A&A...450..117S}
+{Sazonov} S.,  {Revnivtsev} M.,  {Gilfanov} M.,  {Churazov} E.,   {Sunyaev} R.,
+   2006, \mn@doi [\aap] {10.1051/0004-6361:20054297}, \href
+  {https://ui.adsabs.harvard.edu/abs/2006A&A...450..117S} {450, 117}
 
 \bibitem[\protect\citeauthoryear{{Scargle}}{{Scargle}}{1982}]{1982ApJ...263..835S}
 {Scargle} J.~D.,  1982, \mn@doi [\apj] {10.1086/160554}, \href
