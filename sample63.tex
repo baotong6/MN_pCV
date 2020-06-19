@@ -565,6 +565,8 @@ It is noteworthy that there exists no empirical $I_{7.0}/I_{6.7}$--$M_{\rm WD}$ 
 %The group has $I_{7.0}/I_{6.7} = 0.78^{+0.18}_{-0.16}$, thus inferring a mean WD mass of $M_{\rm WD} \approx 0.8$ (1.2) $M_\odot$ if they are IPs (DNe). 
 %On the other hand, the L group shows no constrain of line ratio, we can only provide its upper limit, i.e., 0.39, corresponding $M_{\rm WD} < 0.45$ (0.80) $M_\odot$ if they are IPs (DNe). 
 We further generate the cumulative spectrum for all sources with the exception of \#21(22) and \#25, since the former may dominate the iron line emission and the latter is classified as an AB (see in Section \ref{subsec:class}).
+This group has $I_{7.0}/I_{6.7} \sim 0.19$, 
+thus inferring a mean WD mass of $M_{\rm WD} \approx ?$ (?) $M_\odot$ if they are IPs (DNe).
 
 
 Results of the above spectral analysis are summarized in Table \ref{tab:spec}.
@@ -762,7 +764,7 @@ Considering that the angle between the magnetic and spin axes ($\beta$) is usual
 In this regard, source \#21/\#22 is probably an IP or a so-called asynchronous polar. 
 
 In addition to these two, for source \#2, the determined period is not only lower than 82 minutes (obtained from observation and simulation, \citet{2009MNRAS.397.2170G,2011ApJS..194...28K}), but also below the theoretical period minimum in the standard model, i.e., 65 minutes \citep{1982ApJ...254..616R}. Thus we consider it is more likely to be the spin period of an IP. While the miss of its orbital period detection could arisen from low inclination angle. 
-Generally, the poor detection of spin period for IP candidates brings about the uncertainty for IP identification. It could mostly be resulted from the lower detection rate for short period, as demonstrated in Section \ref{subsec:simulation}.
+Generally, the poor detection of spin period for IP candidates brings about the uncertainty for IP identification. It could mostly be resulted from the lower detection rate for short period, as demonstrated in Section \ref{subsec:simulation}. 
 
 In DNe (i.e., non-magnetic CVs), hard X-rays are produced in the boundary layer near the WD surface, in which case spin modulation is essentially absent and orbital modulation is also expected to be weak, unless the inclination angle $i$ is sufficiently large to allow for a total eclipse. Among the 25 periodic signals, no clear sign of total eclipse is seen except for the case of \#22. However, we have argued in the above that source \#21/\#22 is most likely an IP. Therefore, there is probably no DN among the periodic sources. This is consistent with the generally low to moderate detection rates of eclipse based on our simulations in Section~\ref{subsec:simulation}. 
 
@@ -787,14 +789,16 @@ In summary, based on the X-ray properties of the periodic sources, in particular
 %It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap.
 %According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm.
  
-Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and the sinusoidal variation happens only in "two-pole" situation, which takes $90^\circ$ in total $180^\circ$. In most case, the accretion of polar falls onto one pole. Then we can set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for polars with sinusoidal variation intrinsically. We assumed the even distribution for amplitude from 0.5 to 0.9 and took the simulation results for P=5540s and P=45540s as the detection rate for period under(60\% of the total number) and beyond the period gap(40\% of the total number). The value of 60\% and 40\% are estimated from Figure \ref{fig:N_P}. Then we set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
-%The choice of value is to balance the number of counts taken from observation and simulation. 
- The predicted number of periodic sources which "should" be detected in each bin is calculated by:
+Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and the sinusoidal variation happens only in "two-pole" situation, which needs the accretion of polar falls onto one pole and $i+\beta+\epsilon > 90^{\circ}$. 
+Taking the equal probability hypothesis for parameters and at least half of polars with one-pole accretion, we can set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for polars with sinusoidal variation intrinsically.
+Then we obtain the mean detection rate from simulation, by combining the even distribution for amplitude from 0.5 to 0.9 and the harmonic average for results of P=5540s (60\%) and P=45540s (40\%). The value of 60\% and 40\% are estimated from the period distribution beyond and below the gap, respectively. Thus far, we get the detection rate only depended on number of counts.
+We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
+ The predicted number of periodic sources which "should" be detected in each counts bin is calculated by:
 \begin{equation}
 Np_{i}=N_i\times DR \times 25\% \times 667 \times \alpha	
 \end{equation}
-$N_i$ is the product of number of sources detected in the bin. DR denotes the detection rate weighted from simulation. Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties.
- The comparison between $Np_{i}$ and the real detected 20 periodic sources(two determined IPs and one AB excluded) are plotted in Figure \ref{fig:NP_sim}. The perfect agreement between their population proves the validity of estimation.
+$N_i$ is the number of sources in the bin , i.e, $\sum{N_i}=667$. DR denotes the detection rate in this counts bin weighted from simulation. Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties (two IPs and one AB).
+ The comparison between $Np_{i}$, which denotes the predicted detection and the real detected 20 periodic sources are plotted in Figure \ref{fig:NP_sim}. The perfect agreement between their population proves the validity of estimation.
 
 \begin{figure}
 \includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
