@@ -354,6 +354,7 @@ For each combination of parameters, 100 simulated light curves are again generat
 The resultant detection rate (also taking 90\% as the threshold) is shown in Figure~\ref{fig:eclipse}. 
 As expected, the detection rate is generally higher for a longer period.
 It can also be seen that for total counts below $\sim$300, the detection rate is $\lesssim$10\% regardless of the period; only when total counts exceed $\sim$1500, the detection rate becomes 100\% for all test periods. 
+Since only a small fraction of sources in the raw list have total counts more than 1500, we expect a relatively low detection rate of eclipsing sources in the LW.  
  
 \begin{figure}
 \centering
@@ -415,7 +416,7 @@ Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen
 \begin{tabular}{lccccccccccc}
 \hline
 \hline
-ID& R.A. & Decl. & Period & $P_{\rm GL}$ & H-ID & $C$ & $P_{det}$ & VI & Harmonics
+ID& R.A. & Decl. & Period & Prob. & H-ID & $C$ & $P_{\rm det}$ & VI & Harmonics
 \\
 LW & $\circ$ & $\circ$ & (s) & & & & \% & & 
 \\ 
@@ -738,9 +739,7 @@ On the other hand, if $i+\beta+\epsilon < 90^{\circ}$ and $\beta < i$, the hard 
 
 IPs share the above one-pole or two-pole behavior. 
 In addition, the orbital modulation can result in eclipse of the WD by the companion star \citep{1993MNRAS.260..299H}, by the accretion stream, or by the ``disc overflow'' \citep{1996MNRAS.280..937N}. 
-Thus the light curve shape of IPs are complex and can exhibit both sinusoidal variations and dips,  Examples of this kind are found in sources \#2, \#3, \#7, \#11, \#18 and \#20.
-
-%seem to possess sinusoidal variations plus dips at occasional phase, better be explained as orbital variation with obscuration by the accretion stream.
+Thus the light curve shape of IPs are complex and can exhibit both sinusoidal variations and dips,  Examples of this kind are found in sources \#3, \#7, \#11, \#18 and \#20.
 In addition, source \#19, which has the highest X-ray luminosity with only moderate sinusoidal variation, is most likely the orbital modulation of an IP.
 
 The most robust identification of IPs is to detect both the spin and orbital periods. Among our sources, \#1 (\#14) and \#21 (\#22) show two different periods.
@@ -755,7 +754,7 @@ In this regard, source \#21/\#22 is probably an IP or a so-called asynchronous p
 In addition to these two, for source \#2, the determined period is not only lower than 82 minutes (obtained from observation, \citet{2009MNRAS.397.2170G}), but also below the theoretical period minimum in the standard model, i.e., 65 minutes \citep{2011ApJS..194...28K}. Thus we consider it is more likely to be the spin period of an IP. While the miss of its orbital period detection could arisen from low inclination angle. 
 Generally, the poor detection of spin period for IP candidates brings about the uncertainty for IP identification. It could mostly be resulted from the lower detection rate for short period, as demonstrated in \ref{subsec:simulation}.
 
-For non-magnetic CVs like DNe, the common phase-folded light curve exhibits narrow dip, due to the eclipse of the white dwarf, as modeled in Section~\ref{subsec:simulation}. The typical light curve is like \#22 in Figure \ref{fig:pCV_sample_2}. While the simultaneous existence of \#21 and \#22 and the 5\% period difference suggest it might be an intermediate polar. Except for this, No more clear sign of eclipse are found in these sources, indicating nearly no DNe detected in our sample. It could be explained by the lower detection rate of eclipse-model in Section \ref{subsec:simulation}. 
+In DNe (i.e., non-magnetic CVs), hard X-rays are produced in the boundary layer near the WD surface, in which case spin modulation is essentially absent and orbital modulation is also expected to be weak, unless the inclination angle $i$ is sufficiently large to allow for a total eclipse. Among the 25 periodic signals, no clear sign of total eclipse is seen except for the case of \#22. However, we have argued in the above that source \#21/\#22 is most likely an IP. Therefore, there is probably no DN among the periodic sources. This is consistent with the generally low to moderate detection rates of eclipse based on our simulations in Section~\ref{subsec:simulation}. 
 
 Lastly, we remark on the possible non-CV source \#25. This source has an unabsorbed 1--8 keV luminosity of $\rm 7.5 \times 10^{30}~erg~s^{-1}$, the lowest among all 23 sources. Its X-ray spectra, characterized by a best-fit plasma temperature of 2.3 keV (notably with large uncertainties; Table~\ref{tab:spec}), is also the softest among all sources.
 These values are more typical of ABs. 
@@ -766,7 +765,7 @@ Alternatively and more likely, this can be explained by a total eclipse lasting 
 In this case, the eclipsed star cannot be a WD, because of the mismatch between the stellar radius (order $10^4$ km)
 and the orbital separation (order $10^7$ km).
 Rather, the eclipsed star is likely to have a size not much smaller than the orbital separation, suggesting an AB system viewed nearly edge-on.
-However, the near-zero flux for half-cycle is unusual for ABs. One possibility is that this system consists of a Sun-like star and an A-star, the latter producing no significant X-rays due to a very weak surface magnetic field {\bf (G\''{u}del 2004)}. 
+However, the near-zero flux for half-cycle is unusual for ABs. One possibility is that this system consists of a Sun-like star and an A-star, the latter producing no significant X-rays due to a very weak surface magnetic field \citep{2004A&ARv..12...71G}. 
 An estimated orbital separation of 4 $R_\odot$ from the period is compatible with such a system. 
 %Then the orbit radius would be around 0.02 AU, taking $3M_\odot$ as the total mass.  
 
@@ -774,9 +773,9 @@ In summary, based on the X-ray properties of the periodic sources, in particular
 
 \subsection{CV populations in the Galactic bulge}\label{subsec:population}
 
-Before we start to discuss the nature of other periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
-It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap.{\bf question from tong: maybe not appropriate statement considering the age.}
- According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm.
+%Before we start to discuss the nature of other periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
+%It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap.
+%According to the our simulation results in Section~\ref{subsec:simulation}, this can not be resulted from selection bias of algorithm.
  
 Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and the sinusoidal variation happens only in "two-pole" situation, which takes $90^\circ$ in total $180^\circ$. In most case, the accretion of polar falls onto one pole. Then we can set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for polars with sinusoidal variation intrinsically. We assumed the even distribution for amplitude from 0.5 to 0.9 and took the simulation results for P=5540s and P=45540s as the detection rate for period under(60\% of the total number) and beyond the period gap(40\% of the total number). The value of 60\% and 40\% are estimated from Figure \ref{fig:N_P}. Then we set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
 %The choice of value is to balance the number of counts taken from observation and simulation. 
