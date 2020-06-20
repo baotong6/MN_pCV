@@ -198,7 +198,7 @@ We further define for each source an inter-observation {\it variability index}, 
 \begin{figure*}
 \centering
 \includegraphics[scale=0.8]{./figure/LW/ds9.eps}
-\caption{2--8 keV counts image of the Limiting Window, combining 13 {\it Chandra}/ACIS-I observations. Locations of the 23 periodic sources are marked with colored circles ({\it magenta}: ten sources previously reported by \citep{2012ApJ...746..165H}; {\it red}: thirteen newly discovered in this work). Source numbering is the same as in Table~\ref{tab:src}. In particular, 1/14 and 21/22 are the two sources each showing two periodic signals.}
+\caption{2--8 keV counts image of the Limiting Window, combining 13 {\it Chandra}/ACIS-I observations. Locations of the 23 periodic sources are marked with colored circles ({\it magenta}: ten sources previously reported by \citealp{2012ApJ...746..165H}; {\it red}: thirteen newly discovered in this work). Source numbering is the same as in Table~\ref{tab:src}. In particular, 1/14 and 21/22 are the two sources each showing two periodic signals.}
 \label{fig:FoV}
 \end{figure*}
 
@@ -419,9 +419,9 @@ Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen
 \begin{tabular}{lcccccccccccc}
 \hline
 \hline
-ID& R.A. & Decl. & Period & Prob. & $C$ & VI & H-ID  & $P_{\rm det}$ & Harmonics & Identification 
+ID& R.A. & Decl. & Period & Prob. & $C$ & VI & H-ID  & $P_{\rm det}$ & Harmonics & Class 
 \\
-LW & $\circ$ & $\circ$ & (s) & &  & \% & & &
+LW & $\circ$ & $\circ$ & s & &  &  & \% & &
 \\ 
 (1) & (2) & (3) & (4) & (5) & (6) & (7) & (8) & (9) & (10)  & (11)
 \\
@@ -490,19 +490,16 @@ LW & $\circ$ & $\circ$ & (s) & &  & \% & & &
       \small
       \item 
       Notes:
-      (1) Source sequence number assigned in the order of increasing period. The same source with multiple period signal was denoted as \dag and \ddag. 
-(2) R.A.(J2000) of the centroid of source. 
-(3) Decl.(J2000) of the centroid of source. 
-(4) The modulation period determined by GL method.
-(5) The probability of periodic signal defined by Eqn.~\ref{A20}.  
-(6) The number of counts in the 1-8 keV band. 
-(7) $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections. For source \#10 and \#25, no VI are provided since the lack of valid detections.
-(8) The cross-match results with previous work. $H_{i}$ represents the $i$th source in Table 2 of \cite{2012ApJ...746..165H}.
-(9) The detection probability of periodicity based on simulations of 100 sinusoidal light curves for each source in which the amplitude are taken from \cite{2012ApJ...746..165H}.
-
-(10) The note gives the significant harmonic detected by the algorithm.
-(11) The identification by the shape of phase-folded light curve, as discussed in Section \ref{subsec:class}.
-
+      (1) Source sequence number assigned in the order of increasing period. The same source with dual periods is marked by \dag\ and \ddag. 
+(2) and (3) Right Ascension and Declination (J2000) of the source centroid. 
+(4) The modulation period determined by the GL algorithm.
+(5) The probability of the periodic signal defined by Eqn.~\ref{A20}.  
+(6) The number of total counts in the 1-8 keV band.
+(7) The long-term variability index, defined as $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections. Sources \#10 and \#25 have no measurable VI.
+(8) The ID of previously detected periodic signals as given table 2 of \cite{2012ApJ...746..165H}.
+(9) The detection probability with the GL algorithm based on simulated sinusoidal light curves.
+(10) Significant harmonics, when present.
+(11) Source classification based on the phase-folded light curve.
 \end{tablenotes}
 \end{threeparttable}
 \end{table*}
@@ -516,9 +513,10 @@ LW & $\circ$ & $\circ$ & (s) & &  & \% & & &
 \includegraphics[width=\textwidth]{./figure/LW/pfold_lc_324002.eps}
 \includegraphics[width=1.02\textwidth]{./figure/LW/324001_spec.pdf}
 \end{minipage}
-\caption{The phase-folded light curve at the two modulation periods (up), the long-term, inter-observation light curve (lower left) and the spectra (lower right) for \#1(\#14) source.
-For lower left panel, the valid detection (defined in Section~\ref{subsec:detect}) are plotted with dots plus error range. While the non-valid detection are shown in arrows, providing only the upper limits. Meanwhile, the x-axis in lower left panel were plotted in discontinuous style for better demonstration effect, since the short interval over the last eight observations.
-For lower right panel, the spectrum are plotted over 0.5-8 keV.}
+\caption{{\it Upper panels}: The 1--8 keV phase-folded light curves of source \#1/\#14 at the two modulation periods.
+The green dashed line represents the mean count rate, whereas the yellow strip represents the local background, the width of which represents 1\,$\sigma$ Poisson error.
+{\it Lower left}: the 1--8 keV long-term, inter-observation light curve. Arrows represent 3\,$\sigma$ upper limits. 
+{\it Lower right}: Source spectrum and the best-fit model. See text for details.}
 \label{fig:pCV_sample_1}
 \end{figure*}
 
@@ -566,7 +564,6 @@ It is noteworthy that there exists no empirical $I_{7.0}/I_{6.7}$--$M_{\rm WD}$ 
 We further generate the cumulative spectrum for all sources with the exception of \#21(22) and \#25, since the former may dominate the iron line emission and the latter is classified as an AB (see in Section \ref{subsec:class}).
 This group has $I_{7.0}/I_{6.7} \sim 0.19$, 
 thus inferring a mean WD mass of $M_{\rm WD} \approx ?$ (?) $M_\odot$ if they are IPs (DNe).
-
 
 Results of the above spectral analysis are summarized in Table \ref{tab:spec}.
 \begin{table*}
@@ -639,7 +636,7 @@ $9.70^{+1.22}_{-1.09}$
 25 & $0.83^{+3.31}_{-0.83}$ & $2.30^{+1.59}_{-0.85}$ &-&  0.80/2 & $0.84^{+0.34}_{-0.31}$ 
 \\
 \hline
-CV & $1.40^{+0.07}_{-0.07}$ & 40 (fixed) &$0.18^{+0.07}_{-0.03}$ & 1.04/205 & $12.0^{+0.32}_{-0.32}$\\
+AG & $1.40^{+0.07}_{-0.07}$ & 40 (fixed) &$0.18^{+0.07}_{-0.03}$ & 1.04/205 & $12.0^{+0.32}_{-0.32}$\\
 \hline
 \end{tabular}
 \end{spacing}
