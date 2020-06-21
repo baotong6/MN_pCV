@@ -575,7 +575,7 @@ Results of the above spectral analysis are summarized in Table \ref{tab:spec}.
 \begin{tabular}{lccccc}
 \hline
 \hline
-ID & $N_{\rm H}$ & $T_{\rm b}$ &  $EW_{6.7}$ & $\chi^2/dof$ & $L_{\rm 1-8}$ 
+ID & $N_{\rm H}$ & $T_{\rm b}$ &  $EW_{6.7}$ & $\chi^2$/d.o.f & $L_{\rm 1-8}$ 
 \\
 (1) & (2) & (3) & (4) & (5) & (6) 
 \\
@@ -644,14 +644,12 @@ AG & $1.40^{+0.07}_{-0.07}$ & 40 (fixed) &$0.18^{+0.07}_{-0.03}$ & 1.04/205 & $1
       \small
       \item
       Notes: 
-      (1) Source sequence number as in Table~\ref{tab:src}. And "CV" denotes for the combined spectra of all periodic sources except for \#21(22) and \#25. 
-      {\dag}Sources 1 and 14 are the same source with two different periods; {\ddag}Sources 21 and 22 are the same source with two different periods. 
+      (1) Source sequence number as in Table~\ref{tab:src}. {\dag}\#1 and \#14 are the same source with two different periods; {\ddag}\#21 and \#22 are the same source with two different periods. ``AG'' denotes the aggregated spectrum of all periodic sources except \#21(22) and \#25. 
 (2) Line-of-sight absorption column density.
-(3) The bremsstrahlung temperature, in units of keV. Fixed at a value of 40 keV when the spectrum provides no signficant constraint to this parameter.
- (4) Equivalent width of  6.7 keV line.
-
+(3) The bremsstrahlung temperature. Fixed at 40 keV when the spectrum provides no significant constraint to this parameter.
+ (4) Equivalent width of the 6.7 keV line.
  (5) $\chi^2$ and degree of freedom of the best-fit model.
- (6) 1--8 keV unabsorbed luminosity. Quoted errors are at the 90\% confidence level.
+ (6) 1--8 keV unabsorbed luminosity, corrected for the enclosed-energy fraction. All quoted errors are at the 90\% confidence level. Upper limits are at 3\,$\sigma$ significance.
 \end{tablenotes} 
 \end{threeparttable}
 \end{table*} 
@@ -714,14 +712,14 @@ Clearly, the GL algorithm works better in almost all cases compared to the LS pe
 \includegraphics[width=0.49\textwidth]{./figure/LW/P_comp.eps}
 \includegraphics[width=0.46\textwidth]{./figure/sim_LW/Pdet_com.eps}
 %\end{minipage}
-\caption{Comparison between the periods ({\it left}) and detection rate ({\it right}) of the 10 signals commonly found by the GL and LS methods.The H-ID is the sequence number given in \citet{2012ApJ...746..165H}, same as listed in column 6 of Table \ref{tab:src}. 
+\caption{Comparison between the period ({\it left}) and detection rate ({\it right}) of the 10 signals commonly found by the GL algorithm (this work) and the LS periodogram \citep{2012ApJ...746..165H}.The H-ID is the sequence number given in \citet{2012ApJ...746..165H}, same as listed in column 6 of Table \ref{tab:src}. 
 \label{fig:com}}
 \end{figure*}
 
 \begin{figure*}
 \centering
 \includegraphics[scale=0.73]{./figure/CV/N_P.eps}
-\caption{The period distribution of the LW sources (dark-blue line), the spin (purple) and orbital (green) periods of IPs ,the periods (sky-blue) of polars and the orbital (red) periods of DNe from the RK catalog \citep{2003A&A...404..301R}, version 7.20). The famous period gap(yellow line) and period minimum(orange dashed line) are also plotted, whose value are taken from \citep{2011ApJS..194...28K}.\label{fig:N_P}}
+\caption{The period distribution of the LW sources (black histogram), in comparison with the spin (purple) and orbital (green) periods of IPs ,the orbital period of polars (blue), and the orbital period of DNe from the catalog of \citet{2003A&A...404..301R}, version 7.20. The period gap of CVs is delineated by a pair of vertical solid lines, and the period minimum is shown by a vertical dashed line, the values of which are taken from \citet{2011ApJS..194...28K}.\label{fig:N_P}}
 \end{figure*}
 
 \subsection{Classifying the periodic X-ray sources}
@@ -790,8 +788,6 @@ This cannot be due to a selection effect of the GL algorithm, because our simula
 %Before we start to discuss the nature of other periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 %It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap.
 
-
-
 Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and the sinusoidal variation happens only in "two-pole" situation, which needs the accretion of polar falls onto one pole and $i+\beta+\epsilon > 90^{\circ}$. 
 Taking the equal probability hypothesis for parameters and at least half of polars with one-pole accretion, we can set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for polars with sinusoidal variation intrinsically.
 Then we obtain the mean detection rate from simulation, by combining the even distribution for amplitude from 0.5 to 0.9 and the harmonic average for results of P=5540s (60\%) and P=45540s (40\%). The value of 60\% and 40\% are estimated from the period distribution beyond and below the gap, respectively. Thus far, we get the detection rate only depended on number of counts.
@@ -805,7 +801,7 @@ $N_i$ is the number of sources in the bin , i.e, $\sum{N_i}=667$. DR denotes the
 
 \begin{figure}
 \includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
-\caption{The comparison between estimated and the real detected number of sources. \label{fig:NP_sim}}
+\caption{The comparison between the number of estimated and actually observed periodic sources, as a function of detected counts number of sources. \label{fig:NP_sim}}
 \end{figure}
 
 Since the real luminosity function should be gentle than that of total sample, which means there could be more polars at the bright band, then it demanding lower numbers of polar to balance the high detection rate for bright sources. Besides, with the intrinsic fraction (25\% as the lower limit) increasing, the $\alpha$ decreasing.
@@ -1011,7 +1007,10 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
   \begin{figure*}
     \centering
     \includegraphics[page=1,scale=0.90,trim=0 100 0 20,clip]{plot_figure_LW.pdf}
-    \caption{The phase-folded light curve (left) , the long-term, inter-observation light curve (middle) and the spectra (right) for all the source in Table \ref{tab:src}, similar to Figure \ref{fig:pCV_sample_1}. 
+    \caption{Each row shows one periodic source. {\it Left}: The 1--8 keV phase-folded light curve at the modulation period.
+The green dashed line represents the mean count rate, whereas the yellow strip represents the local background, the width of which represents 1\,$\sigma$ Poisson error.
+{\it Middle}: the 1--8 keV long-term, inter-observation light curve. Arrows represent 3\,$\sigma$ upper limits. 
+{\it Right}: Source spectrum and the best-fit model. 
     \label{fig:Figure_p}}
   \end{figure*}
   
@@ -1020,7 +1019,7 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
 %    \captionsetup{list=off,format=cont}
     \centering
     \includegraphics[page=2,scale=0.90,trim=0 100 0 20,clip]{plot_figure_LW.pdf}
-    \caption{First figure continued}
+    \caption{Continued}
   \end{figure*}
 
   \begin{figure*}
@@ -1028,7 +1027,7 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
 %  \captionsetup{list=off,format=cont}
     \centering
     \includegraphics[page=3,scale=0.90,trim=0 100 0 20,clip]{plot_figure_LW.pdf}
-    \caption{First figure continued}
+    \caption{Continued}
   \end{figure*}
   
    \begin{figure*}
@@ -1036,7 +1035,7 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
 %  \captionsetup{list=off,format=cont}
     \centering
     \includegraphics[page=4,scale=0.90,trim=0 100 0 20,clip]{plot_figure_LW.pdf}
-    \caption{First figure continued}
+    \caption{Continued}
   \end{figure*}
   
   \begin{figure*}
@@ -1044,7 +1043,7 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
 %  \captionsetup{list=off,format=cont}
     \centering
     \includegraphics[page=5,scale=0.90,trim=0 100 0 20,clip]{plot_figure_LW.pdf}
-    \caption{First figure continued}
+    \caption{Continued}
   \end{figure*}
   
   \begin{figure*}
@@ -1052,7 +1051,7 @@ The period locates at $P=2\pi /\omega $ when $O_{m1}(\omega)$ takes the highest 
 %  \captionsetup{list=off,format=cont}
     \centering
     \includegraphics[page=6,scale=0.90,trim=0 100 0 20,clip]{plot_figure_LW.pdf}
-    \caption{First figure continued}
+    \caption{Continued}
   \end{figure*}
   
 %   \begin{figure*}
