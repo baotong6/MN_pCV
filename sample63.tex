@@ -540,22 +540,25 @@ Further, the spectrum is adaptively binned to achieve a minimum of 20 counts and
 The resultant spectra are analyzed using XSPEC v12.9.1.
 
 %The reason we present the fitting results of 0.5-8 keV here is to constrain the absorption. Notice that the choice of energy range is not consistent with the illustration of spectra in Figure \ref{fig:Figure_p}, even though it has little impact on exhibition. 
-Since these sources are expected to be CVs, we adopt a fiducial spectral model \citep{2018ApJS..235...26Z,2019ApJ...882..164X}, which consists of a bremsstrahlung continuum and three Fe lines. 
+Since these sources are expected to be CVs, we adopt a fiducial spectral model, which consists of a bremsstrahlung continuum and three Fe lines \citep{2018ApJS..235...26Z,2019ApJ...882..164X}. 
 %three Gaussian lines centered at , 
 We model each line with a Gaussian profile, fixing their line centroid at 6.40, 6.68 and 6.97 keV, respectively, and adopting a zero line width. 
 All model components are subject to an unknown line-of-sight absorption (\emph{phabs} in XSPEC). 
 
-Physically, the three lines (hereafter referred to as the 6.4, 6.7 and 7.0 keV lines) correspond to neutral Fe K$\alpha$, Fe\,XXV K$\alpha$ and Fe\,XXVI Ly$\alpha$, respectively, which are among the most commonly detected emission lines in CV spectra. The latter two lines, in particular, arise from the post-shock plasma near the WD surface, and their flux ratio ($I_{7.0}/I_{6.7}$) has proven to be a robust tracer of the plasma temperature, hence also a good indicator of the WD mass \citep{2016ApJ...818..136X}.
-
 It turns out that the plasma temperature ($T_{\rm b}$) is not well constrained in most sources, due to a moderate number of counts and the insufficient sensitivity of {\it Chandra} at energies above 8 keV. Hence for such cases we fix $T_{\rm b}$ at 40 keV, which is typical of IPs when their hard X-ray (up to tens of keV) spectra are available \citep{2016ApJ...818..136X,2016ApJ...826..160H}.
 Setting a lower value of $T_{\rm b}$, for instance, at 20 keV, does not affect our following conclusions. 
 
+Physically, the three lines (hereafter referred to as the 6.4, 6.7 and 7.0 keV lines) correspond to neutral Fe K$\alpha$, Fe\,XXV K$\alpha$ and Fe\,XXVI Ly$\alpha$, respectively, which are among the most commonly detected emission lines in CV spectra. The latter two lines, in particular, arise from the post-shock plasma near the WD surface, and their flux ratio ($I_{7.0}/I_{6.7}$) has proven to be a robust tracer of the plasma temperature, hence also a good indicator of the WD mass \citep{2016ApJ...818..136X}.
+Unfortunately, again due to the limited number of counts, the Fe lines are absent or weak in most of the 23 sources.
+We have applied a bootstrapping method using the {\it multifake} tool in XSPEC to derive the confidence range for the fluxes of the three Fe lines. Only one sources, \#21 (same as \#22), shows a significant ($\geq 3 \sigma$) line at both 6.7 keV and 7.0 keV. 
+The flux ratio is $I_{7.0}/I_{6.7} = 0.91^{+1.22}_{-0.56}$ (90\% errors). Three additional sources (\#2, \#20 and \#23) show a significant 6.7 keV only.   
+
+
 %The flux ratio of Fe XXVI to Fe XXV emission lines (hereafter $I_{7.0}/I_{6.7}$) could be interrelated to the $M_{WD}$ by uniting the $I_{7.0}/I_{6.7}$-$T_{max}$ and $T_{max}-M_{WD}$ relations \citep{2019ApJ...882..164X}. 
-Again due to the limited number of counts, most of the periodic sources show weak or non-detected Fe lines.  
-We have applied a bootstrapping method using the {\it multifake} tool in XSPEC to derive the 90\% confidence range for the fluxes of the three Fe lines. It turns out that only one sources, \#21 (same as \#22), shows a significant line at both 6.7 keV and 7.0 keV.  
-The flux ratio and its 90\% error are similarly determined for this sources, resulting in $I_{7.0}/I_{6.7} = 0.91^{+1.22}_{-0.56}$ for \#21.   
+
 %The value of flux ratios are presented together with their 68.3\% confidence range (see column (4) and (5) in Table \ref{tab:spec}). 
-According to the empirical line ratio--WD mass  ($I_{7.0}/I_{6.7}$--$M_{\rm WD}$) relation of \citet{2019ApJ...882..164X}, which is calibrated with CVs in the solar neighborhood, we can infer $M_{\rm WD} \approx 0.8 \, (1.2) $  $M_\odot$ for \#21, provided that both sources are IPs (DNe). 
+
+%According to the empirical line ratio--WD mass  ($I_{7.0}/I_{6.7}$--$M_{\rm WD}$) relation of \citet{2019ApJ...882..164X}, which is calibrated with CVs in the solar neighborhood, we can infer $M_{\rm WD} \approx 0.8 \, (1.2) $  $M_\odot$ for \#21, provided that both sources are IPs (DNe). 
 %It is noteworthy that there exists no empirical $I_{7.0}/I_{6.7}$--$M_{\rm WD}$ relation for polars, mainly due to the small number of known polars in the solar neighborhood \citep{2019ApJ...882..164X}. 
 
 %We further  the 23 periodic sources into two groups based on their luminosities. The H (L) group consists of 6 (17) sources having an unabsorbed 1--8 keV luminosity above (below) $\rm 1.0\times10^{32}~erg ~s^{-1}$, which is derived from the individual best-fit spectral model. 
@@ -565,11 +568,15 @@ According to the empirical line ratio--WD mass  ($I_{7.0}/I_{6.7}$--$M_{\rm WD}$
 %Using the XSPEC tool \emph{multifake}, we have gotten well constrained line ratios for this two subtypes. 
 %The group has $I_{7.0}/I_{6.7} = 0.78^{+0.18}_{-0.16}$, thus inferring a mean WD mass of $M_{\rm WD} \approx 0.8$ (1.2) $M_\odot$ if they are IPs (DNe). 
 %On the other hand, the L group shows no constrain of line ratio, we can only provide its upper limit, i.e., 0.39, corresponding $M_{\rm WD} < 0.45$ (0.80) $M_\odot$ if they are IPs (DNe). 
-We further generate the cumulative spectrum for all sources with the exception of \#21(22) and \#25, since the former may dominate the iron line emission and the latter is classified as an AB (see in Section \ref{subsec:class}).
-This group has $I_{7.0}/I_{6.7} \sim 0.19$, 
-thus inferring a mean WD mass of $M_{\rm WD} \approx ?$ (?) $M_\odot$ if they are IPs (DNe).
+%We further generate an aggregated spectrum for all sources without a significant Fe 6.7 keV line. 
+%the exception of \#21(22) and \#25, since the former may dominate the iron line emission and the latter is classified as an AB (see in Section \ref{subsec:class}).
+%This group has $I_{7.0}/I_{6.7} \sim 0.19$, 
+%thus inferring a mean WD mass of $M_{\rm WD} \approx ?$ (?) $M_\odot$ if they are IPs (DNe).
 
-Results of the above spectral analysis are summarized in Table \ref{tab:spec}.
+Results of the above spectral analysis are summarized in Table \ref{tab:spec}. We have also derived the 1--8 keV unabsorbed luminosity based on the best-fit model. 
+It is noteworthy that source \#24 has an absorption column density of $0.35^{+0.16}_{-0.13}\times10^{21}{\rm~cm^{-2}}$, significantly lower than the expected column density of the LW, $N_{\rm H} \geq 7\times10^{21}{\rm~cm^{-2}}$ \citep{2011MNRAS.414..495R}. Hence 
+this source may be located in the foreground, and its true luminosity can be substantially lower than that listed in Table \ref{tab:spec}. 
+
 \begin{table*}
 \centering
 \begin{threeparttable}
@@ -583,7 +590,7 @@ ID & $N_{\rm H}$ & $T_{\rm b}$ &  $EW_{6.7}$ &$I_{6.7}$ & $\chi^2$/d.o.f & $L_{\
 \\
 (1) & (2) & (3) & (4) & (5) & (6) & (7)
 \\
-LW & $10^{22}\rm~cm^{-2}$ & keV & keV & $\rm 10^{-8} ph~ cm^{-2}~s^{-1} $ & & $10^{31}\rm~erg~s^{-1}$ 
+LW & $10^{22}\rm~cm^{-2}$ & keV & keV & $\rm 10^{-8}~ph~ cm^{-2}~s^{-1} $ & & $10^{31}\rm~erg~s^{-1}$ 
 \\
 \hline
 
@@ -753,7 +760,7 @@ On the other hand, if $i+\beta+\epsilon < 90^{\circ}$ and $\beta < i$, the hard 
 IPs share the above two-pole and one-pole behavior. 
 In addition, the orbital modulation can result in obscuration by the companion star \citep{1993MNRAS.260..299H}, by the accretion stream, or by the ``disc overflow'' \citep{1996MNRAS.280..937N}. 
 Thus the light curve shape of IPs is often complex and can exhibit both sinusoidal variations and dips. Examples of this kind are found in sources \#3, \#7, \#11, \#18 and \#20.
-We also consider source \#19 is a likely IP, for it has both the highest X-ray luminosity ($9.7\times10^{32}{\rm~erg~s^{-1}}$) and lowest variation ($\sim$20\%) among all sources. Its sinusoidal-like variation is quite possibly due to orbital modulation.
+We also consider source \#19 is a likely IP, for it has both the highest X-ray luminosity ($9.3\times10^{32}{\rm~erg~s^{-1}}$) and lowest variation ($\sim$20\%) among all sources. Its sinusoidal-like variation is quite possibly due to orbital modulation.
 
 The most robust identification of IPs is to detect both the spin and orbital periods. Among our sources, \#1 (\#14) and \#21 (\#22) show two different periods.
 For \#1, the period is 853.8 sec and the corresponding phase-folded light curve is consistent with the one-pole behavior (Figures~\ref{fig:pCV_sample_1}). This is naturally understood in terms of a spin modulation. 
@@ -821,6 +828,8 @@ $N_{\rm det,polar}^i$ is constrained by the number of actually detected polars i
 %Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties (two IPs and one AB).
 Figure~\ref{fig:NP_sim} compares the number of detected and predicted polars as a function of total counts, which apparently agree well with each other.  
 This then requires $\alpha_{\rm polar} \approx 17\%$. Strictly speaking, this value is an upper limit, since a good fraction of the 20 periodic sources could be IPs and $g_{\rm polar}$ can also be higher than 25\%. 
+For comparison, the fraction of polars is ??\% among all known CVs in the solar neighborhood as cataloged by \citet{2003A&A...404..301R}.
+
 \begin{figure}
 \includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
 \caption{The comparison between the number of predicted and actually detected polars, as a function of detected counts number of sources. \label{fig:NP_sim}}
@@ -829,7 +838,10 @@ This then requires $\alpha_{\rm polar} \approx 17\%$. Strictly speaking, this va
 %Since the real luminosity function should be gentle than that of total sample, which means there could be more polars at the bright band, then it demanding lower numbers of polar to balance the high detection rate for bright sources. Besides, with the intrinsic fraction (25\% as the lower limit) increasing, the $\alpha$ decreasing.
 %In general, the 17\% should be treated as the upper limit for polars, especially when we considered all the 20 sources are polars. 
 
-The same approach can be applied to IPs by evaluating the detection for spin period. Still, we set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for IPs with sinusoidal variation intrinsically and gain the detection rate in each counts bin by averaging the simulation results for P=554s. Since only three period are considered as the spin of IP, we set 3 as the upper limit for the value of $\sum Np_{i}$. Then estimation of the fraction of IPs is about 5\%. And it should be taken as the upper limit for similar reasons above.
+A similar approach can be applied to constrain the fraction of IPs, by evaluating the detectability of spin modulation. 
+We still adopt $g_{\rm IP} = 25\%$ as the lower limit for detectable two-pole variation. The detected rate of the GL algorithm is represented by our simulations having a test period of $P=554$ sec. In Section~\ref{subsec:class}, we secure three periods as the spin period of IPs (\#1, \#2 and \#21). 
+Hence, according to their total counts, we estimate the fraction of IPs to be 5\% in the LW. 
+This is to be constrasted with ??\% in the solar neighborhood  \citep{2003A&A...404..301R}.
 
 While for DNe, we are constrained by lack of reliable X-ray luminosity function(XLF). We could set one as the upper limit of DNe since no reliable detections of DNe. However, the steeper XLF for DNe than the XLF for total sample would only contribute the lower limit for their proportion. Though this conflict leads to the uncertainty of estimation,  we still present the estimation for fraction of DNe as supplement.
 Intrinsically, the eclipse of white dwarf depends on the inclination angle, radius of companion star and orbit. If we set $i$ as inclination, $R_1$,$R_2$, $a$ as radius of WD, companion star and separation respectively. then eclipsing happens when :
