@@ -807,7 +807,7 @@ Then we obtain the mean detection rate from simulation, by combining the even di
 We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
  The predicted number of periodic sources which "should" be detected in each counts bin is calculated by:
 \begin{equation}
-Np_{i}=N_i\times DR \times 25\% \times 667 \times \alpha	
+Np_{i}=N_i\times DR \times 25\% \times \alpha	
 \end{equation}
 $N_i$ is the number of sources in the bin , i.e, $\sum{N_i}=667$. DR denotes the detection rate in this counts bin weighted from simulation. Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties (two IPs and one AB).
  The comparison between $Np_{i}$, which denotes the predicted detection and the real detected 20 periodic sources are plotted in Figure \ref{fig:NP_sim}. The perfect agreement between their population proves the validity of estimation.
@@ -837,7 +837,7 @@ Assuming that inclination angle is even distributed in $(0,90^\circ)$, the proba
 We utilized the simulation results of 5258s and 15258s as the detection rate for period under (75\% of the total number) and beyond (25\% of the total number) the period gap. The fraction is also taken from the statistics as shown in from Figure \ref{fig:N_P}. Besides, EP was chosen as 0.18 and 0.20 for this two types.
 Similarly, the predicted number of periodic non-mCVs which "should" be detected in each counts bin is:
 \begin{equation}
-Np_{i}=N_i\times DR \times EP \times 667 \times \alpha	
+Np_{i}=N_i\times DR \times EP  \times \alpha	
 \end{equation}
 Since the sum of $Np_{i}$ was assigned as one, the $\alpha$ would be around 0.25 if we set $\rm 10^{32}~erg~s^{-1}$ (roughly corresponding 675 counts) as the upper limit of luminosity for DNe. The rationality of the limit has been proved by the DNe sample from solar neighborhood in \citep{2016ApJ...818..136X}, based on {\it Suzaku} observation. The uncertainty of this fraction comes from our limited acquaintance about XLF for DNe, and no detection of periodic DNe. 
 
