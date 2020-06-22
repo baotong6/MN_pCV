@@ -648,7 +648,7 @@ $10^{+1}_{-1}$
 25 & $1^{+3}_{-1}$ & $2^{+2}_{-1}$ &-&-&  0.80/2 & $0.8^{+0.3}_{-0.3}$ 
 \\
 \hline
-AG & $1.33^{+0.07}_{-0.07}$ & 40 (fixed) & $0.14^{+0.08}_{-0.08}$ &$2^{+1}_{-1}$& 1.04/204 & $11.8^{+0.3}_{-0.3}$\\
+AG & $1.33^{+0.07}_{-0.07}$ & 40 (fixed) & $0.14^{+0.08}_{-0.08}$ &$0.2^{+0.1}_{-0.1}$& 1.04/204 & $11.8^{+0.3}_{-0.3}$\\
 \hline
 \end{tabular}
 \end{spacing}
@@ -823,10 +823,8 @@ Then in each bin the number of polars is predicted to be
 %Np_{i}=N_i\times DR \times 25\% \times \alpha	
 N_{\rm det,polar}^i =  g_{\rm polar} \times \alpha_{\rm polar} \times P_{\rm det}^i \times N^i,
 \end{equation}
-where $N^i$ is the intrinsic number of sources in the bin, i.e., $\sum{N^i}=N_{\rm tot}=667$. 
-%DR denotes the detection rate in this counts bin weighted from simulation. 
+where $N^i$ is the intrinsic number of sources in the bin, i.e., $\sum{N^i}=N_{\rm tot}=667$.  
 $N_{\rm det,polar}^i$ is constrained by the number of actually detected polars in a given bin. We take $\sum{N_{\rm det,polar}^i} = 20$, effectively counting all the periodic sources except the two probable IPs and the one probable AB (Section~\ref{subsec:class}).
-%Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties (two IPs and one AB).
 Figure~\ref{fig:NP_sim} compares the number of detected and predicted polars as a function of total counts, which apparently agree well with each other.  
 This then requires $\alpha_{\rm polar} \approx 17\%$. Strictly speaking, this value is an upper limit, since a good fraction of the 20 periodic sources could be IPs and $g_{\rm polar}$ can also be higher than 25\%. 
 For comparison, the fraction of polars is 13.5\% among all known CVs in the solar neighborhood as cataloged by \citet{2003A&A...404..301R}.
@@ -844,24 +842,27 @@ We still adopt $g_{\rm IP} = 25\%$ as the lower limit for detectable two-pole va
 Hence, according to their total counts, we estimate the fraction of IPs to be 5\% in the LW. 
 This is to be contrasted with 8.6\% in the solar neighborhood  \citep{2003A&A...404..301R}.
 
-While for DNe, we are constrained by lack of reliable X-ray luminosity function(XLF). We could set one as the upper limit of DNe since no reliable detections of DNe. However, the steeper XLF for DNe than the XLF for total sample would only contribute the lower limit for their proportion. Though this conflict leads to the uncertainty of estimation,  we still present the estimation for fraction of DNe as supplement.
+While for DNe, we are constrained by lack of reliable X-ray luminosity function(XLF). We could set one as the upper limit of DNe since no reliable detections of DNe.
+% However, the steeper XLF for DNe than the XLF for total sample would only contribute the lower limit for their proportion. Though this conflict leads to the uncertainty of estimation,  we still present the estimation for fraction of DNe as supplement.
 Intrinsically, the eclipse of white dwarf depends on the inclination angle, radius of companion star and orbit. If we set $i$ as inclination, $R_1$,$R_2$, $a$ as radius of WD, companion star and separation respectively. then eclipsing happens when :
 \begin{equation}
 {a \times cosi}\leq { R_1+R_2}
 \end{equation}
-Assuming that inclination angle is even distributed in $(0,90^\circ)$, the probability of eclipsing(hereafter EP) are plotted in Figure \ref{fig:simpCV}. The value of $R_1, R_2$ and $a$ are taken from simulation operated by \citep{2011ApJS..194...28K}, in which $R_1$ is fixed at when $M_{WD}$ equals 0.75 solar mass.
+Assuming that inclination angle is even distributed in $(0,90^\circ)$, the probability of eclipsing, i.e., $g_{\rm IP}$ are plotted in Figure \ref{fig:simpCV}. The descend at period gap is resulted from the escape of donor star from thermal equilibrium, when the binary evolves as a detached binary with period decreasing along with $R_2$ invariant.
+The value of $R_1, R_2$ and $a$ are taken from simulation operated by \citep{2011ApJS..194...28K}, in which $R_1$ is fixed at when $M_{\rm WD}$ equals 0.75 solar mass.
 \begin{figure}
 \centering
 \includegraphics[scale=0.55]{./figure/p_inCV.eps}
 \caption{Probability of eclipsing in CVs. The break around 3.2hours resulted by different model for CVs beyond and below the period gap.\label{fig:simpCV}}
 \end{figure}
 
-We utilized the simulation results of 5258s and 15258s as the detection rate for period under (75\% of the total number) and beyond (25\% of the total number) the period gap. The fraction is also taken from the statistics as shown in from Figure \ref{fig:N_P}. Besides, EP was chosen as 0.18 and 0.20 for this two types.
-Similarly, the predicted number of periodic non-mCVs which "should" be detected in each counts bin is:
+We utilized the simulation results of 5258s and 15258s as the detection rate for period under (75\% of the total number) and beyond (25\% of the total number) the period gap. The fraction is also taken from the statistics as shown in from Figure \ref{fig:N_P}. Besides, $g_{\rm DN}$ was chosen as 0.18 and 0.20 for this two types.
+Similarly, Then in each bin the number of DNe is predicted to be:
 \begin{equation}
-Np_{i}=N_i\times DR \times EP  \times \alpha	
+%Np_{i}=N_i\times DR \times 25\% \times \alpha	
+N_{\rm det,DN}^i =  g_{\rm DN} \times \alpha_{\rm DN} \times P_{\rm det}^i \times N^i,
 \end{equation}
-Since the sum of $Np_{i}$ was assigned as one, the $\alpha$ would be around 0.25 if we set $\rm 10^{32}~erg~s^{-1}$ (roughly corresponding 675 counts) as the upper limit of luminosity for DNe. The rationality of the limit has been proved by the DNe sample from solar neighborhood in \citep{2016ApJ...818..136X}, based on {\it Suzaku} observation. The uncertainty of this fraction comes from our limited acquaintance about XLF for DNe, and no detection of periodic DNe. 
+Since the sum of $Np_{i}$ was assigned as one, the $\alpha$ would be around 0.53 if we set $\rm 10^{32}~erg~s^{-1}$ (roughly corresponding 575 counts) as the upper limit of luminosity for DNe. The rationality of the limit has been proved by the DNe sample from solar neighborhood in \citep{2016ApJ...818..136X}, based on {\it Suzaku} observation. The uncertainty of this fraction comes from our limited acquaintance about XLF for DNe, and no detection of periodic DNe. 
 
 
 \section{Summary}\label{sec:summary}
@@ -878,8 +879,6 @@ We have searched for periodic X-ray sources in the Limiting Window, taking advan
 
 \item We proved the higher detection rate, more usage of data and ignorance of observation gap for GL method compared with LS method. It is noteworthy that the shape of light curve in GL method could be modified according to different scenarios. It was applied on detection of planetary transits by using customized eclipsing model \citep{2002A&A...395..625A}. For the utility of GL method, there is still room for improvement in the future.
 \end{itemize}
-\\
-
 We thank Xiaojie Xu and Zhenlin Zhu for helpful discussions. This work is supported by the National Key Research and Development Program of China under grant 2017YFA0402703.
 
 %% Appendix material should be preceded with a single \appendix command.
