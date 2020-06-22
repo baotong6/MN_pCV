@@ -800,15 +800,13 @@ This cannot be due to a selection effect of the GL algorithm, because our simula
 However, this could be due to an age effect, in the sense that CVs in the LW (bulge) are predominantly old and have substantially shrunk their orbitals, while CVs in the solar neighborhood can comprise of younger populations. 
 
 \subsection{CV populations in the inner Galactic bulge}\label{subsec:population}
-In the previous section, we have classified, with a varied degree of confidence, the 23 periodic sources, finding that the vast majority of them are either polars or IPs. Based on this classification, we now take one step forward to place constraints on the fraction of different sub-classes of CVs in the inner Galactic bulge, provided that the LW is a representative field.
-%Before we start to discuss the nature of other periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
-%It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap.
+In the previous section, we have classified, with a varied degree of confidence, the 23 periodic sources, finding that the vast majority of them are either polars or IPs. Based on this classification, we now take one step forward to place constraints on the fraction of different sub-classes of CVs in the inner Galactic bulge, provided that the LW is a representative field. Before that, we should give a quantitative estimation on the contribution of the cosmic X-ray background (CXB). A fraction about 10\% of CXB component in the LW has already been given in \cite{2018ApJS..235...26Z}. Thus we take $600~(667\times 10\%)$ as the total number of CVs in the LW.
 
 The observed number of a given sub-class, for instance, polars, can be expressed as,
 \begin{equation}
   N_{\rm det,polar} = P_{\rm det} \times g \times \alpha_{\rm polar} \times N_{\rm tot},
 \end{equation}
-where $N_{\rm tot}$ is the total number of CVs in the LW, $\alpha_{\rm polar}$ is the intrinsic fraction of polars among all CVs, $g$ is a geometric factor that determines the detectability of a periodic signal due to spin/orbital modulations, and $P_{\rm det}$ is the detection probability due to the GL algorithm. Here we take $N_{\rm tot}$ = 667, making the reasonable assumption that all LW sources with 1--8 keV total counts great than 100 are CVs and that CVs with a similar or larger total counts have been detected in 100\% completeness. 
+where $N_{\rm tot}$ is the total number of CVs in the LW, $\alpha_{\rm polar}$ is the intrinsic fraction of polars among all CVs, $g$ is a geometric factor that determines the detectability of a periodic signal due to spin/orbital modulations, and $P_{\rm det}$ is the detection probability due to the GL algorithm. Here we take $N_{\rm tot}$ = 600, making the reasonable assumption that all LW sources with 1--8 keV total counts great than 100 are CVs and that CVs with a similar or larger total counts have been detected in 100\% completeness. 
 %Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and 
 
 We further assume that the substantial sinusoidal variation occurs only in the ``two-pole'' situation, that is, only one pole produces the hard X-rays and for this pole $i+\beta+\epsilon > 90^{\circ}$. 
@@ -820,10 +818,9 @@ Adopting an 50\% probability to fulfill each of these two conditions, this allow
 %We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
 Then in each bin the number of polars is predicted to be
 \begin{equation}
-%Np_{i}=N_i\times DR \times 25\% \times \alpha	
 N_{\rm det,polar}^i =  g_{\rm polar} \times \alpha_{\rm polar} \times P_{\rm det}^i \times N^i,
 \end{equation}
-where $N^i$ is the intrinsic number of sources in the bin, i.e., $\sum{N^i}=N_{\rm tot}=667$.  
+where $N^i$ is the intrinsic number of sources in the bin, i.e., $\sum{N^i}=N_{\rm tot}=600$.  
 $N_{\rm det,polar}^i$ is constrained by the number of actually detected polars in a given bin. We take $\sum{N_{\rm det,polar}^i} = 20$, effectively counting all the periodic sources except the two probable IPs and the one probable AB (Section~\ref{subsec:class}).
 Figure~\ref{fig:NP_sim} compares the number of detected and predicted polars as a function of total counts, which apparently agree well with each other.  
 This then requires $\alpha_{\rm polar} \approx 17\%$. Strictly speaking, this value is an upper limit, since a good fraction of the 20 periodic sources could be IPs and $g_{\rm polar}$ can also be higher than 25\%. 
@@ -842,9 +839,8 @@ We still adopt $g_{\rm IP} = 25\%$ as the lower limit for detectable two-pole va
 Hence, according to their total counts, we estimate the fraction of IPs to be 5\% in the LW. 
 This is to be contrasted with 8.6\% in the solar neighborhood  \citep{2003A&A...404..301R}.
 
-While for DNe, we are constrained by lack of reliable X-ray luminosity function(XLF). We could set one as the upper limit of DNe since no reliable detections of DNe.
-% However, the steeper XLF for DNe than the XLF for total sample would only contribute the lower limit for their proportion. Though this conflict leads to the uncertainty of estimation,  we still present the estimation for fraction of DNe as supplement.
-Intrinsically, the eclipse of white dwarf depends on the inclination angle, radius of companion star and orbit. If we set $i$ as inclination, $R_1$,$R_2$, $a$ as radius of WD, companion star and separation respectively. then eclipsing happens when :
+While for DNe, we are constrained by lack of reliable X-ray luminosity function(XLF). Then we set $\rm 10^{32}~erg~s^{-1}$ (roughly corresponding 575 counts) as the upper limit of luminosity for DNe. The rationality of the limit has been proved by the DNe sample from solar neighborhood in \citep{2016ApJ...818..136X}, based on {\it Suzaku} observation.
+Intrinsically, the eclipse of white dwarf depends on the inclination angle, radius of companion star and orbit. Denoting $R_1$ the radius of WD, $R_2$ the radius of companion star, $a$ the separation between them, then eclipsing happens only when :
 \begin{equation}
 {a \times cosi}\leq { R_1+R_2}
 \end{equation}
@@ -857,12 +853,13 @@ The value of $R_1, R_2$ and $a$ are taken from simulation operated by \citep{201
 \end{figure}
 
 We utilized the simulation results of 5258s and 15258s as the detection rate for period under (75\% of the total number) and beyond (25\% of the total number) the period gap. The fraction is also taken from the statistics as shown in from Figure \ref{fig:N_P}. Besides, $g_{\rm DN}$ was chosen as 0.18 and 0.20 for this two types.
-Similarly, Then in each bin the number of DNe is predicted to be:
+Similarly, then in each bin the number of DNe is predicted to be:
 \begin{equation}
 %Np_{i}=N_i\times DR \times 25\% \times \alpha	
 N_{\rm det,DN}^i =  g_{\rm DN} \times \alpha_{\rm DN} \times P_{\rm det}^i \times N^i,
 \end{equation}
-Since the sum of $Np_{i}$ was assigned as one, the $\alpha$ would be around 0.53 if we set $\rm 10^{32}~erg~s^{-1}$ (roughly corresponding 575 counts) as the upper limit of luminosity for DNe. The rationality of the limit has been proved by the DNe sample from solar neighborhood in \citep{2016ApJ...818..136X}, based on {\it Suzaku} observation. The uncertainty of this fraction comes from our limited acquaintance about XLF for DNe, and no detection of periodic DNe. 
+Since there is no detection of DNe, 
+we are only able to set the sum of $Np_{i}$ smaller than one. Then $\alpha$ would be lower than 53\%.
 
 
 \section{Summary}\label{sec:summary}
