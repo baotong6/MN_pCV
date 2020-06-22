@@ -373,7 +373,7 @@ Therefore, it seems safe to conclude that the false detection rate is essentiall
 \section{Period Searching Results}\label{sec:results}
 %\subsection{Filtering detections}
 According to the simulations in Section~\ref{subsec:simulation}, a periodic signal is hard to detect in LW sources with total counts $C<100$, even in the case of high variation amplitudes.  
-Therefore, we restrict our period searching to sources with $C \geq 100$, which include 667 of the 847 sources in the raw list. Among these 667 sources, 25\% (4\%) have total counts more than 500 (1000).
+Therefore, we restrict our period searching to sources with $C \geq 100$, which include 667 of the 847 sources in the raw list.Among these 667 sources, 25\% (4\%) have total counts more than 500 (1000).
 
 Adopting a probability threshold of 90\%, we obtain 48 tentative periodic signals from the three period ranges. However, it is necessary to filter spurious detections, which may be caused by several effects:
 
@@ -788,12 +788,21 @@ This cannot be due to a selection effect of the GL algorithm, because our simula
 \cite{2012ApJ...746..165H} noticed the narrow period distribution (1--3 hours) of the 10 sources they detected and the similarity with the period distribution of polars in the solar neighborhood (Figure~\ref{fig:N_P}), based on which they suggested that all these sources are polars. 
 However, this could be due to an age effect, in the sense that CVs in the LW (bulge) are predominantly old and have substantially shrunk their orbitals, while CVs in the solar neighborhood can comprise of younger populations. 
 
-\subsection{CV populations in the Galactic bulge}\label{subsec:population}
-
+\subsection{CV populations in the inner Galactic bulge}\label{subsec:population}
+In the previous section, we have classified, with a varied degree of confidence, the 23 periodic sources, finding that the vast majority of them are either polars or IPs. Based on this classification, we now take one step forward to place constraints on the fraction of different sub-classes of CVs in the inner Galactic bulge, provided that the LW is a representative field.
 %Before we start to discuss the nature of other periodic sources, we should take a look at CVs in the field. Their period distribution, including polars, IPs and DNe, are shown in Figure \ref{fig:N_P}.
 %It can be easily seen that the period distribution of these LW sources resembles those of polars more than others, since most of these are below the period gap. While DNe and IPs both have a considerable number of systems with period beyond the gap.
-Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and the sinusoidal variation happens only in "two-pole" situation, which needs the accretion of polar falls onto one pole and $i+\beta+\epsilon > 90^{\circ}$. 
-Taking the equal probability hypothesis for parameters and at least half of polars with one-pole accretion, we can set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for polars with sinusoidal variation intrinsically.
+
+The observed number of a given sub-class, for instance, polars, can be expressed as,
+\begin{equation}
+  N_{\rm obs,polar} = P_{\rm det} \times g \times \alpha_{\rm polar} \times N_{\rm tot},
+\end{equation}
+where $N_{\rm tot}$ is the total number of CVs in the LW, $\alpha_{\rm polar}$ is the intrinsic fraction of polars among all CVs, $g$ is a geometric factor that determines the detectability of a periodic signal due to spin/orbital modulations, and $P_{\rm det}$ is the detection probability due to the GL algorithm. Here we take $N_{\rm tot}$ = 667, making the reasonable assumption that all LW sources with 1--8 keV total counts great than 100 are CVs and that CVs with a similar or larger total counts have been detected in 100\% completeness. 
+%Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and 
+
+We further assume that the substantial sinusoidal variation occurs only in the ``two-pole'' situation, which needs the accretion of polar falls onto one pole and $i+\beta+\epsilon > 90^{\circ}$. 
+Taking the equal probability hypothesis for parameters and at least half of polars with one-pole accretion, 
+This allows us to take $g_{\rm polar}$ = $50\%\times50\% = 25\%$ as the lower limit.
 Then we obtain the mean detection rate from simulation, by combining the even distribution for amplitude from 0.5 to 0.9 and the harmonic average for results of P=5540s (60\%) and P=45540s (40\%). The value of 60\% and 40\% are estimated from the period distribution beyond and below the gap, respectively. Thus far, we get the detection rate only depended on number of counts.
 We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
  The predicted number of periodic sources which "should" be detected in each counts bin is calculated by:
