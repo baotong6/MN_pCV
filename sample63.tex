@@ -537,11 +537,15 @@ The green dashed line represents the mean count rate, whereas the yellow strip r
 We perform spectral analysis for all 23 confirmed periodic sources to gain insight on their nature. Source and background spectra are extracted from the same regions as described in Section~\ref{subsec:detect}, along with the ancillary response files (ARFs) and redistribution matrix files (RMFs), by using the CIAO tool \emph{specextract}. 
 The spectra from individual observations are then coadded to form a combined spectrum of a given source, with the corresponding ARFs and RMFs weighted by the effective exposure. 
 Further, the spectrum is adaptively binned to achieve a minimum of 20 counts and a signal-to-noise ratio greater than 2 per bin.
-
 The resultant spectra are analyzed using XSPEC v12.9.1.
+
 %The reason we present the fitting results of 0.5-8 keV here is to constrain the absorption. Notice that the choice of energy range is not consistent with the illustration of spectra in Figure \ref{fig:Figure_p}, even though it has little impact on exhibition. 
-Since these sources are expected to be CVs, we adopt a fiducial spectral model \citep{2018ApJS..235...26Z,2019ApJ...882..164X}, which consists of a bremsstrahlung continuum and three Gaussian lines centered at 6.40, 6.68 and 6.97 keV, all these components subject to an unknown line-of-sight absorption (\emph{phabs} in XSPEC). 
-The three lines (hereafter referred to as the 6.4, 6.7 and 7.0 keV lines) correspond to neutral Fe K$\alpha$, Fe\,XXV K$\alpha$ and Fe\,XXVI Ly$\alpha$, respectively, which are among the most commonly detected emission lines in CV spectra. The latter two lines, in particular, arise from the post-shock plasma near the WD surface, and their flux ratio ($I_{7.0}/I_{6.7}$) has proven to be a robust tracer of the plasma temperature, hence also a good indicator of the WD mass \citep{2016ApJ...818..136X}.
+Since these sources are expected to be CVs, we adopt a fiducial spectral model \citep{2018ApJS..235...26Z,2019ApJ...882..164X}, which consists of a bremsstrahlung continuum and three Fe lines. 
+%three Gaussian lines centered at , 
+We model each line with a Gaussian profile, fixing their line centroid at 6.40, 6.68 and 6.97 keV, respectively, and adopting a zero line width. 
+All model components are subject to an unknown line-of-sight absorption (\emph{phabs} in XSPEC). 
+
+Physically, the three lines (hereafter referred to as the 6.4, 6.7 and 7.0 keV lines) correspond to neutral Fe K$\alpha$, Fe\,XXV K$\alpha$ and Fe\,XXVI Ly$\alpha$, respectively, which are among the most commonly detected emission lines in CV spectra. The latter two lines, in particular, arise from the post-shock plasma near the WD surface, and their flux ratio ($I_{7.0}/I_{6.7}$) has proven to be a robust tracer of the plasma temperature, hence also a good indicator of the WD mass \citep{2016ApJ...818..136X}.
 
 It turns out that the plasma temperature ($T_{\rm b}$) is not well constrained in most sources, due to a moderate number of counts and the insufficient sensitivity of {\it Chandra} at energies above 8 keV. Hence for such cases we fix $T_{\rm b}$ at 40 keV, which is typical of IPs when their hard X-ray (up to tens of keV) spectra are available \citep{2016ApJ...818..136X,2016ApJ...826..160H}.
 Setting a lower value of $T_{\rm b}$, for instance, at 20 keV, does not affect our following conclusions. 
@@ -795,30 +799,35 @@ In the previous section, we have classified, with a varied degree of confidence,
 
 The observed number of a given sub-class, for instance, polars, can be expressed as,
 \begin{equation}
-  N_{\rm obs,polar} = P_{\rm det} \times g \times \alpha_{\rm polar} \times N_{\rm tot},
+  N_{\rm det,polar} = P_{\rm det} \times g \times \alpha_{\rm polar} \times N_{\rm tot},
 \end{equation}
 where $N_{\rm tot}$ is the total number of CVs in the LW, $\alpha_{\rm polar}$ is the intrinsic fraction of polars among all CVs, $g$ is a geometric factor that determines the detectability of a periodic signal due to spin/orbital modulations, and $P_{\rm det}$ is the detection probability due to the GL algorithm. Here we take $N_{\rm tot}$ = 667, making the reasonable assumption that all LW sources with 1--8 keV total counts great than 100 are CVs and that CVs with a similar or larger total counts have been detected in 100\% completeness. 
 %Firstly, we assumed that the fraction of polars in the total sample of 667 sources is $\alpha$ and 
 
-We further assume that the substantial sinusoidal variation occurs only in the ``two-pole'' situation, which needs the accretion of polar falls onto one pole and $i+\beta+\epsilon > 90^{\circ}$. 
-Taking the equal probability hypothesis for parameters and at least half of polars with one-pole accretion, 
-This allows us to take $\alpha_{\rm polar}$ = $50\%\times50\% = 25\%$ as the lower limit.
-Then we obtain the mean detection rate from simulation, by combining the even distribution for amplitude from 0.5 to 0.9 and the harmonic average for results of P=5540s (60\%) and P=45540s (40\%). The value of 60\% and 40\% are estimated from the period distribution beyond and below the gap, respectively. Thus far, we get the detection rate only depended on number of counts.
-We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
- The predicted number of periodic sources which "should" be detected in each counts bin is calculated by:
+We further assume that the substantial sinusoidal variation occurs only in the ``two-pole'' situation, that is, only one pole produces the hard X-rays and for this pole $i+\beta+\epsilon > 90^{\circ}$. 
+Adopting an 50\% probability to fulfill each of these two conditions, this allows us to take $g_{\rm polar}$ = $50\%\times50\% = 25\%$ as the lower limit. In reality, $P_{\rm det}$ depends on the period, variation amplitude and total counts (Section~\ref{subsec:simulation}). We make use of our simulation results to estimate $P_{\rm det}$ with the following approximations:
+(i) The short and long orbital periods (below or above 3 hours) are represented by $P$=5540 sec and $P$=45540 sec, respectively. A weight of 60\% (40\%) is assigned to the short (long) period, roughly according to the distribution of solar neighborhood polars; (ii) the amplitude is evenly sampled between 0.5 to 0.9, neglecting the contribution from any lower amplitudes (i.e., $P_{\rm det} = 0$ in this case);
+(iii) the observed sources are grouped into different bins of total counts, from $C$=75 to 3575 cts at a step of 100 cts.  
+%Then we obtain the mean detection rate from simulation, by combining the even distribution for amplitude from 0.5 to 0.9 and the harmonic average for results of P=5540s (60\%) and P=45540s (40\%). The value of 60\% and 40\% are estimated from the period distribution beyond and below the gap, respectively. Thus far, we get the detection rate only depended on number of counts.
+%We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
+Then in each bin the number of polars is predicted to be
 \begin{equation}
-Np_{i}=N_i\times DR \times 25\% \times \alpha	
+%Np_{i}=N_i\times DR \times 25\% \times \alpha	
+N_{\rm det,polar}^i =  g_{\rm polar} \times \alpha_{\rm polar} \times P_{\rm det}^i \times N^i,
 \end{equation}
-$N_i$ is the number of sources in the bin , i.e, $\sum{N_i}=667$. DR denotes the detection rate in this counts bin weighted from simulation. Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties (two IPs and one AB).
- The comparison between $Np_{i}$, which denotes the predicted detection and the real detected 20 periodic sources are plotted in Figure \ref{fig:NP_sim}. The perfect agreement between their population proves the validity of estimation.
-
+where $N^i$ is the intrinsic number of sources in the bin, i.e., $\sum{N^i}=N_{\rm tot}=667$. 
+%DR denotes the detection rate in this counts bin weighted from simulation. 
+$N_{\rm det,polar}^i$ is constrained by the number of actually detected polars in a given bin. We take $\sum{N_{\rm det,polar}^i} = 20$, effectively counting all the periodic sources except the two probable IPs and the one probable AB (Section~\ref{subsec:class}).
+%Then we sum all $Np_{i}$ together and force it equals to 20, getting $\alpha$ about 17\%. The value of 20 is taken as the upper limit by considering all periodic sources but three with determined properties (two IPs and one AB).
+Figure~\ref{fig:NP_sim} compares the number of detected and predicted polars as a function of total counts, which apparently agree well with each other.  
+This then requires $\alpha_{\rm polar} \approx 17\%$. Strictly speaking, this value is an upper limit, since a good fraction of the 20 periodic sources could be IPs and $g_{\rm polar}$ can also be higher than 25\%. 
 \begin{figure}
 \includegraphics[scale=0.53]{./figure/sim_LW/est_obs.eps}
-\caption{The comparison between the number of estimated and actually observed periodic sources, as a function of detected counts number of sources. \label{fig:NP_sim}}
+\caption{The comparison between the number of predicted and actually detected polars, as a function of detected counts number of sources. \label{fig:NP_sim}}
 \end{figure}
 
-Since the real luminosity function should be gentle than that of total sample, which means there could be more polars at the bright band, then it demanding lower numbers of polar to balance the high detection rate for bright sources. Besides, with the intrinsic fraction (25\% as the lower limit) increasing, the $\alpha$ decreasing.
-In general, the 17\% should be treated as the upper limit for polars, especially when we considered all the 20 sources are polars. 
+%Since the real luminosity function should be gentle than that of total sample, which means there could be more polars at the bright band, then it demanding lower numbers of polar to balance the high detection rate for bright sources. Besides, with the intrinsic fraction (25\% as the lower limit) increasing, the $\alpha$ decreasing.
+%In general, the 17\% should be treated as the upper limit for polars, especially when we considered all the 20 sources are polars. 
 
 The same approach can be applied to IPs by evaluating the detection for spin period. Still, we set 25\% ($50\% \times 50\%$ ) as the lower limit of fraction for IPs with sinusoidal variation intrinsically and gain the detection rate in each counts bin by averaging the simulation results for P=554s. Since only three period are considered as the spin of IP, we set 3 as the upper limit for the value of $\sum Np_{i}$. Then estimation of the fraction of IPs is about 5\%. And it should be taken as the upper limit for similar reasons above.
 
