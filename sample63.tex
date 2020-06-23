@@ -420,7 +420,7 @@ Similar figures of the remaining 21 sources are presented in Appendix~\ref{appen
 \begin{tabular}{lcccccccccccc}
 \hline
 \hline
-ID& R.A. & Decl. & Period & Prob. & $C$ & $C_B$ & VI & H-ID  & Harmonics & Class 
+ID& R.A. & Decl. & Period & Prob. & $C$ & $C_{B$ & VI & H-ID  & Harmonics & Class 
 \\
 LW & $\circ$ & $\circ$ & s & &  &  & \% & &
 \\ 
@@ -496,10 +496,10 @@ LW & $\circ$ & $\circ$ & s & &  &  & \% & &
 (4) The modulation period determined by the GL algorithm.
 (5) The probability of the periodic signal defined by Eqn.~\ref{A20}.  
 (6) The number of total counts in the 1-8 keV band.
-(7) The number of background counts.
+(7) The number of estimated background counts.
 (8) The long-term variability index, defined as $\rm VI=S_{max}/S_{min}$, where $\rm S_{max}$ and $\rm S_{min}$ are the maximum and minimum photon fluxes among all the valid detections. Sources \#10 and \#25 have no measurable VI.
 (9) The ID of previously detected periodic signals as given in table 2 of \cite{2012ApJ...746..165H}.
-(10) Significant harmonics, when present.
+(10) Significant harmonics, if existed.
 (11) Source classification based primarily on the phase-folded light curve.
 \end{tablenotes}
 \end{threeparttable}
@@ -664,7 +664,7 @@ $10^{+1}_{-1}$
  (4) Equivalent width of the 6.7 keV line.
  (5) Integrated flux of the 6.7 keV line.
  (6) $\chi^2$ and degree of freedom of the best-fit model.
- (7) 1--8 keV unabsorbed luminosity. Quoted errors are at the 90\% confidence level.
+ (7) 1--8 keV unabsorbed luminosity, corrected for the enclosed-energy fraction. Quoted errors are at the 90\% confidence level.
 \end{tablenotes} 
 \end{threeparttable}
 \end{table*} 
@@ -747,22 +747,25 @@ First of all, all but one (\#25) of these sources are found in the 1--8 keV lumi
 On the contrary, coronally active binaries (ABs), which are thought to dominate the detected X-ray sources in the LW by number \citep{2009Natur.458.1142R}, generally have unabsorbed X-ray luminosities below $\rm 10^{31}~erg~s^{-1}$ \citep{2006A&A...450..117S}. 
 This stems from the empirical fact that the coronal X-ray emission from low-mass stars saturates at $\sim$10$^{-3}$ of the bolometric luminosity \citep{2004A&ARv..12...71G}.
 The X-ray spectra of these sources are less informative, since except in a few cases they lack the unambiguous sign of Fe lines due to the moderate S/N (Section~\ref{sec:spectra}), which otherwise would be another characteristic signature of CVs (e.g., \citealp{2016ApJ...818..136X}).
-Nevertheless, most of these sources do show a very hard continuum that are again typical of CVs, although this could be partially owing to the fact that our parent source list is based on the 2--8 keV band (Section~\ref{subsec:detect}).
+Nevertheless, most of these sources do show a very hard continuum that are again typical of CVs.
+%although this could be partially owing to the fact that our parent source list is based on the 2--8 keV band (Section~\ref{subsec:detect}).
 Furthermore, the vast majority of the detected periods fall between 1.1--3.3 hours, consistent with the range of short-period CVs in the solar neighborhood \citep{2003A&A...404..301R}, i.e., those having an orbital period between the so-called period minimum and the upper bound of the period gap, as illustrated in Figure~\ref{fig:N_P}. 
 Therefore, the global X-ray properties point to CVs dominating the detected periodic sources, a conclusion also drawn by \cite{2012ApJ...746..165H}.
 
 It will then be interesting to ask to which sub-class of CVs these periodic sources belong. The phase-folded light curves may provide useful hints to this question. 
-In magnetic CVs, including polars and IPs, their orbital and spin modulations can give rise to a characteristic light curve. For polars, let us consider the simplistic situation in which hard X-rays (photon energy $\gtrsim$1 keV) are produced in only one of the two magnetic poles\footnote{In this picture, accretion can still take place in the other pole, in fact, at a much higher accretion rate, producing quasi-black-body emission peaking at the soft X-ray and extreme ultraviolet bands \citep{2001cvs..book.....H}.}.
+In magnetic CVs, including polars and IPs, their spin modulations can give rise to a characteristic light curve. For polars, let us consider the simplistic situation in which hard X-rays (photon energy $\gtrsim$1 keV) are produced in only one of the two magnetic poles\footnote{In this picture, accretion can still take place in the other pole, in fact, at a much higher accretion rate, producing quasi-black-body emission peaking at the soft X-ray and extreme ultraviolet bands \citep{2001cvs..book.....H}.}.
 %Then the shape of light curve would be divided into two groups.
 Denoting $i$ the angle between the line-of-sight and the spin axis, $\beta$ the angle between the spin and magnetic axes, and $\epsilon$ the magnetic colatitude of the accretion column, when $i+\beta+\epsilon > 90^{\circ}$, the two poles will alternately drift across the front side of the WD. 
 The resultant light curve will look like that of source \#6 , \#8 and \#10, with nearly half of the cycle showing a valley of near-zero hard X-ray flux \citep{1985A&A...148L..14H}. 
 The periods of these sources are consistent with the period range of known polars (for polars the orbital and spin periods are equal; Figure~\ref{fig:N_P}).
-This so-called ``two-pole'' behavior becomes more complicated if hard X-rays were produced near both poles, in which case the second pole can partially fill the ``valley'', resulting in a light curve like that of \#4, \#5, \#9, \#12, \#13, \#15 ,\#16, \#17, \#23 and \#24. 
+This so-called ``two-pole'' behavior becomes more complicated if some hard X-rays were also produced near the second pole, in which case the ``valey'' is partially filled, resulting in a light curve like that of \#4, \#5, \#9, \#12, \#13, \#15 ,\#16, \#17, \#23 and \#24. 
 %Sometimes it may completely reverse in hard X-ray band cause the accretion shock in second pole producing most of hard X-rays. 
-On the other hand, if $i+\beta+\epsilon < 90^{\circ}$ and $\beta < i$, the hard X-ray-emitting pole would be always visible (so-called ``one-pole'' behavior), producing a roughly constant light curve, although at certain phase dips can still present due to obscuration by the accretion stream.
+On the other hand, if $i+\beta+\epsilon < 90^{\circ}$, the hard X-ray-emitting pole would be always visible (the so-called ``one-pole'' behavior), producing a roughly constant light curve, although under certain condition ($\beta < i$) dips can present due to obscuration by the accretion stream \citep{2001cvs..book.....H}. The ``one-pole'' case generally does not favor a robust detection of the period. 
 
 IPs share the above two-pole and one-pole behavior. 
-In addition, the orbital modulation can result in obscuration by the companion star \citep{1993MNRAS.260..299H}, by the accretion stream, or by the ``disc overflow'' \citep{1996MNRAS.280..937N}. 
+In addition, the orbital modulation can result in obscuration by the companion star,
+%\citep{1993MNRAS.260..299H}, 
+by the accretion stream, or by the ``disc overflow'' \citep{1996MNRAS.280..937N}. 
 Thus the light curve shape of IPs is often complex and can exhibit both sinusoidal variations and dips. Examples of this kind are found in sources \#3, \#7, \#11, \#18 and \#20.
 We also consider source \#19 is a likely IP, for it has both the highest X-ray luminosity ($9.3\times10^{32}{\rm~erg~s^{-1}}$) and lowest variation ($\sim$20\%) among all sources. Its sinusoidal-like variation is quite possibly due to orbital modulation.
 
