@@ -250,7 +250,7 @@ If this probability exceeds a predefined threshold (default at 90\%), a periodic
 \subsection{Application to the LW}\label{subsec:appli}
 We apply the GL algorithm to search for periodic signals in the LW sources. 
 For a given source, the 1--8 keV counts within the 90\% ECR of individual ACIS-I observations are extracted to form a time series.  
-In addition, we supply for each source the information of ``epoch'', i.e., the start time and end time of each ObsID in which the source has at least one detected count. This information is used to compensate for the uneven distribution over the phase bins (see Eqn.~\ref{A17} for a detailed illustration). 
+In addition, we supply for each source the information of ``epoch'', i.e., the start time and end time of each ObsID in which the source has at least one detected count. This information is used to compensate for the uneven distribution of exposure over the phase bins (see Eqn.~\ref{A17} for a detailed illustration). 
 Since the GL algorithm determines the probability of a periodic signal against a constant light curve, there is no need to separately account for the background level, which is absorbed into the constant. 
 Nevertheless, we have measured the local background (Section~\ref{subsec:detect}) for each periodic source as a consistency check (see Section~\ref{sec:results}). 
 
@@ -316,7 +316,7 @@ f\lambda_0 & \text{$\phi(t) \in[(1-w)\pi,(1+w)\pi]$},
 \end{equation}
 where $w$ accounts for the eclipse width (duration) in phase space, and $f$ characterizes the relative depth of the eclipse ($0\leq f \leq 1$; $f = 0$ corresponds to total eclipse). Here the middle of eclipse is assumed to occur at $\phi = \pi$. 
 Again, $\lambda_0$ can be related to the total counts as $C=[1-(1-f)w]\lambda_0T_{\rm exp}$.
-We set $f=0.1$ and $w=0.1$ in our simulations, which are not atypical of eclipsing CVs. 
+We set $f=0.1$ and $w=0.1$ in our simulations, which are atypical of eclipsing CVs. 
 %since the radius ratio of WD, companion star and orbit are about 1:10:50. 
 We test three values of the period, $P$=5258, 15258 and 45258 sec and adopt trial count rates $\lambda_0 = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15$ and $20\times10^{-4}{\rm~cts~s^{-1}}$.
 For each combination of parameters, 100 simulated light curves are again generated and fed to the GL algorithm. 
@@ -640,7 +640,7 @@ In this section, we discuss the most significant implications of our results. We
 \subsection{Comparison with previous work} \label{subsec:compare}
 We have detected 25 periodic signals from 23 sources in the LW (Table~\ref{tab:src}). 
 Our detections fully recover the 10 periodic signals from 10 sources found by \cite{2012ApJ...746..165H}. 
-As illustrated in the upper panel of Figure~\ref{fig:com}, the measured periods of these 10 signals from the two studies agree with each other to within 0.7\% and show no systematic bias.
+As illustrated in the left panel of Figure~\ref{fig:com}, the measured periods of these 10 signals from the two studies agree with each other to within 0.7\% and show no systematic bias.
 The remaining 15 periods are new detections. 
 Since our work and \cite{2012ApJ...746..165H} have used the same set of {\it Chandra} observations, 
 this difference must be owing to the different period searching methods employed.
@@ -672,7 +672,7 @@ from \citet{2012ApJ...746..165H}, which was  based on the Rayleigh statistics \c
 %where equation \ref{Arms} only works for sinusoidal modulations. N and B represent the total counts in source region and local background respectively. $t_{j}$ and $\phi\left(t_{j}\right)$ refer to the arrival time and phase of each photon. $Z_{1}^{2}$ is the classical Rayleigh statistic method \citep{1983A&A...128..245B,2003ApJ...599..465M}.
 %Though $A_{M}$ depends on the bin size of phase-folded light curve, we still prefer it rather than $A_{rms}$ to get the amplitude, i.e, $A_0$, since the deviation between sinusoidal variation and real shape sometimes made $A_{0}$ exceeds one when it was calculated from $A_{\mathrm{rms}}$. $A_{M}$ is obtained with bin size fixed at 20.
 For each of the 10 signals, 100 simulated light curves are produced and fed to the GL algorithm.
-Again, we take the 90\% probability threshold and a period accuracy of 1\% to define a valid detection. The percentage of valid detections, $P_{\rm det}$ (also listed in column 9 of Table~\ref{tab:src}), is plotted in the upper panel of Figure~\ref{fig:com}, along with the detection rate of the LS periodogram taken from \citet{2012ApJ...746..165H}.
+Again, we take the 90\% probability threshold and a period accuracy of 1\% to define a valid detection. The percentage of valid detections, $P_{\rm det}$ (also listed in column 9 of Table~\ref{tab:src}), is plotted in the right panel of Figure~\ref{fig:com}, along with the detection rate of the LS periodogram taken from \citet{2012ApJ...746..165H}.
 %For directly comparison, we also ran the simulation based on the same $A_{0}$ defined in \citet{2012ApJ...746..165H} for the ten collective sources, the result of which is also plotted in Figure \ref{fig:com}.
 Clearly, the GL algorithm works better in almost all cases compared to the LS periodogram. 
 
@@ -713,7 +713,7 @@ In magnetic CVs, including polars and IPs, their spin modulations can give rise 
 Denoting $i$ the angle between the line-of-sight and the spin axis, $\beta$ the angle between the spin and magnetic axes, and $\epsilon$ the magnetic colatitude of the accretion column, when $i+\beta+\epsilon > 90^{\circ}$, the two poles will alternately drift across the front side of the WD. 
 The resultant light curve will look like that of source \#6 , \#8 and \#10, with nearly half of the cycle showing a valley of near-zero hard X-ray flux \citep{1985A&A...148L..14H}. 
 The periods of these sources are consistent with the period range of known polars (for polars the orbital and spin periods are equal; Figure~\ref{fig:N_P}).
-This so-called ``two-pole'' behavior becomes more complicated if some hard X-rays were also produced near the second pole, in which case the ``valey'' is partially filled, resulting in a light curve like that of \#4, \#5, \#9, \#12, \#13, \#15 ,\#16, \#17, and \#23. 
+This so-called ``two-pole'' behavior becomes more complicated if some hard X-rays were also produced near the second pole, in which case the ``valley'' is partially filled, resulting in a light curve like that of \#4, \#5, \#9, \#12, \#13, \#15 ,\#16, \#17, and \#23. 
 %Sometimes it may completely reverse in hard X-ray band cause the accretion shock in second pole producing most of hard X-rays. 
 On the other hand, if $i+\beta+\epsilon < 90^{\circ}$, the hard X-ray-emitting pole would be always visible (the so-called ``one-pole'' behavior), producing a roughly constant light curve, although under certain condition ($\beta < i$) dips can be present due to obscuration by the accretion stream \citep{2001cvs..book.....H}. The ``one-pole'' case generally does not favor a robust detection of the period. 
 
@@ -788,10 +788,10 @@ where $N_{\rm tot}$ is the total number of CVs in the LW, $\alpha_{\rm polar}$ i
 
 We further assume that the substantial sinusoidal variation occurs only in the ``two-pole'' situation, that is, only one pole produces the hard X-rays and for this pole $i+\beta+\epsilon > 90^{\circ}$. 
 Adopting an 50\% probability to fulfill each of these two conditions, this allows us to take $g_{\rm polar}$ = $50\%\times50\% = 25\%$. In reality, $P_{\rm det}$ depends on the period, variation amplitude and total counts (Section~\ref{subsec:simulation}). 
-Without {\it a priori} information about period and amplitude, we make use of our simulation results to estimate $P_{\rm det}$ with the following approximations:
+Without a {\it  priori} information about period and amplitude, we make use of our simulation results to estimate $P_{\rm det}$ with the following approximations:
 (i) The short and long orbital periods (below or above 3.2 hours) are represented by $P$=5540 sec and $P$=45540 sec, respectively. A weight of 82\% (18\%) is assigned to the short (long) period, roughly according to the distribution of solar neighborhood polars; 
 (ii) the amplitude is evenly sampled between 0.5 to 0.9, neglecting the contribution from any lower amplitudes (i.e., $P_{\rm det} = 0$ in this case);
-(iii) the observed source countss are grouped into different bins, from $C$=75 to 3575 cts at a step of 100 cts.  
+(iii) the observed source counts are grouped into different bins, from $C$=75 to 3575 cts at a step of 100 cts.  
 %Then we obtain the mean detection rate from simulation, by combining the even distribution for amplitude from 0.5 to 0.9 and the harmonic average for results of P=5540s (60\%) and P=45540s (40\%). The value of 60\% and 40\% are estimated from the period distribution beyond and below the gap, respectively. Thus far, we get the detection rate only depended on number of counts.
 %We set width=100 for our binning of counts, from 75 to 3575, covering nearly all detected sources. 
 Then in each bin the number of polars is predicted to be,
@@ -799,7 +799,8 @@ Then in each bin the number of polars is predicted to be,
 N_{\rm det,polar}^i =  g_{\rm polar} \times \alpha_{\rm polar} \times P_{\rm det}^i \times N^i,
 \end{equation}
 where $N^i$ is the intrinsic number of sources in the bin, i.e., $\sum{N^i}=N_{\rm tot}=600$.  
-$N_{\rm det,polar}^i$ is constrained by the number of actually detected polars in a given bin. We take $\sum{N_{\rm det,polar}^i} = 19$, effectively counting all the periodic sources except the two probable IPs, one probable AB and one foreground DN (Section~\ref{subsec:class}).
+$N_{\rm det,polar}^i$ is constrained by the number of actually detected polars in a given bin.
+We take $\sum{N_{\rm det,polar}^i} = 19$, effectively counting all the periodic sources except the two probable IPs, one probable AB and one foreground DN (Section~\ref{subsec:class}).
 Figure~\ref{fig:NP_sim} compares the number of detected and predicted polars as a function of total counts, which apparently agree well with each other.  
 The required normalization of the predicted numbers is such that $\alpha_{\rm polar} \approx 18\%$. Strictly speaking, this value is an upper limit, since a fraction of the 19 periodic sources could be IPs and $g_{\rm polar}$ may be significantly underestimated. 
 For comparison, the fraction of polars is 13.5\% among all known CVs in the solar neighborhood as cataloged by \citet{2003A&A...404..301R}. This lends support to our above estimates.
