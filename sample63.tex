@@ -45,8 +45,6 @@
 %\def\thebibliography{\DeclareRobustCommand{\VAN}[3]{##3}\VANthebibliography}
 
 
-%%%%% AUTHORS - PLACE YOUR OWN PACKAGES HERE %%%%%
-
 % Only include extra packages if you really need them. Common packages are:
 \usepackage{graphicx}	% Including figure files
 \usepackage{amsmath}	% Advanced maths commands
@@ -54,12 +52,9 @@
 \usepackage{amssymb}	% Extra maths symbols
 \usepackage[justification=centering]{caption}
 \usepackage{float}
-%% Reintroduced the \received and \accepted commands from AASTeX v5.2
 %\received{June 1, 2019}
 %\revised{January 10, 2019}
 %\accepted{\today}
-%% Command to document which AAS Journal the manuscript was submitted to.
-%% Adds "Submitted to " the argument.
 
 %\title[Short title, max. 45 characters]{Periodic X-ray Sources in the Galactic Bulge}
 %\author{Bao \& Li}
@@ -96,9 +91,6 @@ On the other hand, there is an apparent lack of long-period ($\gtrsim$3.3 hours)
 We suggest that this might be an age effect, in the sense that CVs in the inner bulge are more evolved systems and have substantially shrunk their orbits. 
 \end{abstract}
 
-%% Keywords should appear after the \end{abstract} command. 
-%% See the online documentation for the full list of available subject
-%% keywords and the rules for their use.
 %\keywords{Galaxy: bulge --- X-rays: stars --- X-rays: binaries}
 \begin{keywords}
 Galaxy: bulge --- X-rays: stars --- X-rays: binaries
@@ -155,7 +147,6 @@ A total of 13 ACIS-I observations were taken, three in 2005 and ten in 2008, res
 A log of these observations is given in Table \ref{tab:obsinfo}. 
 A number of previous studies have made use of all or part of these observations, which primarily focused on the identification of discrete X-ray sources and the quantification of their statistical properties \citep{2009Natur.458.1142R,2009ApJ...700.1702V,2009ApJ...706..223H,2011MNRAS.414..495R,2012MNRAS.427.1633H,2013ApJ...766...14M,2016MNRAS.462L.106W}.
 
-%\decimalcolnumbers
 \begin{table*}
 \centering
 \caption{{\it Chandra} observations of the Limiting Window} \label{tab:obsinfo}
@@ -642,15 +633,6 @@ $10^{+1}_{-1}$
 \end{threeparttable}
 \end{table*} 
  
-%\end{deluxetable*}
-%
-
-%\begin{figure*}[!htbp]
-%\centering
-%\rotatebox[origin=c,x=11pt,y=146pt]{270}{\includegraphics[width = 0.6\textwidth]{./figure/LW/pCV_brem.eps}}
-%\caption{Cumulative spectra with the best-fit model($phabs\times (bremsstrahlung+gaussian+gaussian+gaussian) $).
-%The spectrum for H, L set of periodic sources are plotted in red and black respectively. %\label{fig:pCV_spec}}
-%\end{figure*}
 
 \section{Discussion}\label{sec:discussion}
 In this section, we discuss the most significant implications of our results. We first provide a comparison between our work and \cite{2012ApJ...746..165H} (Section~\ref{subsec:compare}). Then, we try to classify the periodic sources based on their temporal and spectral properties, demonstrating that the majority of these sources are most likely magnetic CVs (Section~\ref{subsec:class}). Lastly, we attempt to constrain the fraction of various CV sub-classes in the Galactic bulge (Section~\ref{subsec:population}).
@@ -896,13 +878,6 @@ It will be interesting to further compare the period distribution of the LW CVs 
 \vskip0.5cm
 We thank Xiaojie Xu and Zhenlin Zhu for helpful discussions. This work is supported by the National Key Research and Development Program of China under grant 2017YFA0402703.
 
-%% Appendix material should be preceded with a single \appendix command.
-%% There should be a \section command for each appendix. Mark appendix
-%% subsections with the same markup you use in the main body of the paper.
-
-%% Each Appendix (indicated with \section) will be lettered A, B, C, etc.
-%% The equation counter will reset when it encounters the \appendix
-%% command and will number appendix equations (A1), (A2), etc. The
 
 \bibliography{sample63}{}
 \bibliographystyle{mnras}
@@ -1125,4 +1100,3 @@ The green dashed line represents the mean count rate, whereas the yellow strip r
 
 \end{document}
 
-% End of file `sample63.tex'.
