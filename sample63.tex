@@ -67,8 +67,8 @@
 \title[Periodic X-ray Sources in the Galactic Bulge]{Periodic X-ray Sources in the Galactic Bulge: Application of the Gregory-Loredo Algorithm}
 
 \author[Bao \& Li]{
-Tong Bao,$^{1,2}$\thanks{E-mail: baotong@smail.nju.edu.cn}
-Zhiyuan Li,$^{1,2}$\thanks{E-mail: lizy@nju.edu.cn}
+Tong Bao$^{1,2}$\thanks{E-mail: baotong@smail.nju.edu.cn}
+Zhiyuan Li$^{1,2}$\thanks{E-mail: lizy@nju.edu.cn}
 \\
 % List of institutions
 $^{1}$School of Astronomy and Space Science, Nanjing University, Nanjing 210046, China\\
@@ -86,10 +86,14 @@ $^{2}$Key Laboratory of Modern Astronomy and Astrophysics (Nanjing University), 
 %\correspondingauthor{August Muench}
 %\email{greg.schwarz@aas.org, gus.muench@aas.org}
 \begin{abstract}
-We present the discovery of 23 X-ray periodic sources with 25 signals in the Limiting Window (LW), a low-extinction region in the Galactic bulge, locating 80' south of the Galactic center. Their luminosities range(${\rm 10^{31}-10^{33} ~erg ~ s^{-1}}$) and period distribution(mostly between 1 to 3 hour), indicate they are cataclysmic variables (CVs). Most of them are determined as magnetic CVs by their feature of period modulation. 
-We also proved that the Gregory-Loredo (GL) method used in this work has better sensitivity and data usage compared to the Lomb-Scargle (LS) method. In combination with the simulation and the geometry of accretion in CVs, we constrain the proportion of polars (IPs) to X-ray sources in LW about 18\% (5\%) as upper limit. 
-The relatively shorter period distribution of these sources indicates the older stellar age of galactic bulge than solar neighborhood.
-%Still, this discovery confirms the sub-type of unusual mCVs and provides a practical way to study the population about X-ray sources based on periodic modulation.
+We present a systematic study of periodic X-ray sources in the Limiting Window (LW), a $\sim$70 arcmin$^2$ field representative of the inner Galactic bulge and the target of $\sim$1 Ms {\it Chandra} observations.  
+Using the Gregory-Loredo algorithm, which applies Bayes's theorem to the phase-folded light curve, we search for periodic signals among 667 discrete X-ray sources that have at least 100 counts in the 1--8 keV band. 
+This results in 25 periodic signals in 23 sources, among which 15 signals are new discoveries and two sources show dual periods. 
+The vast majority of the 23 periodic sources are classified as magnetic cataclysmic variables (CVs), based on their period range, X-ray luminosities, spectral properties, and phase-folded light curves that are characteristic of spin modulation.
+Accordingly, there is a paucity of non-magnetic CVs seen as periodic sources, which can be understood as due to a low detection efficiency for eclipsing sources given only a moderate number of source counts. 
+Based on reasonable assumptions about the geometry of magnetic CVs and a large set of simulated X-ray light curves, we estimate the fraction of magnetic CVs in the inner Galactic bulge to be $\lesssim$23\%, which is similar to that in the solar neighborhood.
+On the other hand, there is an apparent lack of long-period ($\gtrsim$3.3 hours) CVs in the LW, when contrasted with the range of known CVs in the solar neighborhood.
+We suggest that this might be an age effect, in the sense that CVs in the inner bulge are more evolved systems and have substantially shrunk their orbits. 
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
@@ -114,7 +118,8 @@ While historically the CV phenomenon roots on the optical band, X-ray observatio
 In CVs, X-rays are almost exclusively produced near the WD surface. 
 In the case of non-magnetic CVs (dominated by dwarf novae [DNe]), accretion proceeds through a disk, releasing about half of the gravitational energy in heating the disk and the other half in a boundary layer between the WD surface and the inner edge of the disk, producing copious X-rays \citep{2001cvs..book.....H}.    
 In the case of magnetic CVs, accretion is dictated by magnetic field lines rooting on the magnetic poles. An accretion shock occurs near the WD surface, producing X-rays in the post-shock plasma. 
-The evolution of CVs are driven by angular momentum losses (AML) to keep the orbital period from expanding. The change of mechanism for angular momentum losses causes the famous feature "period gap" between 2 to 3 hours.  The dominant AML mechanism in long-period systems ($P_{orb}$ $\geq$ 3 hour) is "magnetic braking", whereas short-period CVs ($P_{orb}$ $\leq$ 2 hour) are  driven by gravitational radiation. Meanwhile, there is a minimum period ($\sim$1.2 hour) of CVs, resulted from the mass-loss-induced loss of thermal equilibrium in companion star. The orbital period of CVs are mainly between 1 to 10 hours, making it suitable for X-ray timing analysis.
+The evolution of CVs are driven by angular momentum losses (AML) to keep the orbital period from expanding. The change of mechanism for angular momentum losses causes the famous feature "period gap" between 2 to 3 hours.  The dominant AML mechanism in long-period systems ($P_{orb}$ $\geq$ 3 hour) is "magnetic braking", whereas short-period CVs ($P_{orb}$ $\leq$ 2 hour) are  driven by gravitational radiation. Meanwhile, there is a minimum period ($\sim$1.2 hour) of CVs, resulted from the mass-loss-induced loss of thermal equilibrium in companion star. 
+In general, the orbital period of CVs are mainly between 1 to 10 hours, making it suitable for X-ray timing analysis.
 
 The advent of {\it Chandra} observations have opened up the possibility of detecting numerous CVs in the inner Galactic regions, which is inaccessible to optical observations and suffers from strong crowding. 
 In particular, it has been suggested that thousands of X-ray sources detected in the innermost degree of the Galactic center are predominantly IPs \citep{2009ApJS..181..110M,2018ApJS..235...26Z}. Due to the lack of optical/infrared imaging and spectroscopy resulted from high extinction and source crowding, the direct identification of them has been really difficult.
@@ -131,7 +136,7 @@ Hence the periodicity becomes a well recognized probe to study their population,
 
 
 
-In \citet{2003ApJ...599..465M}, eight periodic sources were identified as mCVs in galactic center region (GCR). Then for galactic bulge region, ten periodic sources were found by using Lomb-Scargle methods in \citet{2012ApJ...746..165H}. They were believed as an unusual type of mCVs with harder spectra like IPs while their period distribution resembles that of polars. The research was based on the observation of low-extinction Window fields (LW), locating at $1^{\circ}4$ south of the Galactic center. Its rarity of avoiding the obscuration from molecular cloud deserved our deeper excavation of these X-ray sources. 
+In \citep{2003ApJ...599..465M}, eight periodic sources were identified as mCVs in galactic center region (GCR). Then for galactic bulge region, ten periodic sources were found by using Lomb-Scargle methods in \citep{2012ApJ...746..165H}. They were believed as an unusual type of mCVs with harder spectra like IPs while their period distribution resembles that of polars. The research was based on the observation of low-extinction Window fields (LW), locating at $1^{\circ}4$ south of the Galactic center. Its rarity of avoiding the obscuration from molecular cloud deserved our deeper excavation of these X-ray sources. 
 Besides, according to RK catalog \citep{2003A&A...404..301R}, the mCVs (mostly DNe) occupied 20\% in CVs sample, while for GCR, this fraction was reckoned over 30-40\% \citep{2016ApJ...826..160H,2012ApJ...746..165H}. The miss of non-mCVs demands reliable explanation from analyzing the properties of these sources. It may indicates that a large number of non-mCVs still awaits discovery since faint class can be always missed in flux-limited surveys.
 
 In this work, we revisit the {\it Chandra} observations of the LW, employing a novel technique, known as the Gregory-Loredo period searching algorithm, to detect periodic signals in the LW. Meanwhile, the methods with more efficiency and the simulation with higher accuracy have been both operated. 
@@ -182,7 +187,7 @@ We downloaded and uniformly reprocessed the archival data with CIAO v4.10 and CA
 The CIAO tool \emph{reproject\_aspect} was employed to align the relative astrometry among the individual observations, by matching the centroids of commonly detected point sources. ObsID 9502, which has the longest exposure (164.1 ks), served as the reference frame.
 The level 2 event file was created for each ObsID, with the arrival time of each event corrected to the Solar System barycenter (i.e., Temps Dynamique Barycentrique time) by using the CIAO tool \emph{axbary}.
 We then constructed a merged event list, reprojecting all events to a common tangential point, [R.A., Decl.]=[267.86375, 29.58475].
-The individual observations cover a similar field-of-view (FoV) due to their similar aimpoints and roll angles, as illustrated in Figure~\ref{fig:FoV} which displays the merged 2--8 keV counts image.
+The individual observations cover a similar field-of-view (FoV) of $\sim$70 arcmin$^2$, due to their similar aimpoints and roll angles. The FoV is illustrated in Figure~\ref{fig:FoV}, which displays the merged 2--8 keV counts image.
 We have examined the light curve of each ObsID and found that the instrumental background was quiescent for the vast majority of time intervals.
 Hence we preserved all the science exposures for source detection and subsequent timing analysis, taking the advantage of uninterrupted signals within each observation.  
 
@@ -231,7 +236,7 @@ When working in frequency space, such a sampling can lead to spurious signals an
 Moreover, the number of detected source counts is often only moderate. While one can in principle apply binning to create photometric light curves, it takes the price of potentially losing temporal information. Phase-folding methods, on the other hand, directly handle individual events, thus maximally incorporating the temporal information.
 
 Most X-ray sources in the LW share the characteristics of irregular sampling and limited source counts. 
-Therefore, it is appropriate to employ the GL algorithm, which applies the Bayesian probability theory to the phase-folded light curve, to search for periodic signals for the LW sources. We provide a brief summary in mathematical form of Bayes's theorem and the GL algorithm in Appendix \ref{GL}. 
+Therefore, it is appropriate to employ the GL algorithm, which applies the Bayesian probability theorem to the phase-folded light curve, to search for periodic signals for the LW sources. We provide a brief summary in mathematical form of Bayes's theorem and the GL algorithm in Appendix \ref{GL}. 
 The key of this algorithm is the multiplicity of the phase distribution of events,
 \begin{equation}\label{multi}
 W_m(\omega, \phi)={{N!}\over{n_1!\; n_2!\; n_3!\cdots {n_m}!}}.
