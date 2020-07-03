@@ -97,29 +97,33 @@ Galaxy: bulge --- X-rays: stars --- X-rays: binaries
 \end{keywords}
 
 \section{Introduction} \label{sec:intro}
-Mass-transferring, close binaries, which involve an black hole (BH), a neutron star (NS) or a white dwarf (WD) accreting from a companion star, are among the first objects discovered in the X-ray sky and now understood to be ubiquitous in the local universe, in particular our own Milky Way Galaxy \citep{2006ARA&A..44..323F}. 
+Mass-transferring, close binaries, which involve a black hole (BH), a neutron star (NS) or a white dwarf (WD) accreting from a companion star, are among the first objects discovered in the X-ray sky and now understood to be ubiquitous in the local universe, in particular our own Galaxy \citep{2006ARA&A..44..323F}. 
 As such, X-ray binaries can serve as a useful probe of their parent stellar populations.
 
-Due to their relative dimness in the X-ray band (with intrinsic luminosities of $10^{30}-10^{34}\rm~erg~s^{-1}$, cataclysmic variables (CVs), mass-transferring binaries consisting of a WD accretor and a main-sequence or sub-giant donor,
-are typically best studied in the solar neighborhood,  
-are abundant throughout the Galactic disk and bulge, as well as dense environments including the Galactic center (e.g., \citealp{2003ApJ...599..465M,2009ApJS..181..110M,2018ApJS..235...26Z}) and globular clusters (e.g., \citealp{2006ApJ...646L.143P,2018ApJ...858...33C}). 
+Due to their relative dimness in the quiescent state,
+well-studied examples of cataclysmic variables (CVs), close binaries consisting of a WD accretor and a main-sequence or sub-giant donor,
+are typically found in the solar neighborhood. 
+While historically the CV phenomenon roots on the optical band, X-ray observations have been providing complementary and crucial knowledge about CVs, since the first CV detection in the X-ray band (SS Cyg, \citealp{1974ApJ...187L...5R,1978ApJ...224..953S}). 
+Popular catalogs of CVs now include more than one thousand {\bf [is this true?]} sources with well determined physical properties of the binary system (\citealp{2003A&A...404..301R}; {\bf any other catalogs worth mentioning?}).
+The evolution of CVs is driven by angular momentum losses (AML) to keep the orbital period from expanding. 
+%The change of mechanism for angular momentum losses causes the famous feature "period gap" between 2 to 3 hours.  
+The dominant AML mechanism in long orbital period systems ($P_{\rm orb}$ $\gtrsim$ 3 hours) is magnetic braking, whereas short-period CVs ($P_{\rm orb}$ $\lesssim$ 2 hour) are driven by gravitational radiation. This results in  a ``period gap'' between about 2--3 hours, within which mass transfer is largely suppressed and few CVs are found. There is also a minimum orbital period ($\sim$80 minutes) of CVs, which is resulted from the mass-loss-induced loss of thermal equilibrium in companion star. 
+Most known CVs have an orbital period between 1--10 hours, making it suitable for X-ray timing analysis. 
+
+%Typical X-ray luminosities of CV range between $10^{30}-10^{34}\rm~erg~s^{-1}$. %are abundant throughout the Galactic disk and bulge, as well as dense environments including the Galactic center (e.g., \citealp{2003ApJ...599..465M,2009ApJS..181..110M,2018ApJS..235...26Z}) and globular clusters (e.g., \citealp{2006ApJ...646L.143P,2018ApJ...858...33C}). 
+CVs are dubbed magnetic or non-magnetic, according to whether the WD has a strong surface magnetic field. Magnetic CVs can be further divided into polars and intermediate polars (IPs), depending on the level of synchronization between the orbital period ($P_{\rm orb}$) and spin period ($P_{\rm spin}$) of the WD. Polars have a near-perfect synchronization, $P_{\rm spin}/P_{\rm orb}\simeq 1$, a result of magnetic coupling owing to a strong magnetic field ($\gtrsim$ 10 MG on the WD surface).
+IPs, on the other hand, have weaker surface magnetic fields (typically 0.1--10 MG) and are thus less synchronized ($P_{\rm spin}/P_{\rm orb}\simeq 0.01-1$).
+Empirically, the fraction of magnetic CVs (polars plus IPs) is $\sim$20\% among all known CVs in the solar neighborhood (\citealt{2003A&A...404..301R}), while the intrinsic fraction might be somewhat lower ($\sim$16\%; Pretorius \& Mukai 2014).
+%more references? Do we also have knowledge on the fraction of magnetic WDs?).      
+
+In CVs, X-rays are almost exclusively produced near the WD surface (\citealp{2001cvs..book.....H}; Mukai 2017). 
+In the case of magnetic CVs, the motion of the accreted material is dictated by magnetic field lines, landing near the magnetic poles as an accretion stream or curtain and producing an accretion shock. It is the post-shock plasma that produces the optically-thin thermal X-ray emission. 
+In the case of non-magnetic CVs (dominated by dwarf novae [DNe]), accretion proceeds through a disk, releasing about half of the gravitational energy in heating the disk and the other half in a boundary layer between the WD surface and the inner edge of the disk, producing copious X-rays.    
+%In fact, even though the presence and characteristics of the He II $\lambda 4686$ and H$\beta$ line have been often used to judge if a CV is magnetic or not, the proof is far from conclusive. In \cite{1992PhDT.......119S}, many IPs with weak H$\beta$ lines could not be identified from non-magnetic systems using this diagnostic. 
+Hence the periodicity becomes a well recognized probe to study their population, because of their different features in periodic modulation (see Section~\ref{subsec:class}). 
 
 The advent of {\it Chandra} observations have opened up the possibility of detecting numerous CVs in the inner Galactic regions, which is inaccessible to optical observations and suffers from strong crowding. 
 In particular, it has been suggested that thousands of X-ray sources detected in the innermost degree of the Galactic center are predominantly IPs \citep{2009ApJS..181..110M,2018ApJS..235...26Z}. Due to the lack of optical/infrared imaging and spectroscopy resulted from high extinction and source crowding, the direct identification of them has been really difficult.
-In fact, even though the presence and characteristics of the He II $\lambda 4686$ and H$\beta$ line have been often used to judge if a CV is magnetic or not, the proof is far from conclusive. In \cite{1992PhDT.......119S}, many IPs with weak H$\beta$ lines could not be identified from non-magnetic systems using this diagnostic. 
-Hence the periodicity becomes a well recognized probe to study their population, because of their different features in periodic modulation (see Section~\ref{subsec:class}). 
-
-
-CVs are dubbed magnetic or non-magnetic, according to whether the WD has a strong surface magnetic field. Magnetic CVs can be further divided into polars and intermediate polars (IPs), depending on the level of synchronization between the orbital period ($P_{\rm orb}$) and spin period ($P_{\rm spin}$) of the WD. Polars have a near-perfect synchronization, $P_{\rm spin}/P_{\rm orb}\simeq 1$, a result of magnetic coupling owing to a strong magnetic field ($\gtrsim$ 1 MG on the WD surface).
-IPs, on the other hand, have weaker surface magnetic fields (typically 0.1--1 MG) and are thus less synchronized ($P_{\rm spin}/P_{\rm orb}\simeq 0.01-1$).
-Empirically, the fraction of magnetic CVs (polars plus IPs) is $\sim$20\% among all known CVs in the solar neighborhood (\citealt{2003A&A...404..301R}, more references? Do we also have knowledge on the fraction of magnetic WDs?).      
-
-While historically the CV phenomenon roots on the optical band, X-ray observations have been providing complementary and crucial knowledge about CVs since the first CV observed in the X-ray band (SS Cyg, \citealp{1974ApJ...187L...5R,1978ApJ...224..953S}). 
-In CVs, X-rays are almost exclusively produced near the WD surface. 
-In the case of non-magnetic CVs (dominated by dwarf novae [DNe]), accretion proceeds through a disk, releasing about half of the gravitational energy in heating the disk and the other half in a boundary layer between the WD surface and the inner edge of the disk, producing copious X-rays \citep{2001cvs..book.....H}.    
-In the case of magnetic CVs, accretion is dictated by magnetic field lines rooting on the magnetic poles. An accretion shock occurs near the WD surface, producing X-rays in the post-shock plasma. 
-The evolution of CVs are driven by angular momentum losses (AML) to keep the orbital period from expanding. The change of mechanism for angular momentum losses causes the famous feature "period gap" between 2 to 3 hours.  The dominant AML mechanism in long-period systems ($P_{orb}$ $\geq$ 3 hour) is "magnetic braking", whereas short-period CVs ($P_{orb}$ $\leq$ 2 hour) are  driven by gravitational radiation. Meanwhile, there is a minimum period ($\sim$1.2 hour) of CVs, resulted from the mass-loss-induced loss of thermal equilibrium in companion star. 
-In general, the orbital period of CVs are mainly between 1 to 10 hours, making it suitable for X-ray timing analysis.
 
 
 % The main periodic feature of CVs are orbital modulation and spin modulation. 
@@ -133,9 +137,7 @@ In general, the orbital period of CVs are mainly between 1 to 10 hours, making i
 In \citet{2003ApJ...599..465M}, eight periodic sources were identified as mCVs in galactic center region (GCR). Then for galactic bulge region, ten periodic sources were found by using Lomb-Scargle methods in \citep{2012ApJ...746..165H}. They were believed as an unusual type of mCVs with harder spectra like IPs while their period distribution resembles that of polars. The research was based on the observation of low-extinction Window fields (LW), locating at $1^{\circ}4$ south of the Galactic center. Its rarity of avoiding the obscuration from molecular cloud deserved our deeper excavation of these X-ray sources. 
 Besides, according to RK catalog \citep{2003A&A...404..301R}, the mCVs (mostly DNe) occupied 20\% in CVs sample, while for GCR, this fraction was reckoned over 30-40\% \citep{2016ApJ...826..160H,2012ApJ...746..165H}. The miss of non-mCVs demands reliable explanation from analyzing the properties of these sources. It may indicates that a large number of non-mCVs still awaits discovery since faint class can be always missed in flux-limited surveys.
 
-In this work, we revisit the deep {\it Chandra} observations of the LW, employing a novel technique, known as the Gregory-Loredo period searching algorithm, to detect periodic signals in the LW. 
-%Meanwhile, the methods with more efficiency and the simulation with higher accuracy have been both operated. 
-We show that this enables us to find more periodic signals than previous work using the same dataset \citep{2012ApJ...746..165H}. 
+In this work, we revisit the deep {\it Chandra} observations of the LW, employing a novel technique, known as the Gregory-Loredo period searching algorithm \citep{1992ApJ...398..146G}, to detect periodic signals in the LW. We will show that this enables us to find more periodic X-ray sources than previous work using the same dataset \citep{2012ApJ...746..165H}. 
 The rest of this paper is structured as follows.
 In Section~\ref{sec:obs}, we describe the preparation of the X-ray data and the construction of a raw list of X-ray sources in the LW.
 We then provide in Section~\ref{sec:methods} a brief overview of the various period searching methods, with an emphasis on the advantage of the Gregory-Loredo algorithm. We also provide an outline of the algorithm's basic principles, supplementing in the Appendix the mathematical formulae in detail.
