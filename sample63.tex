@@ -82,12 +82,14 @@ $^{2}$Key Laboratory of Modern Astronomy and Astrophysics (Nanjing University), 
 %\email{greg.schwarz@aas.org, gus.muench@aas.org}
 \begin{abstract}
 We present a systematic study of periodic X-ray sources in the Limiting Window (LW), a $\sim$70 arcmin$^2$ field representative of the inner Galactic bulge and the target of $\sim$1 Ms {\it Chandra} observations.  
-Using the Gregory-Loredo algorithm, which applies Bayes's theorem to the phase-folded light curve, we search for periodic signals among 667 discrete X-ray sources that have at least 100 counts in the 1--8 keV band. 
-This results in 25 periodic signals in 23 sources, among which 15 signals are new discoveries and two sources show dual periods. 
+Using the Gregory-Loredo algorithm, which applies Bayes's theorem to the phase-folded light curve, 
+%we search for periodic signals among 667 discrete X-ray sources that have at least 100 counts in the 1--8 keV band. 
+we detect 25 periodic signals in 23 discrete sources, among which 15 signals are new discoveries and two sources show dual periods. 
 The vast majority of the 23 periodic sources are classified as magnetic cataclysmic variables (CVs), based on their period range, X-ray luminosities, spectral properties, and phase-folded light curves that are characteristic of spin modulation.
-Accordingly, there is a paucity of non-magnetic CVs seen as periodic sources, which can be understood as due to a low detection efficiency for eclipsing sources given only a moderate number of source counts. 
-Based on reasonable assumptions about the geometry of magnetic CVs and a large set of simulated X-ray light curves, we estimate the fraction of magnetic CVs in the inner Galactic bulge to be $\lesssim$23\%, which is similar to that in the solar neighborhood.
-On the other hand, there is an apparent lack of long-period ($\gtrsim$3.3 hours) CVs in the LW, when contrasted with the range of known CVs in the solar neighborhood.
+Meanwhile, there is a paucity of non-magnetic CVs seen as periodic sources, which can be understood as due to a low detection efficiency for eclipsing sources. 
+%given only a moderate number of source counts. 
+Under reasonable assumptions about the geometry of magnetic CVs and a large set of simulated X-ray light curves, we estimate the fraction of magnetic CVs in the inner Galactic bulge to be $\lesssim$23\%, which is similar to that in the solar neighborhood.
+There is an apparent lack of long-period ($\gtrsim$3.3 hours) CVs in the LW, when contrasted with the range of known CVs in the solar neighborhood.
 We suggest that this might be an age effect, in the sense that CVs in the inner bulge are more evolved systems and have substantially shrunk their orbits. 
 \end{abstract}
 
@@ -102,7 +104,7 @@ As such, X-ray binaries can serve as a useful probe of their parent stellar popu
 
 Due to their relative dimness in the quiescent state,
 well-studied examples of cataclysmic variables (CVs), close binaries consisting of a WD accretor and a main-sequence or sub-giant donor, mainly reside in the solar neighborhood. 
-Popular catalogs of CVs now include more than one thousand sources with well determined physical properties of the binary system (\citealp{2001PASP..113..764D,2003A&A...404..301R}).
+Popular catalogs of CVs now include more than one thousand sources, most with well determined physical properties of the binary system (\citealp{2001PASP..113..764D,2003A&A...404..301R}).
 Most known CVs have an orbital period between 1--12 hours.
 %which are particularly suited for X-ray timing analysis.
 The evolution of CVs is driven by angular momentum loss (AML) that leads to a gradual shrinking of the binary orbit.
@@ -264,7 +266,7 @@ If this probability exceeds a predefined threshold (default at 90\%), a periodic
 \subsection{Application to the LW}\label{subsec:appli}
 We apply the GL algorithm to search for periodic signals in the LW sources. 
 For a given source, the 1--8 keV counts within the 90\% ECR of individual ACIS-I observations are extracted to form a time series.  
-In addition, we supply for each source the information of ``epoch'', i.e., the start time and end time of each ObsID in which the source has at least one detected count. This information is used to compensate for the uneven distribution of exposure over the phase bins (see Eqn.~\ref{A17} for the exact treatment). 
+In addition, we supply for each source the information of ``epoch'', i.e., the start time and end time of each ObsID. This information is used to compensate for the uneven distribution of exposure over the phase bins (see Eqn.~\ref{A17} for the exact treatment). 
 Since the GL algorithm determines the probability of a periodic signal against a constant light curve, there is no need to separately account for the background level, which is absorbed into the constant. 
 Nevertheless, we have measured the local background (Section~\ref{subsec:detect}) for each periodic source as a consistency check (see Section~\ref{sec:results}). 
 
@@ -766,21 +768,24 @@ We note that SS Aur, a well-known DN, may be a local analog to \#24.
 While the inclination angle of SS Aur,  $\sim$38$^\circ$, does not favor an eclipse, it exhibits low-amplitude ($\sim30\%$) orbital modulation at a 4.4-hour period in both the ultraviolet  (\citealt{1983ApJ...271..754W,1986Afz....24..227E}) and X-ray (X. Xu, private communications) bands.
 Therefore, we seem to have caught one DN among the periodic sources, although this source is quite likely located in the foreground (Section~\ref{sec:spectra}).
 
-Lastly, we remark on the possible non-CV source \#25. This source has an unabsorbed 1--8 keV luminosity of $\rm 0.8\times 10^{31}~erg~s^{-1}$, the lowest among all 23 sources. Its X-ray spectra, characterized by a best-fit plasma temperature of 2 keV (notably with large uncertainties; Table~\ref{tab:spec}), is also the softest among all sources.
-These values are more typical of ABs. 
+Lastly, we remark on source \#25, for which we have found no satisfying classification. This source has an unabsorbed 1--8 keV luminosity of $\rm 0.8\times 10^{31}~erg~s^{-1}$, the lowest among all 23 sources. Its X-ray spectra, characterized by a best-fit plasma temperature of 2 keV (notably with large uncertainties; Table~\ref{tab:spec}), is also the softest among all sources.
+Together these values argue against a CV, but are more typical of ABs. 
 Moreover, the phase-folded light curve of \#25 suggests that the X-ray flux drops to the background level for nearly half of the 47317-sec period (Figure~\ref{fig:Figure_p}). 
 As mentioned in the above, this may be due to a polar producing hard X-rays from only one pole.
 However, we consider such a case rather unlikely, since the corresponding period again greatly exceeds the empirical range of known polars.
 %which would imply for an exceptionally strong magnetic field in the WD. 
-Alternatively, the light curve can be explained by a total eclipse lasting for nearly half cycle.
+Alternatively, the light curve can be explained by a total eclipse lasting for nearly half cycle, 
+suggesting an AB system viewed nearly edge-on.
 %In this case, the eclipsed star cannot be a WD, because of the mismatch between the stellar radius (order $10^4$ km) and the orbital separation (order $10^7$ km).
 %Rather, 
-In this case, the eclipsed star is likely to have a size not much smaller than the orbital separation, suggesting an AB system viewed nearly edge-on.
-However, the near-zero flux for half-cycle is unusual for ABs. One possibility is that this system consists of a Sun-like star and an A-star, the latter producing no significant X-rays due to a very weak surface magnetic field \citep{2004A&ARv..12...71G}. 
+%In this case, the eclipsed star is likely to have a size not much smaller than the orbital separation, suggesting an AB system viewed nearly edge-on.
+%However, the near-zero flux for half-cycle is unusual for ABs. 
+However, this would require the obscuring star to have a size not much smaller than the orbital separation and in the meantime negligible X-ray emission.
+One possibility is that this system consists of a Sun-like star and an A-star, the latter producing no significant X-rays due to a very weak surface magnetic field \citep{2004A&ARv..12...71G}. 
 An orbital separation of 4 $R_\odot$ estimated from the period is compatible with such a system. 
 %Then the orbit radius would be around 0.02 AU, taking $3M_\odot$ as the total mass.  
 
-In summary, based on the X-ray properties of the periodic sources, in particular their phase-folded light curves, we identify 12 candidate polars, 2 probable plus 7 candidate IPs, one likely DN and one likely AB. 
+In summary, based on the X-ray properties of the periodic sources, in particular their phase-folded light curves, we identify 12 candidate polars, 2 probable plus 7 candidate IPs, one likely DN and one possible AB. 
 Admittedly, polars and IPs share similar characteristics in their phase-folded light curves, as described above. The non-detection of the spin period (or orbital period in the case of \#2) brings about substantial uncertainty in the IP identification.
 
 It is also noteworthy that only two long ($>3.5$ hours) periods are found among the 22 orbital periods (3 probable spin periods subtracted), and in fact none of them are genuine CVs in the LW (\#24 is a foreground source and \#25 is likely an AB).
@@ -817,7 +822,7 @@ N_{\rm det,polar}^i =  g_{\rm polar} \times \alpha_{\rm polar} \times P_{\rm det
 \end{equation}
 where $N^i$ is the intrinsic number of sources in the $i$th bin, satisfying $\sum{N^i}=N_{\rm tot}=600$.  
 $N_{\rm det,polar}^i$ is constrained by the number of actually detected polars in a given bin.
-We take $\sum{N_{\rm det,polar}^i} = 19$, effectively counting all the periodic sources except the two probable IPs, one likely AB and one foreground DN (Section~\ref{subsec:class}).
+We take $\sum{N_{\rm det,polar}^i} = 19$, effectively counting all the periodic sources except the two probable IPs, one possible AB and one foreground DN (Section~\ref{subsec:class}).
 Figure~\ref{fig:NP_sim} compares the number of detected and predicted polars as a function of total counts, which apparently agree well with each other.  
 The required normalization of the predicted numbers is such that $\alpha_{\rm polar} \approx 18\%$. Strictly speaking, this value is an upper limit, since a fraction of the 19 periodic sources could be IPs and $g_{\rm polar}$ may have been underestimated. 
 For comparison, the fraction of polars is 13.5\% among all known CVs in the solar neighborhood  \citep{2003A&A...404..301R}. This lends support to our above working assumptions.
@@ -881,23 +886,27 @@ Indeed, the presence of merely 20 long-period CVs with $C \approx 500$ in the in
 We have searched for periodic X-ray sources in the Limiting Window, utilizing $\sim$1 Ms {\it Chandra} observations and the Gregory-Loredo algorithm. We have also generated a large set of simulated light curves, based on idealized sinusoidal and piecewise functions, to evaluate the detection completeness of the GL algorithm. Our main findings include:
 
 \begin{itemize}
-\item We have detected 23 periodic sources with 25 signals, among a parent list of 667 discrete X-ray sources in the Limited Window. Among them, 10 signals were previously found \cite{2012ApJ...746..165H} using the Lomb-Scargle periodogram, whereas the remaining 15 signals are new discoveries. This underscores the advantage of the GL algorithm in dealing with irregular X-ray observations.
+\item We have detected 23 periodic sources with 25 signals, among a parent list of 667 discrete X-ray sources in the LW. Among them, 10 signals were previously found \cite{2012ApJ...746..165H} using the Lomb-Scargle periodogram, whereas the remaining 15 signals are new discoveries. This underscores the advantage of the GL algorithm in dealing with relatively faint sources and irregular X-ray observations.
 
 \item The vast majority of the 23 periodic sources are classified as magnetic CVs, based on their period range, X-ray luminosities, spectral properties and phase-folded light curves. In particular, dual periods are found in two sources, providing strong evidence that they are IPs. 
 
-\item In addition, one source is classified as a DN, based on its long period, soft X-ray spectrum and an outburst caught by the {\it Chandra} observations. However, its low line-of-sight absorption indicates that it is most likely a foreground source. Another source, which has the longest period among all, is best understood as an AB, based on it soft X-ray spectrum, low X-ray luminosity and phase-folded light curve characterized by a wide dip. 
+\item In addition, one source is classified as a DN, based on its long period, soft X-ray spectrum and an outburst caught by the {\it Chandra} observations. However, its low line-of-sight absorption indicates that it is most likely a foreground source. Another source, which has the longest period among all, could be an eclipsing AB, in view of it soft X-ray spectrum and low X-ray luminosity and phase-folded light curve characterized by a wide dip. 
 
-\item Based on the number of tentatively classified periodic sources, a simplified geometry involved in different CV sub-classes, and the detection completeness evaluated from our simulations, we are able to provide a rough estimation on the fraction of polars and IPs in the inner Galactic bulge, which is 18\% and 5\%, respectively. This suggests that the fraction of magnetic CVs (polars plus IPs) in the inner bulge is similar to that in the solar neighborhood. On the other hand, the lack of candidate periodic DNe in the inner bulge and the low detection completeness expected for eclipsing sources result in a large uncertainty in the estimated fraction of DNe. 
+\item Based on the number of tentatively classified periodic sources, a simplified geometry involved in different CV sub-classes, and the detection completeness evaluated from our simulations, we are able to provide meaningful constraints on the fraction of polars and IPs in the inner Galactic bulge, which is 18\% and 5\%, respectively. This suggests that the fraction of magnetic CVs (polars plus IPs) in the inner bulge is similar to that in the solar neighborhood. On the other hand, the lack of candidate periodic DNe in the inner bulge and the low detection completeness expected for eclipsing sources result in a large uncertainty in the estimated fraction of DNe. 
  
-\item The lack of the observed long-period CVs in the LW suggests an intrinsically different period distribution, in the sense that CVs in the inner bulge are predominantly old and have substantially shrunk their orbits. 
+\item The apparent lack of long-period CVs in the LW suggests an intrinsically different period distribution, in the sense that CVs in the inner bulge are predominantly old and have substantially shrunk their orbits. 
 
 \end{itemize}
 %It is noteworthy that the shape of light curve in GL method could be modified according to different scenarios. It was applied on detection of planetary transits by using customized eclipsing model \citep{2002A&A...395..625A}. For the utility of GL method, there is still room for improvement in the future.
 It will be interesting to further compare the period distribution of the LW CVs with that of other stellar populations, especially in dense environments including globular clusters and the Galactic center. We will present such a study in future work, utilizing the techniques developed in this work.
 
 \vskip0.5cm
+\noindent{\bf Acknowledgements}\\
 We thank Xiangdong Li, Xiaojie Xu and Zhenlin Zhu for helpful discussions. This work is supported by the National Key Research and Development Program of China under grant 2017YFA0402703.
+\\
 
+\noindent{\bf Data Availability}\\
+The data underlying this article will be shared on reasonable request to the corresponding author. 
 
 \bibliography{sample63}{}
 \bibliographystyle{mnras}
